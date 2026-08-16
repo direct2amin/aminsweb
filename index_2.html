@@ -1,0 +1,300 @@
+<!DOCTYPE HTML>
+<!--
+	Dimension by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>AMIN</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			:root {
+				--brand-dark-green: #1b542c;
+				--brand-mid-green: #2e723a;
+				--brand-leaf-green: #68a438;
+				--brand-light-green: #8ebe3f;
+				--color-white: #ffffff;
+			}
+
+			/* Exact Logo Gradient for Background */
+			body, #bg {
+				background: linear-gradient(135deg, #194e29 0%, #296b37 40%, #589535 75%, #88be40 100%) !important;
+				background-attachment: fixed !important;
+			}
+			#bg:before {
+				background-color: rgba(10, 30, 15, 0.2) !important;
+			}
+			#bg:after {
+				background: none !important;
+			}
+
+			/* Vertical Connecting Lines & Borders made Pure White */
+			#header:before,
+			#header:after,
+			#header .content:before,
+			#header .content:after,
+			#header nav:before,
+			#header nav:after {
+				background-color: var(--color-white) !important;
+				border-color: var(--color-white) !important;
+			}
+
+			/* Logo circle with White Background & Exact Sizing/Positioning */
+			#header .logo {
+				width: 6.5rem !important;
+				height: 6.5rem !important;
+				line-height: 6.5rem !important;
+				display: flex !important;
+				align-items: center !important;
+				justify-content: center !important;
+				background-color: var(--color-white) !important;
+				border: none !important;
+				border-radius: 50% !important;
+				box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+				transition: transform 0.3s ease, box-shadow 0.3s ease;
+				padding: 0 !important;
+				overflow: hidden !important;
+			}
+			#header .logo:hover {
+				transform: scale(1.05);
+				box-shadow: 0 0 25px rgba(255, 255, 255, 0.7);
+			}
+			#header .logo img {
+				width: 88% !important;
+				height: 88% !important;
+				object-fit: contain !important;
+				display: block !important;
+				transform: translate(3.5%, -9.5%) !important;
+			}
+
+			/* Header & Typography */
+			body, p, li, div {
+				color: var(--color-white) !important;
+			}
+			h1, h2, h3, h4, h5, h6, strong, b {
+				color: var(--color-white) !important;
+			}
+			em {
+				color: #d6f59c !important;
+				font-style: italic;
+			}
+			h2.major {
+				border-bottom-color: var(--color-white) !important;
+			}
+			hr {
+				border-bottom-color: rgba(255, 255, 255, 0.3) !important;
+			}
+
+			/* Navigation Bar */
+			#header nav ul {
+				border-color: var(--color-white) !important;
+			}
+			#header nav ul li {
+				border-left-color: rgba(255, 255, 255, 0.4) !important;
+			}
+			#header nav ul li a {
+				color: var(--color-white) !important;
+				letter-spacing: 0.15rem;
+			}
+			#header nav ul li a:hover {
+				background-color: rgba(255, 255, 255, 0.15) !important;
+				color: var(--color-white) !important;
+			}
+
+			/* Links */
+			a {
+				color: #d6f59c !important;
+				border-bottom-color: rgba(214, 245, 156, 0.6) !important;
+			}
+			a:hover {
+				color: var(--color-white) !important;
+				border-bottom-color: transparent !important;
+			}
+
+			/* Modal Popup Articles */
+			#main article {
+				background: rgba(20, 55, 30, 0.88) !important;
+				border: solid 1px rgba(255, 255, 255, 0.25) !important;
+				backdrop-filter: blur(8px);
+			}
+
+			/* Form Inputs & Buttons */
+			input[type="text"],
+			input[type="email"],
+			select,
+			textarea {
+				border-color: rgba(255, 255, 255, 0.4) !important;
+				color: var(--color-white) !important;
+				background: rgba(255, 255, 255, 0.08) !important;
+			}
+			input[type="text"]:focus,
+			input[type="email"]:focus,
+			select:focus,
+			textarea:focus {
+				border-color: var(--color-white) !important;
+			}
+			input[type="submit"].primary,
+			.button.primary {
+				background-color: var(--color-white) !important;
+				color: var(--brand-dark-green) !important;
+				border: 1px solid var(--color-white) !important;
+				font-weight: 600;
+			}
+			input[type="submit"].primary:hover,
+			.button.primary:hover {
+				background-color: #d6f59c !important;
+				color: var(--brand-dark-green) !important;
+			}
+
+			/* Social Icons */
+			ul.icons li a {
+				border-color: rgba(255, 255, 255, 0.6) !important;
+				color: var(--color-white) !important;
+			}
+			ul.icons li a:hover {
+				border-color: var(--color-white) !important;
+				background-color: rgba(255, 255, 255, 0.15) !important;
+				color: var(--color-white) !important;
+			}
+		</style>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="logo">
+							<img src="images/favicon.svg" alt="Amin Logo" />
+						</div>
+						<div class="content">
+							<div class="inner">
+								<h1>AMIN</h1>
+								<p>Bringing visual ideas to life is what I do. <br> I focus on striking a natural balance between clarity, minimalism,<br> and thoughtful aesthetics in every design.</p>
+							</div>
+						</div>
+						<nav>
+							<ul>
+								<li><a href="#intro">Intro</a></li>
+								<li><a href="#work">Work</a></li>
+								<li><a href="#about">About</a></li>
+								<li><a href="#contact">Contact</a></li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Intro -->
+							<article id="intro">
+								<h2 class="major">Intro</h2>
+								<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
+								<p>Assalamu Alaikum, I’m Amin—a graphic designer dedicated to turning visual ideas into purposeful realities. I believe design is best when it is thoughtful, modest, and meaningful. In every project, I focus on striking a natural balance between clarity, minimalism, and clean aesthetics—keeping elements intentional and beneficial. Welcome to my creative space, and feel free to explore my work.</p>
+							</article>
+
+						<!-- Work -->
+							<article id="work">
+								<h2 class="major">Work</h2>
+								<span class="image main"><img src="images/pic02.jpg" alt="" /></span>
+								<div>
+									<div>
+										<h3>Design Approach & Philosophy</h3>
+									</div>
+
+									<div>
+										<div>
+											For me, design is not merely about decorating a canvas; it is an <em>Amanah</em> (a trust) that demands integrity, sincerity, and purpose. I approach every project with the belief that visual communication should be meaningful, modest, and genuinely beneficial.
+										</div>
+										<br>
+										<div>
+											In a digital space often overwhelmed by excessive noise, I prioritize intentional simplicity. My creative process centers on thoughtful typography, balanced whitespace, and purposeful color harmony. Every line, curve, and layout choice is crafted to convey a clear message without compromising on ethical values or artistic elegance.
+										</div>
+									</div>
+									<br>
+									<div>
+										<h3><strong>Core Services & Capabilities</strong></h3>
+										<ul>
+											<li>
+												<strong>Brand Identity:</strong> Meaningful logos, cohesive color palettes, and visual systems built on balance and clarity.
+											</li>
+											<li>
+												<strong>Typography & Layout Design:</strong> Clean editorial layouts, Arabic/Latin typography integration, and print-ready compositions.
+											</li>
+											<li>
+												<strong>Digital & Social Media Creatives:</strong> Refined, eye-catching visual assets that maintain aesthetic poise and ethical standards.
+											</li>
+											<li>
+												<strong>Visual Concept Development:</strong> Transforming abstract ideas into structured, functional, and timeless visual assets.
+											</li>
+										</ul>
+									</div>
+								</div>
+							</article>
+
+						<!-- About -->
+							<article id="about">
+								<h2 class="major">About</h2>
+								<span class="image main"><img src="images/pic03.jpg" alt="" /></span>
+								<p>Assalamu Alaikum. I am a passionate graphic designer who views creative work as both an art and a responsibility. My journey is shaped by a deep respect for ethical values, clarity, and intentional aesthetics. Rather than chasing fleeting design trends, I focus on creating timeless visuals that communicate with modesty, purpose, and impact.</p>
+								<p>My creative discipline is grounded in the principle of simplicity. I specialize in harmonizing clean layouts, refined typography, and thoughtful color schemes to bring meaningful ideas to life. Every project I undertake is treated as a trust (<em>Amanah</em>), ensuring honest collaboration, meticulous attention to detail, and a calm, uncluttered end result.</p>
+								<p>Whether shaping brand identities, designing print layouts, or crafting digital media, my goal remains consistent: to deliver work that serves a genuine benefit, elevates the message, and brings visual tranquility to the viewer.</p>
+							</article>
+
+						<!-- Contact -->
+							<article id="contact">
+								<h2 class="major">Contact</h2>
+								<form method="post" action="#">
+									<div class="fields">
+										<div class="field half">
+											<label for="name">Name</label>
+											<input type="text" name="name" id="name" />
+										</div>
+										<div class="field half">
+											<label for="email">Email</label>
+											<input type="text" name="email" id="email" />
+										</div>
+										<div class="field">
+											<label for="message">Message</label>
+											<textarea name="message" id="message" rows="4"></textarea>
+										</div>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Send Message" class="primary" /></li>
+										<li><input type="reset" value="Reset" /></li>
+									</ul>
+								</form>
+								<ul class="icons">
+									<li><a href="https://www.facebook.com/direct2amin/" class="icon fa-facebook" target="_blank" rel="noopener noreferrer"><span class="label">Facebook</span></a></li>
+									<li><a href="https://www.instagram.com/direct2amin" class="icon fa-instagram" target="_blank" rel="noopener noreferrer"><span class="label">Instagram</span></a></li>
+									<li><a href="https://github.com/direct2amin/" class="icon fa-github" target="_blank" rel="noopener noreferrer"><span class="label">GitHub</span></a></li>
+								</ul>
+							</article>
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<p class="copyright">&copy; Amin. Design: <a href="https://github.com/direct2amin/" target="_blank" rel="noopener noreferrer">Amin</a>.</p>
+					</footer>
+
+			</div>
+
+		<!-- BG -->
+			<div id="bg"></div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
