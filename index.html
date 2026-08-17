@@ -12,6 +12,12 @@
 		<link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+		<!-- Bengali & Arabic Google Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Hind+Siliguri:wght@300;400;500;600;700&family=Noto+Sans+Bengali:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 		<style>
 			:root {
 				--brand-dark-green: #1b542c;
@@ -21,16 +27,30 @@
 				--color-white: #ffffff;
 			}
 
-			/* Exact Logo Gradient for Background */
-			body, #bg {
-				background: linear-gradient(135deg, #194e29 0%, #296b37 40%, #589535 75%, #88be40 100%) !important;
-				background-attachment: fixed !important;
-			}
-			#bg:before {
-				background-color: rgba(10, 30, 15, 0.2) !important;
+			/* Exact Logo Gradient for Background with Smooth Page-load Reveal Transition */
+			#bg {
+				background-color: #194e29 !important;
 			}
 			#bg:after {
-				background: none !important;
+				background: linear-gradient(135deg, #194e29 0%, #296b37 40%, #589535 75%, #88be40 100%) !important;
+				background-size: cover !important;
+				background-position: center !important;
+				opacity: 1 !important;
+				transition: transform 1.75s ease-out, filter 1.75s ease-out !important;
+			}
+			#bg:before {
+				background-image: none !important;
+				background-color: rgba(10, 30, 15, 0.2) !important;
+				transition: background-color 2.5s ease-in-out !important;
+				transition-delay: 0.75s !important;
+				z-index: 2;
+			}
+			body.is-preload #bg:before {
+				background-color: #000000 !important;
+			}
+			body.is-preload #bg:after {
+				transform: scale(1.2) !important;
+				filter: blur(4px) !important;
 			}
 
 			/* Vertical Connecting Lines & Borders made Pure White */
@@ -59,6 +79,8 @@
 				transition: transform 0.3s ease, box-shadow 0.3s ease;
 				padding: 0 !important;
 				overflow: hidden !important;
+				cursor: pointer;
+				text-decoration: none !important;
 			}
 			#header .logo:hover {
 				transform: scale(1.05);
@@ -93,6 +115,7 @@
 			/* Navigation Bar */
 			#header nav ul {
 				border-color: var(--color-white) !important;
+				direction: ltr !important;
 			}
 			#header nav ul li {
 				border-left-color: rgba(255, 255, 255, 0.4) !important;
@@ -151,7 +174,13 @@
 				color: var(--brand-dark-green) !important;
 			}
 
-			/* Social Icons */
+			/* Footer Elements (Social Icons & Language Switcher) */
+			#footer {
+				direction: ltr !important;
+			}
+			#footer .icons {
+				margin-bottom: 1.25rem;
+			}
 			ul.icons li a {
 				border-color: rgba(255, 255, 255, 0.6) !important;
 				color: var(--color-white) !important;
@@ -160,6 +189,177 @@
 				border-color: var(--color-white) !important;
 				background-color: rgba(255, 255, 255, 0.15) !important;
 				color: var(--color-white) !important;
+			}
+
+			.lang-switch {
+				list-style: none;
+				padding: 0;
+				margin: 0 auto 1.25rem auto;
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				border: 1px solid rgba(255, 255, 255, 0.5);
+				border-radius: 4px;
+				direction: ltr !important;
+				overflow: hidden;
+			}
+			.lang-switch li {
+				margin: 0;
+				padding: 0;
+			}
+			.lang-switch li + li {
+				border-left: 1px solid rgba(255, 255, 255, 0.3);
+			}
+			.lang-switch li a {
+				display: block;
+				width: 3.2rem !important;
+				height: 2rem;
+				line-height: 2rem;
+				text-align: center;
+				font-size: 0.75rem;
+				font-weight: 600;
+				letter-spacing: 0.05rem;
+				text-transform: uppercase;
+				color: var(--color-white) !important;
+				border-bottom: none !important;
+				cursor: pointer;
+				transition: background-color 0.2s ease, color 0.2s ease;
+			}
+			.lang-switch li a:hover {
+				background-color: rgba(255, 255, 255, 0.15) !important;
+				color: var(--color-white) !important;
+			}
+			.lang-switch li a.active {
+				background-color: var(--color-white) !important;
+				color: var(--brand-dark-green) !important;
+			}
+
+			/* Copyright Fixed English Typography */
+			#footer .copyright,
+			#footer .copyright *,
+			body.lang-bn #footer .copyright,
+			body.lang-bn #footer .copyright *,
+			body.lang-ar #footer .copyright,
+			body.lang-ar #footer .copyright * {
+				font-family: "Source Sans Pro", sans-serif !important;
+				letter-spacing: 0.2rem !important;
+				text-transform: uppercase !important;
+				font-size: 0.6rem !important;
+				font-weight: 300 !important;
+				direction: ltr !important;
+			}
+
+			/* Bengali Global Typography & Broken Letter Fix (Home-matched Font Size) */
+			body.lang-bn,
+			body.lang-bn *,
+			body.lang-bn form *,
+			body.lang-bn label,
+			body.lang-bn input,
+			body.lang-bn select,
+			body.lang-bn textarea,
+			body.lang-bn button,
+			body.lang-bn .button {
+				font-family: 'Hind Siliguri', 'Noto Sans Bengali', "Source Sans Pro", sans-serif !important;
+				letter-spacing: 0 !important;
+				text-transform: none !important;
+			}
+			body.lang-bn p,
+			body.lang-bn li,
+			body.lang-bn div,
+			body.lang-bn #main article p,
+			body.lang-bn #main article div,
+			body.lang-bn #main article li {
+				font-size: 0.95rem !important;
+				line-height: 1.8 !important;
+			}
+			body.lang-bn #header .content p {
+				font-size: 0.95rem !important;
+				line-height: 1.8 !important;
+			}
+			body.lang-bn h1 { font-size: 2.1rem !important; line-height: 1.3 !important; }
+			body.lang-bn h2 { font-size: 1.45rem !important; }
+			body.lang-bn h3 { font-size: 1rem !important; }
+			body.lang-bn h4 { font-size: 0.85rem !important; }
+			body.lang-bn label {
+				font-size: 0.85rem !important;
+				font-weight: 500 !important;
+			}
+			body.lang-bn input[type="submit"],
+			body.lang-bn input[type="reset"],
+			body.lang-bn button,
+			body.lang-bn .button {
+				font-size: 0.85rem !important;
+				font-weight: 600 !important;
+			}
+			body.lang-bn #header nav ul li a {
+				font-size: 0.9rem !important;
+				padding: 0 0.8rem !important;
+			}
+
+			/* Arabic Font & Enhanced RTL Typography */
+			body.lang-ar,
+			body.lang-ar *,
+			body.lang-ar form *,
+			body.lang-ar label,
+			body.lang-ar input,
+			body.lang-ar select,
+			body.lang-ar textarea,
+			body.lang-ar button,
+			body.lang-ar .button {
+				font-family: 'Amiri', "Source Sans Pro", sans-serif !important;
+				letter-spacing: 0 !important;
+				text-transform: none !important;
+			}
+			body.lang-ar input,
+			body.lang-ar select,
+			body.lang-ar textarea,
+			body.lang-ar button,
+			body.lang-ar h1,
+			body.lang-ar h2,
+			body.lang-ar h3,
+			body.lang-ar h4,
+			body.lang-ar p,
+			body.lang-ar li,
+			body.lang-ar div,
+			body.lang-ar #header nav ul li a,
+			body.lang-ar #main article a {
+				font-weight: 400 !important;
+			}
+			body.lang-ar strong,
+			body.lang-ar b {
+				font-weight: 700 !important;
+			}
+			body.lang-ar p, 
+			body.lang-ar div, 
+			body.lang-ar li {
+				font-size: 1.03rem !important;
+				line-height: 1.8 !important;
+			}
+			body.lang-ar h1 { font-size: 2.1rem !important; }
+			body.lang-ar h2 { font-size: 1.4rem !important; }
+			body.lang-ar h3 { font-size: 0.95rem !important; }
+			body.lang-ar #header .content p {
+				font-size: 1.12rem !important;
+				line-height: 1.9 !important;
+			}
+			body.lang-ar #header nav ul li a {
+				font-size: 0.95rem !important;
+				font-weight: 400 !important;
+			}
+			body.lang-ar #main article {
+				direction: rtl !important;
+				text-align: right !important;
+			}
+			body.lang-ar #main article ul {
+				padding-right: 1.5em;
+				padding-left: 0;
+			}
+			body.lang-ar #main article .close {
+				left: 0 !important;
+				right: auto !important;
+			}
+			body.lang-ar #main article .actions {
+				text-align: center !important;
 			}
 		</style>
 	</head>
@@ -170,21 +370,21 @@
 
 				<!-- Header -->
 					<header id="header">
-						<div class="logo">
+						<a href="javascript:void(0)" onclick="goHome()" class="logo" title="Home">
 							<img src="images/favicon.svg" alt="Amin Logo" />
-						</div>
+						</a>
 						<div class="content">
 							<div class="inner">
 								<h1>AMIN</h1>
-								<p>Bringing visual ideas to life is what I do. <br> I focus on striking a natural balance between clarity, minimalism,<br> and thoughtful aesthetics in every design.</p>
+								<p data-i18n="header_sub">Bringing visual ideas to life is what I do. <br> I focus on striking a natural balance between clarity, minimalism,<br> and thoughtful aesthetics in every design.</p>
 							</div>
 						</div>
 						<nav>
 							<ul>
-								<li><a href="#intro">Intro</a></li>
-								<li><a href="#work">Work</a></li>
-								<li><a href="#about">About</a></li>
-								<li><a href="#contact">Contact</a></li>
+								<li><a href="#intro" data-i18n="nav_intro">Intro</a></li>
+								<li><a href="#work" data-i18n="nav_work">Work</a></li>
+								<li><a href="#about" data-i18n="nav_about">About</a></li>
+								<li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
 							</ul>
 						</nav>
 					</header>
@@ -194,43 +394,43 @@
 
 						<!-- Intro -->
 							<article id="intro">
-								<h2 class="major">Intro</h2>
+								<h2 class="major" data-i18n="intro_title">Intro</h2>
 								<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
-								<p>Assalamu Alaikum, I’m Amin—a graphic designer dedicated to turning visual ideas into purposeful realities. I believe design is best when it is thoughtful, modest, and meaningful. In every project, I focus on striking a natural balance between clarity, minimalism, and clean aesthetics—keeping elements intentional and beneficial. Welcome to my creative space, and feel free to explore my work.</p>
+								<p data-i18n="intro_text">Assalamu Alaikum, I’m Amin—a graphic designer dedicated to turning visual ideas into purposeful realities. I believe design is best when it is thoughtful, modest, and meaningful. In every project, I focus on striking a natural balance between clarity, minimalism, and clean aesthetics—keeping elements intentional and beneficial. Welcome to my creative space, and feel free to explore my work.</p>
 							</article>
 
 						<!-- Work -->
 							<article id="work">
-								<h2 class="major">Work</h2>
+								<h2 class="major" data-i18n="work_title">Work</h2>
 								<span class="image main"><img src="images/pic02.jpg" alt="" /></span>
 								<div>
 									<div>
-										<h3>Design Approach & Philosophy</h3>
+										<h3 data-i18n="work_heading1">Design Approach & Philosophy</h3>
 									</div>
 
 									<div>
-										<div>
+										<div data-i18n="work_p1">
 											For me, design is not merely about decorating a canvas; it is an <em>Amanah</em> (a trust) that demands integrity, sincerity, and purpose. I approach every project with the belief that visual communication should be meaningful, modest, and genuinely beneficial.
 										</div>
 										<br>
-										<div>
+										<div data-i18n="work_p2">
 											In a digital space often overwhelmed by excessive noise, I prioritize intentional simplicity. My creative process centers on thoughtful typography, balanced whitespace, and purposeful color harmony. Every line, curve, and layout choice is crafted to convey a clear message without compromising on ethical values or artistic elegance.
 										</div>
 									</div>
 									<br>
 									<div>
-										<h3><strong>Core Services & Capabilities</strong></h3>
+										<h3><strong data-i18n="work_heading2">Core Services & Capabilities</strong></h3>
 										<ul>
-											<li>
+											<li data-i18n="work_service1">
 												<strong>Brand Identity:</strong> Meaningful logos, cohesive color palettes, and visual systems built on balance and clarity.
 											</li>
-											<li>
+											<li data-i18n="work_service2">
 												<strong>Typography & Layout Design:</strong> Clean editorial layouts, Arabic/Latin typography integration, and print-ready compositions.
 											</li>
-											<li>
+											<li data-i18n="work_service3">
 												<strong>Digital & Social Media Creatives:</strong> Refined, eye-catching visual assets that maintain aesthetic poise and ethical standards.
 											</li>
-											<li>
+											<li data-i18n="work_service4">
 												<strong>Visual Concept Development:</strong> Transforming abstract ideas into structured, functional, and timeless visual assets.
 											</li>
 										</ul>
@@ -240,47 +440,52 @@
 
 						<!-- About -->
 							<article id="about">
-								<h2 class="major">About</h2>
+								<h2 class="major" data-i18n="about_title">About</h2>
 								<span class="image main"><img src="images/pic03.jpg" alt="" /></span>
-								<p>Assalamu Alaikum. I am a passionate graphic designer who views creative work as both an art and a responsibility. My journey is shaped by a deep respect for ethical values, clarity, and intentional aesthetics. Rather than chasing fleeting design trends, I focus on creating timeless visuals that communicate with modesty, purpose, and impact.</p>
-								<p>My creative discipline is grounded in the principle of simplicity. I specialize in harmonizing clean layouts, refined typography, and thoughtful color schemes to bring meaningful ideas to life. Every project I undertake is treated as a trust (<em>Amanah</em>), ensuring honest collaboration, meticulous attention to detail, and a calm, uncluttered end result.</p>
-								<p>Whether shaping brand identities, designing print layouts, or crafting digital media, my goal remains consistent: to deliver work that serves a genuine benefit, elevates the message, and brings visual tranquility to the viewer.</p>
+								<p data-i18n="about_p1">Assalamu Alaikum. I am a passionate graphic designer who views creative work as both an art and a responsibility. My journey is shaped by a deep respect for ethical values, clarity, and intentional aesthetics. Rather than chasing fleeting design trends, I focus on creating timeless visuals that communicate with modesty, purpose, and impact.</p>
+								<p data-i18n="about_p2">My creative discipline is grounded in the principle of simplicity. I specialize in harmonizing clean layouts, refined typography, and thoughtful color schemes to bring meaningful ideas to life. Every project I undertake is treated as a trust (<em>Amanah</em>), ensuring honest collaboration, meticulous attention to detail, and a calm, uncluttered end result.</p>
+								<p data-i18n="about_p3">Whether shaping brand identities, designing print layouts, or crafting digital media, my goal remains consistent: to deliver work that serves a genuine benefit, elevates the message, and brings visual tranquility to the viewer.</p>
 							</article>
 
 						<!-- Contact -->
 							<article id="contact">
-								<h2 class="major">Contact</h2>
-								<form method="post" action="#">
+								<h2 class="major" data-i18n="contact_title">Contact</h2>
+								<form id="whatsapp-contact-form" onsubmit="sendViaWhatsApp(event)">
 									<div class="fields">
 										<div class="field half">
-											<label for="name">Name</label>
-											<input type="text" name="name" id="name" />
+											<label for="name" data-i18n="label_name">Name</label>
+											<input type="text" name="name" id="name" required />
 										</div>
 										<div class="field half">
-											<label for="email">Email</label>
-											<input type="text" name="email" id="email" />
+											<label for="email" data-i18n="label_email">Email</label>
+											<input type="email" name="email" id="email" />
 										</div>
 										<div class="field">
-											<label for="message">Message</label>
-											<textarea name="message" id="message" rows="4"></textarea>
+											<label for="message" data-i18n="label_message">Message</label>
+											<textarea name="message" id="message" rows="4" required></textarea>
 										</div>
 									</div>
 									<ul class="actions">
-										<li><input type="submit" value="Send Message" class="primary" /></li>
-										<li><input type="reset" value="Reset" /></li>
+										<li><input type="submit" value="Contact on WhatsApp" class="primary" data-i18n="btn_send" /></li>
+										<li><input type="reset" value="Reset" data-i18n="btn_reset" /></li>
 									</ul>
 								</form>
-								<ul class="icons">
-									<li><a href="https://www.facebook.com/direct2amin/" class="icon fa-facebook" target="_blank" rel="noopener noreferrer"><span class="label">Facebook</span></a></li>
-									<li><a href="https://www.instagram.com/direct2amin" class="icon fa-instagram" target="_blank" rel="noopener noreferrer"><span class="label">Instagram</span></a></li>
-									<li><a href="https://github.com/direct2amin/" class="icon fa-github" target="_blank" rel="noopener noreferrer"><span class="label">GitHub</span></a></li>
-								</ul>
 							</article>
 
 					</div>
 
 				<!-- Footer -->
 					<footer id="footer">
+						<ul class="icons">
+							<li><a href="https://www.facebook.com/direct2amin/" class="icon fa-facebook" target="_blank" rel="noopener noreferrer"><span class="label">Facebook</span></a></li>
+							<li><a href="https://www.instagram.com/direct2amin" class="icon fa-instagram" target="_blank" rel="noopener noreferrer"><span class="label">Instagram</span></a></li>
+							<li><a href="https://github.com/direct2amin/" class="icon fa-github" target="_blank" rel="noopener noreferrer"><span class="label">GitHub</span></a></li>
+						</ul>
+						<ul class="lang-switch">
+							<li><a href="javascript:void(0)" onclick="switchLanguage('en')" id="btn-en" class="active">EN</a></li>
+							<li><a href="javascript:void(0)" onclick="switchLanguage('bn')" id="btn-bn">BN</a></li>
+							<li><a href="javascript:void(0)" onclick="switchLanguage('ar')" id="btn-ar">AR</a></li>
+						</ul>
 						<p class="copyright">&copy; Amin. Design: <a href="https://github.com/direct2amin/" target="_blank" rel="noopener noreferrer">Amin</a>.</p>
 					</footer>
 
@@ -295,6 +500,165 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+
+			<!-- WhatsApp Sender Script -->
+			<script>
+				function sendViaWhatsApp(e) {
+					e.preventDefault();
+					const name = document.getElementById('name').value.trim();
+					const email = document.getElementById('email').value.trim();
+					const message = document.getElementById('message').value.trim();
+					const phoneNumber = "8801949895761";
+
+					let fullText = `*New Contact Message*\n\n*Name:* ${name}`;
+					if (email) {
+						fullText += `\n*Email:* ${email}`;
+					}
+					fullText += `\n*Message:* ${message}`;
+
+					const encodedMessage = encodeURIComponent(fullText);
+					const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+					window.open(whatsappUrl, '_blank');
+				}
+			</script>
+
+			<!-- Instant Multi-Language Translation & Home Navigation Script -->
+			<script>
+				const translations = {
+					en: {
+						header_sub: "Bringing visual ideas to life is what I do. <br> I focus on striking a natural balance between clarity, minimalism,<br> and thoughtful aesthetics in every design.",
+						nav_intro: "Intro",
+						nav_work: "Work",
+						nav_about: "About",
+						nav_contact: "Contact",
+						intro_title: "Intro",
+						intro_text: "Assalamu Alaikum, I’m Amin—a graphic designer dedicated to turning visual ideas into purposeful realities. I believe design is best when it is thoughtful, modest, and meaningful. In every project, I focus on striking a natural balance between clarity, minimalism, and clean aesthetics—keeping elements intentional and beneficial. Welcome to my creative space, and feel free to explore my work.",
+						work_title: "Work",
+						work_heading1: "Design Approach & Philosophy",
+						work_p1: "For me, design is not merely about decorating a canvas; it is an <em>Amanah</em> (a trust) that demands integrity, sincerity, and purpose. I approach every project with the belief that visual communication should be meaningful, modest, and genuinely beneficial.",
+						work_p2: "In a digital space often overwhelmed by excessive noise, I prioritize intentional simplicity. My creative process centers on thoughtful typography, balanced whitespace, and purposeful color harmony. Every line, curve, and layout choice is crafted to convey a clear message without compromising on ethical values or artistic elegance.",
+						work_heading2: "Core Services & Capabilities",
+						work_service1: "<strong>Brand Identity:</strong> Meaningful logos, cohesive color palettes, and visual systems built on balance and clarity.",
+						work_service2: "<strong>Typography & Layout Design:</strong> Clean editorial layouts, Arabic/Latin typography integration, and print-ready compositions.",
+						work_service3: "<strong>Digital & Social Media Creatives:</strong> Refined, eye-catching visual assets that maintain aesthetic poise and ethical standards.",
+						work_service4: "<strong>Visual Concept Development:</strong> Transforming abstract ideas into structured, functional, and timeless visual assets.",
+						about_title: "About",
+						about_p1: "Assalamu Alaikum. I am a passionate graphic designer who views creative work as both an art and a responsibility. My journey is shaped by a deep respect for ethical values, clarity, and intentional aesthetics. Rather than chasing fleeting design trends, I focus on creating timeless visuals that communicate with modesty, purpose, and impact.",
+						about_p2: "My creative discipline is grounded in the principle of simplicity. I specialize in harmonizing clean layouts, refined typography, and thoughtful color schemes to bring meaningful ideas to life. Every project I undertake is treated as a trust (<em>Amanah</em>), ensuring honest collaboration, meticulous attention to detail, and a calm, uncluttered end result.",
+						about_p3: "Whether shaping brand identities, designing print layouts, or crafting digital media, my goal remains consistent: to deliver work that serves a genuine benefit, elevates the message, and brings visual tranquility to the viewer.",
+						contact_title: "Contact",
+						label_name: "Name",
+						label_email: "Email (Optional)",
+						label_message: "Message",
+						btn_send: "Contact on WhatsApp",
+						btn_reset: "Reset"
+					},
+					bn: {
+						header_sub: "দৃশ্যমান ভাবনাগুলোকে জীবন্ত রূপ দেওয়াই আমার কাজ। <br> প্রতিটি ডিজাইনে স্পষ্টতা, মিনিমালিজম এবং নান্দনিকতার<br> নিখুঁত ভারসাম্য বজায় রাখাই আমার লক্ষ্য।",
+						nav_intro: "পরিচিতি",
+						nav_work: "কাজ",
+						nav_about: "সম্পর্কে",
+						nav_contact: "যোগাযোগ",
+						intro_title: "পরিচিতি",
+						intro_text: "আসসালামু আলাইকুম, আমি আমিন—একজন গ্রাফিক ডিজাইনার। আমি অর্থপূর্ণ, মার্জিত এবং পরিচ্ছন্ন ডিজাইনে বিশ্বাসী। প্রতিটি কাজেই মিনিমালিজম এবং সঠিক নান্দনিকতার সমন্বয় ঘটিয়ে উপকারী কিছু তৈরি করার চেষ্টা করি। আমার পোর্টফোলিওতে আপনাকে স্বাগতম।",
+						work_title: "কাজের ক্ষেত্র",
+						work_heading1: "ডিজাইন দর্শন ও দৃষ্টিভঙ্গি",
+						work_p1: "আমার কাছে ডিজাইন কেবল ক্যানভাস সাজানো নয়; এটি একটি <em>আমানত</em> যা সততা, আন্তরিকতা ও উদ্দেশ্যের দাবি রাখে। আমি বিশ্বাস করি ভিজ্যুয়াল যোগাযোগ হওয়া উচিত অর্থপূর্ণ ও উপকারী।",
+						work_p2: "ডিজিটাল দুনিয়ার কোলাহলে আমি সরলতাকে প্রাধান্য দিই। মার্জিত টাইপোগ্রাফি, ব্যালান্সড স্পেসিং এবং কালার হারমোনির মাধ্যমে নৈতিক মান ঠিক রেখে কাজ তৈরি করি।",
+						work_heading2: "প্রধান সেবাসমূহ",
+						work_service1: "<strong>ব্র্যান্ড আইডেন্টিটি:</strong> অর্থপূর্ণ লোগো এবং সুবিন্যস্ত কালার প্যালেট তৈরি।",
+						work_service2: "<strong>টাইপোগ্রাফি ও লেআউট:</strong> আরবি ও ইংরেজি টাইপোগ্রাফির সমন্বয়ে পরিচ্ছন্ন প্রিন্ট ডিজাইন।",
+						work_service3: "<strong>ডিজিটাল ও সোশ্যাল ক্রিয়েটিভস:</strong> মার্জিত এবং দৃষ্টিনন্দন সোশ্যাল মিডিয়া ভিজ্যুয়াল।",
+						work_service4: "<strong>কনসেপ্ট ডেভেলপমেন্ট:</strong> আইডিয়াকে সময়োপযোগী ও কার্যকরী ডিজাইনে রূপান্তর।",
+						about_title: "সম্পর্কে",
+						about_p1: "আসসালামু আলাইকুম। আমি ডিজাইনকে দায়িত্ব ও শিল্পের মেলবন্ধন হিসেবে দেখি। ট্রেন্ডের পেছনে না ছুটে মার্জিত ও অর্থপূর্ণ ভিজ্যুয়াল তৈরিতে আমি বিশ্বাসী।",
+						about_p2: "আমার কাজের মূল ভিত্তি হলো সরলতা। টাইপোগ্রাফি এবং রঙের সঠিক বিন্যাসের মাধ্যমে যেকোনো কাজকে আমানত হিসেবে গুরুত্ব সহকারে সম্পন্ন করি।",
+						about_p3: "ব্র্যান্ড ডিজাইন হোক কিংবা প্রিন্ট লেআউট—আমার লক্ষ্য দর্শকের কাছে একটি ইতিবাচক ও স্বস্তিদায়ক ভিজ্যুয়াল অভিজ্ঞতা পৌঁছে দেওয়া।",
+						contact_title: "যোগাযোগ",
+						label_name: "নাম",
+						label_email: "ইমেইল (ঐচ্ছিক)",
+						label_message: "বার্তা",
+						btn_send: "হোয়াটসঅ্যাপে মেসেজ পাঠান",
+						btn_reset: "রিসেট"
+					},
+					ar: {
+						header_sub: "إحياء الأفكار البصرية هو شغفي. <br> أركز على تحقيق توازن طبيعي بين الوضوح، البساطة،<br> والجماليات المدروسة في كل تصميم.",
+						nav_intro: "مقدمة",
+						nav_work: "أعمالي",
+						nav_about: "عنّي",
+						nav_contact: "تواصل",
+						intro_title: "مقدمة",
+						intro_text: "السلام عليكم، أنا أمين — مصمم جرافيك أكرس جهدي لتحويل الأفكار البصرية إلى واقع هادف. أؤمن بأن التصميم يكون في أبهى صوره عندما يكون متأملاً، متواضعاً وذا مغزى. مرحباً بكم في مساحتي الإبداعية.",
+						work_title: "الأعمال",
+						work_heading1: "نهج وفلسفة التصميم",
+						work_p1: "بالنسبة لي، التصميم ليس مجرد تزيين؛ بل هو <em>أمانة</em> تتطلب النزاهة والإخلاص والهدف. أسعى لتقديم رسائل بصرية هادفة ونافعة.",
+						work_p2: "في عالم رقمي مليء بالضوضاء، أعطي الأولوية للبساطة الهادفة مع التركيز على التيبوغرافيا المتناسقة والمساحات المتوازنة.",
+						work_heading2: "الخدمات والقدرات الأساسية",
+						work_service1: "<strong>الهوية البصرية:</strong> شعارات معبرة، ولوحات ألوان متناسقة مبنية على التوازن والوضوح.",
+						work_service2: "<strong>تصميم التيبوغرافيا والتخطيط:</strong> تصاميم تحريرية متقنة تدمج الخطوط العربية واللاتينية باحترافية.",
+						work_service3: "<strong>تصاميم وسائل التواصل:</strong> محتوى بصري راقٍ يحافظ على الهيبة والجمال.",
+						work_service4: "<strong>تطوير المفاهيم البصرية:</strong> تحويل الأفكار المجردة إلى أصول بصرية وظيفية وخالدة.",
+						about_title: "عنّي",
+						about_p1: "السلام عليكم. أنا مصمم جرافيك أرى العمل الإبداعي فناً ومسؤولية في آن واحد. أركز على إبداع تصاميم خالدة تنقل الرسائل بأناقة ووضوح.",
+						about_p2: "يعتمد أسلوبي على البساطة والتناغم، وأتعامل مع كل مشروع كأمانة تتطلب الدقة والاهتمام بأدق التفاصيل.",
+						about_p3: "هدفي هو تقديم أعمال نافعة ترفع من قيمة الرسالة وتمنح المشاهد شعوراً بالسكينة والارتياح.",
+						contact_title: "تواصل معي",
+						label_name: "الاسم",
+						label_email: "البريد الإلكتروني (اختياري)",
+						label_message: "الرسالة",
+						btn_send: "تواصل عبر واتساب",
+						btn_reset: "إعادة تعيين"
+					}
+				};
+
+				function switchLanguage(lang) {
+					// Update Active Button
+					document.querySelectorAll('.lang-switch a').forEach(btn => btn.classList.remove('active'));
+					const activeBtn = document.getElementById('btn-' + lang);
+					if (activeBtn) activeBtn.classList.add('active');
+
+					// Reset Language Classes
+					document.body.classList.remove('lang-bn', 'lang-ar');
+
+					// Apply Language Style
+					if (lang === 'bn') {
+						document.body.classList.add('lang-bn');
+					} else if (lang === 'ar') {
+						document.body.classList.add('lang-ar');
+					}
+
+					// Update Texts
+					document.querySelectorAll('[data-i18n]').forEach(element => {
+						const key = element.getAttribute('data-i18n');
+						if (translations[lang] && translations[lang][key]) {
+							if (element.tagName.toLowerCase() === 'input' && (element.type === 'submit' || element.type === 'reset')) {
+								element.value = translations[lang][key];
+							} else {
+								element.innerHTML = translations[lang][key];
+							}
+						}
+					});
+
+					// Save Preference
+					localStorage.setItem('preferred_lang', lang);
+				}
+
+				// Reset to Home (English & Main Screen)
+				function goHome() {
+					if (window.location.hash) {
+						window.location.hash = '';
+					}
+					switchLanguage('en');
+				}
+
+				// Load Saved Language Preference
+				document.addEventListener('DOMContentLoaded', () => {
+					const savedLang = localStorage.getItem('preferred_lang') || 'en';
+					if (savedLang !== 'en') {
+						switchLanguage(savedLang);
+					}
+				});
+			</script>
 
 	</body>
 </html>
