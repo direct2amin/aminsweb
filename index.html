@@ -927,6 +927,102 @@
 				direction: rtl;
 			}
 
+		
+			/* ============================================================
+			   BORNOMALA TRIO MULTILINGUAL FONT STYLING
+			   ============================================================ */
+			@font-face {
+				font-family: 'Bornomala Trio';
+				src: url('assets/fonts/bornomala-trio/Bornomala-Trio-Regular.ttf') format('truetype');
+				font-weight: 400;
+				font-style: normal;
+				font-display: swap;
+			}
+			@font-face {
+				font-family: 'Bornomala Trio';
+				src: url('assets/fonts/bornomala-trio/Bornomala-Trio-Bold.ttf') format('truetype');
+				font-weight: 700;
+				font-style: normal;
+				font-display: swap;
+			}
+
+			/* Font Specimen Images - Both with exact same aspect-ratio and size */
+			.font-specimen-grid {
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+				gap: 1rem;
+				margin: 1.5rem 0;
+			}
+			@media screen and (max-width: 736px) {
+				.font-specimen-grid {
+					grid-template-columns: 1fr;
+				}
+			}
+			.font-specimen-item {
+				border-radius: 6px;
+				overflow: hidden;
+				border: 1px solid rgba(255, 255, 255, 0.25);
+				background: #0d2314;
+				box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
+			}
+			.font-specimen-item img {
+				width: 100%;
+				height: auto;
+				aspect-ratio: 16 / 8;
+				object-fit: cover;
+				display: block;
+				transition: transform 0.25s ease;
+			}
+			.font-specimen-item:hover img {
+				transform: scale(1.02);
+			}
+			.font-specimen-bar {
+				padding: 0.5rem 0.85rem;
+				background: rgba(10, 35, 18, 0.95);
+				border-top: 1px solid rgba(255, 255, 255, 0.15);
+				font-size: 0.78rem;
+				color: #d6f59c;
+				display: flex;
+				align-items: center;
+				gap: 0.45rem;
+			}
+			.font-credits-callout {
+				background: rgba(142, 190, 63, 0.08) !important;
+				border: 1px solid rgba(142, 190, 63, 0.35) !important;
+				color: #ffffff !important;
+				line-height: 1.7;
+			}
+			.font-credits-callout i {
+				color: #ff5a79;
+				font-size: 1.1rem;
+				flex-shrink: 0;
+			}
+			.font-live-preview-box {
+				background: rgba(0, 0, 0, 0.45);
+				border: 1px solid rgba(255, 255, 255, 0.2);
+				border-radius: 6px;
+				padding: 1rem 1.25rem;
+				margin: 1.25rem 0;
+			}
+			.font-live-preview-header {
+				font-size: 0.78rem;
+				color: #8ebe3f;
+				margin-bottom: 0.5rem;
+				display: flex;
+				align-items: center;
+				gap: 0.4rem;
+				font-weight: 600;
+			}
+			.font-live-sample-text {
+				font-family: 'Bornomala Trio', sans-serif !important;
+				font-size: 1.25rem;
+				line-height: 1.8;
+				color: #ffffff;
+				letter-spacing: 0 !important;
+				text-transform: none !important;
+				word-break: break-word;
+			}
+
 		</style>
 	</head>
 	<body class="is-preload">
@@ -1054,7 +1150,7 @@
 								</div>
 							</article>
 
-												<!-- Showcase (Formerly Work) -->
+																		<!-- Showcase (Formerly Work) -->
 							<article id="work">
 								<h2 class="major" data-i18n="work_title">Showcase</h2>
 								<p data-i18n="showcase_intro">Custom-built software utilities, workflow automation tools, and creative scripts. Browse projects side-by-side below.</p>
@@ -1071,8 +1167,12 @@
 											<span data-i18n="showcase_tab_2">2. PDFCreator.jsx</span>
 										</button>
 										<button type="button" class="showcase-tab" onclick="goToShowcaseSlide(2)">
+											<i class="icon fa-font"></i>
+											<span data-i18n="showcase_tab_3">3. Bornomala Trio Font</span>
+										</button>
+										<button type="button" class="showcase-tab" onclick="goToShowcaseSlide(3)">
 											<i class="icon fa-cubes"></i>
-											<span data-i18n="showcase_tab_3">3. More Tools & Scripts</span>
+											<span data-i18n="showcase_tab_4">4. More Tools & Scripts</span>
 										</button>
 									</div>
 
@@ -1080,238 +1180,344 @@
 										<button type="button" class="slider-arrow-btn" onclick="prevShowcaseSlide()" title="Previous Project" aria-label="Previous Project">
 											<i class="icon fa-chevron-left"></i>
 										</button>
-										<span class="slide-indicator" id="showcase-slide-indicator">01 / 03</span>
+										<span class="slide-indicator" id="showcase-slide-indicator">01 / 04</span>
 										<button type="button" class="slider-arrow-btn" onclick="nextShowcaseSlide()" title="Next Project" aria-label="Next Project">
 											<i class="icon fa-chevron-right"></i>
 										</button>
 									</div>
 								</div>
 
-								<!-- Showcase Slider Viewport & Track -->
+								<!-- Showcase Viewport with Direct Display for Slide 1 -->
 								<div class="showcase-slider-viewport" id="showcaseSliderViewport">
 
-										<!-- Slide 1: Bangla Proofreader -->
-										<div class="showcase-slide active" data-slide-index="0">
-											<div class="showcase-card">
-												<div class="showcase-badges">
-													<span class="badge-pill" data-i18n="bp_badge_app">AI Desktop App</span>
-													<span class="badge-pill version" data-i18n="bp_badge_version">v1.4.0</span>
-													<span class="badge-pill">Windows 10 / 11</span>
-													<span class="badge-pill">Open Source</span>
-												</div>
+									<!-- Slide 1: Bangla Proofreader (ACTIVE BY DEFAULT) -->
+									<div class="showcase-slide active" id="slide-0" data-slide-index="0">
+										<div class="showcase-card">
+											<div class="showcase-badges">
+												<span class="badge-pill" data-i18n="bp_badge_app">AI Desktop App</span>
+												<span class="badge-pill version" data-i18n="bp_badge_version">v1.4.0</span>
+												<span class="badge-pill">Windows 10 / 11</span>
+												<span class="badge-pill">Open Source</span>
+											</div>
 
-												<h3 class="project-title" data-i18n="bp_title">বাংলা প্রুফরিডার (Bangla Proofreader)</h3>
-												<p class="project-subtitle" data-i18n="bp_subtitle">AI Assisted Windows Desktop Utility for Bangla Proofreading, Bijoy-to-Unicode Conversion & Linguistic Correction</p>
+											<h3 class="project-title" data-i18n="bp_title">বাংলা প্রুফরিডার (Bangla Proofreader)</h3>
+											<p class="project-subtitle" data-i18n="bp_subtitle">AI Assisted Windows Desktop Utility for Bangla Proofreading, Bijoy-to-Unicode Conversion & Linguistic Correction</p>
 
-												<!-- Screenshot Interactive Gallery -->
-												<div class="gallery-container">
-													<div class="gallery-main-view">
-														<img id="bp-main-image" src="images/proofreader/bp_side_by_side.png" alt="Bangla Proofreader Screenshot" />
-														<div class="gallery-caption-bar">
-															<i class="icon fa-image"></i>
-															<span id="bp-image-caption" data-i18n="caption_side_by_side">Side-by-Side Review: Word-level difference comparison with synced scrolling</span>
-														</div>
-													</div>
-
-													<div class="gallery-thumbs">
-														<div class="thumb-item active" onclick="switchProofreaderImage('images/proofreader/bp_side_by_side.png', 'caption_side_by_side', this)">
-															<img src="images/proofreader/bp_side_by_side.png" alt="Side-by-Side" />
-															<span class="thumb-title" data-i18n="thumb_side_by_side">Side-by-Side</span>
-														</div>
-														<div class="thumb-item" onclick="switchProofreaderImage('images/proofreader/bp_inline_diff.png', 'caption_inline_diff', this)">
-															<img src="images/proofreader/bp_inline_diff.png" alt="Inline Diff" />
-															<span class="thumb-title" data-i18n="thumb_inline_diff">Inline Diff</span>
-														</div>
-														<div class="thumb-item" onclick="switchProofreaderImage('images/proofreader/bp_changes_list.png', 'caption_changes_list', this)">
-															<img src="images/proofreader/bp_changes_list.png" alt="Changes List" />
-															<span class="thumb-title" data-i18n="thumb_changes_list">Changes List</span>
-														</div>
-														<div class="thumb-item" onclick="switchProofreaderImage('images/proofreader/bp_dark_mode.png', 'caption_dark_mode', this)">
-															<img src="images/proofreader/bp_dark_mode.png" alt="Dark Mode" />
-															<span class="thumb-title" data-i18n="thumb_dark_mode">Dark Mode</span>
-														</div>
-														<div class="thumb-item" onclick="switchProofreaderImage('images/proofreader/bp_settings.png', 'caption_settings', this)">
-															<img src="images/proofreader/bp_settings.png" alt="Settings" />
-															<span class="thumb-title" data-i18n="thumb_settings">Settings & Hotkey</span>
-														</div>
-														<div class="thumb-item" onclick="switchProofreaderImage('images/proofreader/bp_api_guide.png', 'caption_api_guide', this)">
-															<img src="images/proofreader/bp_api_guide.png" alt="API Guide" />
-															<span class="thumb-title" data-i18n="thumb_api_guide">Free API Guide</span>
-														</div>
+											<!-- Screenshot Interactive Gallery -->
+											<div class="gallery-container">
+												<div class="gallery-main-view">
+													<img id="bp-main-image" src="images/proofreader/bp_side_by_side.png" alt="Bangla Proofreader Screenshot" />
+													<div class="gallery-caption-bar">
+														<i class="icon fa-image"></i>
+														<span id="bp-image-caption" data-i18n="caption_side_by_side">Side-by-Side Review: Word-level difference comparison with synced scrolling</span>
 													</div>
 												</div>
 
-												<!-- Action Buttons -->
-												<div class="showcase-actions">
-													<a href="https://github.com/direct2amin/Bangla-Proofreader/raw/main/releases/BanglaProofreader_Setup_v1.4.0.exe" class="button primary icon fa-download" target="_blank" rel="noopener noreferrer" data-i18n="bp_btn_download">Download Setup v1.4.0 (.exe)</a>
-													<a href="https://github.com/direct2amin/Bangla-Proofreader" class="button secondary icon fa-github" target="_blank" rel="noopener noreferrer" data-i18n="bp_btn_github">View on GitHub</a>
-												</div>
-
-												<!-- Key Features Grid -->
-												<div class="feature-grid">
-													<div class="feature-item">
-														<h4><i class="icon fa-bolt"></i> <span data-i18n="bp_feat1_title">Global Hotkey (Ctrl+Alt+B)</span></h4>
-														<p data-i18n="bp_feat1_desc">Select text in Word, Illustrator, browser, or any app and trigger instant proofreading with a shortcut.</p>
+												<div class="gallery-thumbs">
+													<div class="thumb-item active" onclick="switchProofreaderImage('images/proofreader/bp_side_by_side.png', 'caption_side_by_side', this)">
+														<img src="images/proofreader/bp_side_by_side.png" alt="Side-by-Side" />
+														<span class="thumb-title" data-i18n="thumb_side_by_side">Side-by-Side</span>
 													</div>
-													<div class="feature-item">
-														<h4><i class="icon fa-refresh"></i> <span data-i18n="bp_feat2_title">Auto Bijoy-to-Unicode</span></h4>
-														<p data-i18n="bp_feat2_desc">Seamlessly converts legacy Bijoy (ANSI) text to Unicode upon pasting, saving time and manual conversion.</p>
+													<div class="thumb-item" onclick="switchProofreaderImage('images/proofreader/bp_inline_diff.png', 'caption_inline_diff', this)">
+														<img src="images/proofreader/bp_inline_diff.png" alt="Inline Diff" />
+														<span class="thumb-title" data-i18n="thumb_inline_diff">Inline Diff</span>
 													</div>
-													<div class="feature-item">
-														<h4><i class="icon fa-shield"></i> <span data-i18n="bp_feat3_title">Arabic Script & Harkat Protection</span></h4>
-														<p data-i18n="bp_feat3_desc">100% preserves Quranic verses, Hadith, and Islamic invocations with diacritics inside Bangla text.</p>
+													<div class="thumb-item" onclick="switchProofreaderImage('images/proofreader/bp_changes_list.png', 'caption_changes_list', this)">
+														<img src="images/proofreader/bp_changes_list.png" alt="Changes List" />
+														<span class="thumb-title" data-i18n="thumb_changes_list">Changes List</span>
 													</div>
-													<div class="feature-item">
-														<h4><i class="icon fa-map-marker"></i> <span data-i18n="bp_feat4_title">BD Location Gazetteer</span></h4>
-														<p data-i18n="bp_feat4_desc">Built-in verified database of all Bangladesh districts, upazilas, thanas, and unions for accurate spelling.</p>
+													<div class="thumb-item" onclick="switchProofreaderImage('images/proofreader/bp_dark_mode.png', 'caption_dark_mode', this)">
+														<img src="images/proofreader/bp_dark_mode.png" alt="Dark Mode" />
+														<span class="thumb-title" data-i18n="thumb_dark_mode">Dark Mode</span>
 													</div>
-													<div class="feature-item">
-														<h4><i class="icon fa-check-square-o"></i> <span data-i18n="bp_feat5_title">Selective Suggestions Control</span></h4>
-														<p data-i18n="bp_feat5_desc">Easily choose which spelling corrections to accept or reject with individual checkboxes before replacing.</p>
+													<div class="thumb-item" onclick="switchProofreaderImage('images/proofreader/bp_settings.png', 'caption_settings', this)">
+														<img src="images/proofreader/bp_settings.png" alt="Settings" />
+														<span class="thumb-title" data-i18n="thumb_settings">Settings & Hotkey</span>
 													</div>
-													<div class="feature-item">
-														<h4><i class="icon fa-paint-brush"></i> <span data-i18n="bp_feat6_title">Direct Active App Replace</span></h4>
-														<p data-i18n="bp_feat6_desc">'Replace in Active App' injects corrected text directly into Illustrator, Word, or any text editor with 1 click.</p>
+													<div class="thumb-item" onclick="switchProofreaderImage('images/proofreader/bp_api_guide.png', 'caption_api_guide', this)">
+														<img src="images/proofreader/bp_api_guide.png" alt="API Guide" />
+														<span class="thumb-title" data-i18n="thumb_api_guide">Free API Guide</span>
 													</div>
-												</div>
-
-												<!-- Tech Stack Tags -->
-												<div class="tech-stack-row">
-													<span class="tech-stack-title" data-i18n="tech_stack_label">Built With:</span>
-													<span class="tech-tag">Python</span>
-													<span class="tech-tag">Google Gemini AI</span>
-													<span class="tech-tag">PyQt / Win32 API</span>
-													<span class="tech-tag">PyInstaller</span>
-													<span class="tech-tag">Inno Setup</span>
-													<span class="tech-tag">MIT License</span>
 												</div>
 											</div>
 
-											<!-- Slide Footer Navigation -->
-											<div class="slide-footer-nav">
-												<span class="slide-counter-badge" data-i18n="slide_badge_1">Project 1 of 3</span>
-												<button type="button" class="button primary small icon fa-arrow-right" onclick="nextShowcaseSlide()">
-													<span data-i18n="showcase_next_btn">Next Project: PDFCreator.jsx</span>
-												</button>
+											<!-- Action Buttons -->
+											<div class="showcase-actions">
+												<a href="https://github.com/direct2amin/Bangla-Proofreader/raw/main/releases/BanglaProofreader_Setup_v1.4.0.exe" class="button primary icon fa-download" target="_blank" rel="noopener noreferrer" data-i18n="bp_btn_download">Download Setup v1.4.0 (.exe)</a>
+												<a href="https://github.com/direct2amin/Bangla-Proofreader" class="button secondary icon fa-github" target="_blank" rel="noopener noreferrer" data-i18n="bp_btn_github">View on GitHub</a>
+											</div>
+
+											<!-- Key Features Grid -->
+											<div class="feature-grid">
+												<div class="feature-item">
+													<h4><i class="icon fa-bolt"></i> <span data-i18n="bp_feat1_title">Global Hotkey (Ctrl+Alt+B)</span></h4>
+													<p data-i18n="bp_feat1_desc">Select text in Word, Illustrator, browser, or any app and trigger instant proofreading with a shortcut.</p>
+												</div>
+												<div class="feature-item">
+													<h4><i class="icon fa-refresh"></i> <span data-i18n="bp_feat2_title">Auto Bijoy-to-Unicode</span></h4>
+													<p data-i18n="bp_feat2_desc">Seamlessly converts legacy Bijoy (ANSI) text to Unicode upon pasting, saving time and manual conversion.</p>
+												</div>
+												<div class="feature-item">
+													<h4><i class="icon fa-shield"></i> <span data-i18n="bp_feat3_title">Arabic Script & Harkat Protection</span></h4>
+													<p data-i18n="bp_feat3_desc">100% preserves Quranic verses, Hadith, and Islamic invocations with diacritics inside Bangla text.</p>
+												</div>
+												<div class="feature-item">
+													<h4><i class="icon fa-map-marker"></i> <span data-i18n="bp_feat4_title">BD Location Gazetteer</span></h4>
+													<p data-i18n="bp_feat4_desc">Built-in verified database of all Bangladesh districts, upazilas, thanas, and unions for accurate spelling.</p>
+												</div>
+												<div class="feature-item">
+													<h4><i class="icon fa-check-square-o"></i> <span data-i18n="bp_feat5_title">Selective Suggestions Control</span></h4>
+													<p data-i18n="bp_feat5_desc">Easily choose which spelling corrections to accept or reject with individual checkboxes before replacing.</p>
+												</div>
+												<div class="feature-item">
+													<h4><i class="icon fa-paint-brush"></i> <span data-i18n="bp_feat6_title">Direct Active App Replace</span></h4>
+													<p data-i18n="bp_feat6_desc">'Replace in Active App' injects corrected text directly into Illustrator, Word, or any text editor with 1 click.</p>
+												</div>
+											</div>
+
+											<!-- Tech Stack Tags -->
+											<div class="tech-stack-row">
+												<span class="tech-stack-title" data-i18n="tech_stack_label">Built With:</span>
+												<span class="tech-tag">Python</span>
+												<span class="tech-tag">Google Gemini AI</span>
+												<span class="tech-tag">PyQt / Win32 API</span>
+												<span class="tech-tag">PyInstaller</span>
+												<span class="tech-tag">Inno Setup</span>
+												<span class="tech-tag">MIT License</span>
 											</div>
 										</div>
 
-										<!-- Slide 2: PDFCreator.jsx -->
-										<div class="showcase-slide" data-slide-index="1">
-											<div class="showcase-card">
-												<div class="showcase-badges">
-													<span class="badge-pill script" data-i18n="pdfc_badge_type">Illustrator Script</span>
-													<span class="badge-pill version">ExtendScript (.jsx)</span>
-													<span class="badge-pill" data-i18n="pdfc_badge_protection">Vector to Raster PDF</span>
-													<span class="badge-pill" data-i18n="pdfc_badge_free">Free Download</span>
+										<!-- Slide Footer Navigation -->
+										<div class="slide-footer-nav">
+											<span class="slide-counter-badge" data-i18n="slide_badge_1">Project 1 of 4</span>
+											<button type="button" class="button primary small icon fa-arrow-right" onclick="nextShowcaseSlide()">
+												<span data-i18n="showcase_next_btn">Next Project: PDFCreator.jsx</span>
+											</button>
+										</div>
+									</div>
+
+									<!-- Slide 2: PDFCreator.jsx -->
+									<div class="showcase-slide" id="slide-1" data-slide-index="1">
+										<div class="showcase-card">
+											<div class="showcase-badges">
+												<span class="badge-pill script" data-i18n="pdfc_badge_type">Illustrator Script</span>
+												<span class="badge-pill version">ExtendScript (.jsx)</span>
+												<span class="badge-pill" data-i18n="pdfc_badge_protection">Vector to Raster PDF</span>
+												<span class="badge-pill" data-i18n="pdfc_badge_free">Free Download</span>
+											</div>
+
+											<h3 class="project-title" data-i18n="pdfc_title">PDFCreator.jsx — Client Proof PDF Generator</h3>
+											<p class="project-subtitle" data-i18n="pdfc_subtitle">Automated Illustrator script to generate crisp, multi-page client proof PDFs while protecting raw vector source assets by flattening into high-res raster pages.</p>
+
+											<!-- Quick Usage Snippet -->
+											<div class="script-usage-box">
+												<i class="icon fa-terminal"></i>
+												<span data-i18n="pdfc_usage_guide">Illustrator Menu: <strong>File &gt; Scripts &gt; Other Script... &gt; PDFCreator.jsx</strong></span>
+											</div>
+
+											<!-- Action Buttons -->
+											<div class="showcase-actions">
+												<a href="assets/scripts/PDFCreator.jsx" download class="button primary icon fa-download" data-i18n="pdfc_btn_download">Download PDFCreator.jsx</a>
+											</div>
+
+											<!-- Key Features Grid -->
+											<div class="feature-grid">
+												<div class="feature-item">
+													<h4><i class="icon fa-shield"></i> <span data-i18n="pdfc_feat1_title">Vector Source Protection</span></h4>
+													<p data-i18n="pdfc_feat1_desc">Flattens vector artwork into high-res raster pages so clients can clearly inspect proofs without ever extracting or stealing raw vector paths.</p>
 												</div>
-
-												<h3 class="project-title" data-i18n="pdfc_title">PDFCreator.jsx — Client Proof PDF Generator</h3>
-												<p class="project-subtitle" data-i18n="pdfc_subtitle">Automated Illustrator script to generate crisp, multi-page client proof PDFs while protecting raw vector source assets by flattening into high-res raster pages.</p>
-
-												<!-- Quick Usage Snippet -->
-												<div class="script-usage-box">
-													<i class="icon fa-terminal"></i>
-													<span data-i18n="pdfc_usage_guide">Illustrator Menu: <strong>File &gt; Scripts &gt; Other Script... &gt; PDFCreator.jsx</strong></span>
+												<div class="feature-item">
+													<h4><i class="icon fa-book"></i> <span data-i18n="pdfc_feat2_title">Multi-page Book & Artboard Support</span></h4>
+													<p data-i18n="pdfc_feat2_desc">Seamlessly compiles single or multi-artboard books, brochures, and catalogs into a single, unified multi-page PDF in exact page order.</p>
 												</div>
-
-												<!-- Action Buttons -->
-												<div class="showcase-actions">
-													<a href="assets/scripts/PDFCreator.jsx" download class="button primary icon fa-download" data-i18n="pdfc_btn_download">Download PDFCreator.jsx</a>
+												<div class="feature-item">
+													<h4><i class="icon fa-magic"></i> <span data-i18n="pdfc_feat3_title">1-Click Full Automation</span></h4>
+													<p data-i18n="pdfc_feat3_desc">Zero tedious manual steps: run the script from Illustrator, and it automatically executes export, sizing, and PDF compilation.</p>
 												</div>
-
-												<!-- Key Features Grid -->
-												<div class="feature-grid">
-													<div class="feature-item">
-														<h4><i class="icon fa-shield"></i> <span data-i18n="pdfc_feat1_title">Vector Source Protection</span></h4>
-														<p data-i18n="pdfc_feat1_desc">Flattens vector artwork into high-res raster pages so clients can clearly inspect proofs without ever extracting or stealing raw vector paths.</p>
-													</div>
-													<div class="feature-item">
-														<h4><i class="icon fa-book"></i> <span data-i18n="pdfc_feat2_title">Multi-page Book & Artboard Support</span></h4>
-														<p data-i18n="pdfc_feat2_desc">Seamlessly compiles single or multi-artboard books, brochures, and catalogs into a single, unified multi-page PDF in exact page order.</p>
-													</div>
-													<div class="feature-item">
-														<h4><i class="icon fa-magic"></i> <span data-i18n="pdfc_feat3_title">1-Click Full Automation</span></h4>
-														<p data-i18n="pdfc_feat3_desc">Zero tedious manual steps: run the script from Illustrator, and it automatically executes export, sizing, and PDF compilation.</p>
-													</div>
-													<div class="feature-item">
-														<h4><i class="icon fa-rocket"></i> <span data-i18n="pdfc_feat4_title">Silent Background Engine</span></h4>
-														<p data-i18n="pdfc_feat4_desc">Custom binary PDF generator writes directly to disk without launching new Illustrator windows or slowing down your workflow.</p>
-													</div>
-													<div class="feature-item">
-														<h4><i class="icon fa-folder-open-o"></i> <span data-i18n="pdfc_feat5_title">Smart Output Location</span></h4>
-														<p data-i18n="pdfc_feat5_desc">Automatically saves the generated PDF in the exact folder of your source .ai file using the document's original name.</p>
-													</div>
-													<div class="feature-item">
-														<h4><i class="icon fa-recycle"></i> <span data-i18n="pdfc_feat6_title">Auto Temp Cleanup</span></h4>
-														<p data-i18n="pdfc_feat6_desc">Instantly purges and deletes all intermediate raster cache files upon completion, leaving your computer clean and uncluttered.</p>
-													</div>
+												<div class="feature-item">
+													<h4><i class="icon fa-rocket"></i> <span data-i18n="pdfc_feat4_title">Silent Background Engine</span></h4>
+													<p data-i18n="pdfc_feat4_desc">Custom binary PDF generator writes directly to disk without launching new Illustrator windows or slowing down your workflow.</p>
 												</div>
-
-												<!-- Tech Stack Tags -->
-												<div class="tech-stack-row">
-													<span class="tech-stack-title" data-i18n="tech_stack_label">Built With:</span>
-													<span class="tech-tag">Adobe Illustrator CC</span>
-													<span class="tech-tag">ExtendScript / JavaScript</span>
-													<span class="tech-tag">Cross-Platform (Win / Mac)</span>
-													<span class="tech-tag">Direct Binary PDF 1.4</span>
-													<span class="tech-tag">Free & Open Tool</span>
+												<div class="feature-item">
+													<h4><i class="icon fa-folder-open-o"></i> <span data-i18n="pdfc_feat5_title">Smart Output Location</span></h4>
+													<p data-i18n="pdfc_feat5_desc">Automatically saves the generated PDF in the exact folder of your source .ai file using the document's original name.</p>
+												</div>
+												<div class="feature-item">
+													<h4><i class="icon fa-recycle"></i> <span data-i18n="pdfc_feat6_title">Auto Temp Cleanup</span></h4>
+													<p data-i18n="pdfc_feat6_desc">Instantly purges and deletes all intermediate raster cache files upon completion, leaving your computer clean and uncluttered.</p>
 												</div>
 											</div>
 
-											<!-- Slide Footer Navigation -->
-											<div class="slide-footer-nav">
-												<button type="button" class="button secondary small icon fa-arrow-left" onclick="prevShowcaseSlide()">
-													<span data-i18n="showcase_prev_btn">Previous Project</span>
-												</button>
-												<span class="slide-counter-badge" data-i18n="slide_badge_2">Project 2 of 3</span>
-												<button type="button" class="button primary small icon fa-arrow-right" onclick="nextShowcaseSlide()">
-													<span data-i18n="showcase_next_tools_btn">Next: Upcoming Tools</span>
-												</button>
+											<!-- Tech Stack Tags -->
+											<div class="tech-stack-row">
+												<span class="tech-stack-title" data-i18n="tech_stack_label">Built With:</span>
+												<span class="tech-tag">Adobe Illustrator CC</span>
+												<span class="tech-tag">ExtendScript / JavaScript</span>
+												<span class="tech-tag">Cross-Platform (Win / Mac)</span>
+												<span class="tech-tag">Direct Binary PDF 1.4</span>
+												<span class="tech-tag">Free & Open Tool</span>
 											</div>
 										</div>
 
-										<!-- Slide 3: Coming Soon & More Tools -->
-										<div class="showcase-slide" data-slide-index="2">
-											<div class="showcase-card">
-												<div class="showcase-badges">
-													<span class="badge-pill script" data-i18n="showcase_badge_pipeline">In Development</span>
-													<span class="badge-pill version">Adobe Ecosystem</span>
-													<span class="badge-pill" data-i18n="showcase_badge_more">Workflow Tools</span>
-												</div>
+										<!-- Slide Footer Navigation -->
+										<div class="slide-footer-nav">
+											<button type="button" class="button secondary small icon fa-arrow-left" onclick="prevShowcaseSlide()">
+												<span data-i18n="showcase_prev_btn">Previous Project</span>
+											</button>
+											<span class="slide-counter-badge" data-i18n="slide_badge_2">Project 2 of 4</span>
+											<button type="button" class="button primary small icon fa-arrow-right" onclick="nextShowcaseSlide()">
+												<span data-i18n="showcase_next_font_btn">Next: Bornomala Trio Font</span>
+											</button>
+										</div>
+									</div>
 
-												<h3 class="project-title" data-i18n="showcase_coming_soon_title"><i class="icon fa-code"></i> More Adobe Scripts & Automation Coming Soon</h3>
-												<p class="project-subtitle" data-i18n="showcase_coming_soon_desc">Custom productivity scripts for Adobe Photoshop, Illustrator & InDesign are currently being curated for this showcase.</p>
+									<!-- Slide 3: Bornomala Trio Multilingual Font -->
+									<div class="showcase-slide" id="slide-2" data-slide-index="2">
+										<div class="showcase-card">
+											<div class="showcase-badges">
+												<span class="badge-pill script" data-i18n="btf_badge_type">Custom Multilingual Font</span>
+												<span class="badge-pill version" data-i18n="btf_badge_weights">Regular & Bold</span>
+												<span class="badge-pill" data-i18n="btf_badge_scripts">Arabic • Bangla • English</span>
+												<span class="badge-pill" data-i18n="pdfc_badge_free">Free Download</span>
+											</div>
 
-												<!-- Teaser Feature Grid -->
-												<div class="feature-grid">
-													<div class="feature-item">
-														<h4><i class="icon fa-book"></i> <span data-i18n="teaser_script1_title">InDesign Book Formatter</span></h4>
-														<p data-i18n="teaser_script1_desc">Automated book interior layout styler, footnote aligner, and master spread generator for editorial publishing.</p>
+											<h3 class="project-title" data-i18n="btf_title">বর্ণমালা ট্রায়ো (Bornomala Trio) — ত্রিভাষিক কাস্টম ফন্ট</h3>
+											<p class="project-subtitle" data-i18n="btf_subtitle">A unified tri-lingual typeface combining Arabic, Bengali, and English in a single synchronized baseline—available in both Regular and Bold weights for print, digital, and editorial publishing.</p>
+
+											<!-- Font Specimen Image Grid (Both images with identical proportions & size) -->
+											<div class="font-specimen-grid">
+												<div class="font-specimen-item">
+													<img src="images/fonts/bornomala_trio_preview1.png" alt="Bornomala Trio Specimen Preview 1" />
+													<div class="font-specimen-bar">
+														<i class="icon fa-picture-o"></i>
+														<span data-i18n="btf_specimen1_label">Font Specimen: Regular & Bold Typography Display</span>
 													</div>
-													<div class="feature-item">
-														<h4><i class="icon fa-picture-o"></i> <span data-i18n="teaser_script2_title">Photoshop Batch Art Exporter</span></h4>
-														<p data-i18n="teaser_script2_desc">Instant multi-format asset export with color profile conversion and smart tagging for social media & print.</p>
-													</div>
 												</div>
-
-												<div class="script-usage-box">
-													<i class="icon fa-info-circle"></i>
-													<span data-i18n="teaser_note">Have a custom repetitive design workflow you'd like automated? Feel free to reach out via Contact.</span>
+												<div class="font-specimen-item">
+													<img src="images/fonts/bornomala_trio_preview2.png" alt="Bornomala Trio Specimen Preview 2" />
+													<div class="font-specimen-bar">
+														<i class="icon fa-picture-o"></i>
+														<span data-i18n="btf_specimen2_label">Font Specimen: Arabic, Bangla & English Composition</span>
+													</div>
 												</div>
 											</div>
 
-											<!-- Slide Footer Navigation -->
-											<div class="slide-footer-nav">
-												<button type="button" class="button secondary small icon fa-arrow-left" onclick="prevShowcaseSlide()">
-													<span data-i18n="showcase_prev_btn">Previous Project</span>
-												</button>
-												<span class="slide-counter-badge" data-i18n="slide_badge_3">Project 3 of 3</span>
-												<button type="button" class="button secondary small icon fa-refresh" onclick="goToShowcaseSlide(0)">
-													<span data-i18n="showcase_first_btn">First Project</span>
-												</button>
+											<!-- Live Multilingual Font Preview Box -->
+											<div class="font-live-preview-box">
+												<div class="font-live-preview-header">
+													<i class="icon fa-font"></i>
+													<span data-i18n="btf_live_preview_label">Live Multilingual Font Preview:</span>
+												</div>
+												<div class="font-live-sample-text">
+													بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ &bull; আসসালামু আলাইকুম &bull; Bornomala Trio Typeface
+												</div>
+											</div>
+
+											<!-- Special Attribution / Gratitude Callout -->
+											<div class="script-usage-box font-credits-callout">
+												<i class="icon fa-heart"></i>
+												<span data-i18n="btf_credits_desc">Heartfelt gratitude and credit to the creators of <strong>Bornomala</strong> and <strong>Traditional Arabic</strong> fonts. Bornomala Trio is crafted through the thoughtful fusion and metric alignment of these two timeless everyday typefaces with clean Latin typography, making multilingual publishing effortless.</span>
+											</div>
+
+											<!-- Action Buttons (Zip bundle + separate TTFs) -->
+											<div class="showcase-actions">
+												<a href="assets/fonts/bornomala-trio/Bornomala-Trio-Font-Bundle.zip" download class="button primary icon fa-download" data-i18n="btf_btn_zip">Download Font Bundle (.zip)</a>
+												<a href="assets/fonts/bornomala-trio/Bornomala-Trio-Regular.ttf" download class="button secondary icon fa-file-text-o" data-i18n="btf_btn_regular">Regular (.ttf)</a>
+												<a href="assets/fonts/bornomala-trio/Bornomala-Trio-Bold.ttf" download class="button secondary icon fa-file-text-o" data-i18n="btf_btn_bold">Bold (.ttf)</a>
+											</div>
+
+											<!-- Key Features Grid -->
+											<div class="feature-grid">
+												<div class="feature-item">
+													<h4><i class="icon fa-globe"></i> <span data-i18n="btf_feat1_title">3-in-1 Multilingual Harmony</span></h4>
+													<p data-i18n="btf_feat1_desc">Seamlessly switch between Arabic, Bengali, and English inside the same sentence or paragraph without font replacement issues.</p>
+												</div>
+												<div class="feature-item">
+													<h4><i class="icon fa-arrows-v"></i> <span data-i18n="btf_feat2_title">Synchronized Baseline & X-Height</span></h4>
+													<p data-i18n="btf_feat2_desc">Carefully normalized vertical metrics ensure Arabic diacritics (harkat) and Bengali vowel marks (kar/fola) stay balanced without clipping.</p>
+												</div>
+												<div class="feature-item">
+													<h4><i class="icon fa-text-width"></i> <span data-i18n="btf_feat3_title">Dual Weights: Regular & Bold</span></h4>
+													<p data-i18n="btf_feat3_desc">Includes both 400 Regular for comfortable body reading and 700 Bold for strong, impactful headings and emphasis.</p>
+												</div>
+												<div class="feature-item">
+													<h4><i class="icon fa-book"></i> <span data-i18n="btf_feat4_title">Ideal for Islamic & Academic Publishing</span></h4>
+													<p data-i18n="btf_feat4_desc">Perfect for Quranic translations, Hadith collections, Madrasah textbooks, academic papers, and bilingual cultural publications.</p>
+												</div>
+												<div class="feature-item">
+													<h4><i class="icon fa-check-circle-o"></i> <span data-i18n="btf_feat5_title">Universal Software Support</span></h4>
+													<p data-i18n="btf_feat5_desc">Fully compatible with Adobe InDesign, Illustrator, Photoshop, MS Word, mobile apps, and web @font-face CSS.</p>
+												</div>
+												<div class="feature-item">
+													<h4><i class="icon fa-gift"></i> <span data-i18n="btf_feat6_title">100% Free & Open Resource</span></h4>
+													<p data-i18n="btf_feat6_desc">Available completely free for personal and commercial creative work. Download individual TTF files or the complete ZIP package.</p>
+												</div>
+											</div>
+
+											<!-- Tech Stack Tags -->
+											<div class="tech-stack-row">
+												<span class="tech-stack-title" data-i18n="tech_stack_label">Built With:</span>
+												<span class="tech-tag">TrueType Font (.ttf)</span>
+												<span class="tech-tag">Bangla • Arabic • English</span>
+												<span class="tech-tag">Cross-Platform (Win / Mac)</span>
+												<span class="tech-tag">Regular & Bold (400 / 700)</span>
+												<span class="tech-tag">Free & Open Font</span>
 											</div>
 										</div>
+
+										<!-- Slide Footer Navigation -->
+										<div class="slide-footer-nav">
+											<button type="button" class="button secondary small icon fa-arrow-left" onclick="prevShowcaseSlide()">
+												<span data-i18n="showcase_prev_btn">Previous Project</span>
+											</button>
+											<span class="slide-counter-badge" data-i18n="slide_badge_3">Project 3 of 4</span>
+											<button type="button" class="button primary small icon fa-arrow-right" onclick="nextShowcaseSlide()">
+												<span data-i18n="showcase_next_tools_btn">Next: Upcoming Tools</span>
+											</button>
+										</div>
+									</div>
+
+									<!-- Slide 4: Coming Soon & More Tools -->
+									<div class="showcase-slide" id="slide-3" data-slide-index="3">
+										<div class="showcase-card">
+											<div class="showcase-badges">
+												<span class="badge-pill script" data-i18n="showcase_badge_pipeline">In Development</span>
+												<span class="badge-pill version">Adobe Ecosystem</span>
+												<span class="badge-pill" data-i18n="showcase_badge_more">Workflow Tools</span>
+											</div>
+
+											<h3 class="project-title" data-i18n="showcase_coming_soon_title"><i class="icon fa-code"></i> More Adobe Scripts & Automation Coming Soon</h3>
+											<p class="project-subtitle" data-i18n="showcase_coming_soon_desc">Custom productivity scripts for Adobe Photoshop, Illustrator & InDesign are currently being curated for this showcase.</p>
+
+											<!-- Teaser Feature Grid -->
+											<div class="feature-grid">
+												<div class="feature-item">
+													<h4><i class="icon fa-book"></i> <span data-i18n="teaser_script1_title">InDesign Book Formatter</span></h4>
+													<p data-i18n="teaser_script1_desc">Automated book interior layout styler, footnote aligner, and master spread generator for editorial publishing.</p>
+												</div>
+												<div class="feature-item">
+													<h4><i class="icon fa-picture-o"></i> <span data-i18n="teaser_script2_title">Photoshop Batch Art Exporter</span></h4>
+													<p data-i18n="teaser_script2_desc">Instant multi-format asset export with color profile conversion and smart tagging for social media & print.</p>
+												</div>
+											</div>
+
+											<div class="script-usage-box">
+												<i class="icon fa-info-circle"></i>
+												<span data-i18n="teaser_note">Have a custom repetitive design workflow you'd like automated? Feel free to reach out via Contact.</span>
+											</div>
+										</div>
+
+										<!-- Slide Footer Navigation -->
+										<div class="slide-footer-nav">
+											<button type="button" class="button secondary small icon fa-arrow-left" onclick="prevShowcaseSlide()">
+												<span data-i18n="showcase_prev_btn">Previous Project</span>
+											</button>
+											<span class="slide-counter-badge" data-i18n="slide_badge_4">Project 4 of 4</span>
+											<button type="button" class="button secondary small icon fa-refresh" onclick="goToShowcaseSlide(0)">
+												<span data-i18n="showcase_first_btn">First Project</span>
+											</button>
+										</div>
+									</div>
 
 								</div>
 							</article>
@@ -1465,14 +1671,14 @@
           "showcase_intro": "Custom-built software utilities, workflow automation tools, and creative scripts. Browse projects side-by-side below.",
           "showcase_tab_1": "1. Bangla Proofreader",
           "showcase_tab_2": "2. PDFCreator.jsx",
-          "showcase_tab_3": "3. More Tools & Scripts",
+          "showcase_tab_3": "3. Bornomala Trio Font",
           "showcase_next_btn": "Next Project: PDFCreator.jsx",
           "showcase_prev_btn": "Previous Project",
           "showcase_next_tools_btn": "Next: Upcoming Tools",
           "showcase_first_btn": "Back to First Project",
-          "slide_badge_1": "Project 1 of 3",
-          "slide_badge_2": "Project 2 of 3",
-          "slide_badge_3": "Project 3 of 3",
+          "slide_badge_1": "Project 1 of 4",
+          "slide_badge_2": "Project 2 of 4",
+          "slide_badge_3": "Project 3 of 4",
           "showcase_badge_pipeline": "In Development",
           "showcase_badge_more": "Workflow Tools",
           "teaser_script1_title": "InDesign Book Formatter",
@@ -1545,7 +1751,35 @@
           "about_p4": "I believe the most effective way to learn is through hands-on application. Whenever I discover something new, I immediately put it to work in real-world scenarios. Design teaches me to think aesthetically, programming teaches me to analyze problems logically, and automation teaches me to accomplish tasks with greater intelligence.",
           "about_p5": "To me, technology is not just a badge of modern life; it is an empowering medium to make human effort simpler. Be it an elegant design, an efficient script, or a tiny time-saving utility, I always seek the harmony between practical utility and creative craftsmanship.",
           "about_p6": "My goal is never just to build things for the sake of building, but to create things that genuinely serve a purpose. Solutions that simplify complexity, automate repetitive grind, and allow people to focus on their authentic creative voice.",
-          "about_p7": "I am continuously learning, experimenting, and refining my craft. For I believe the true worth of knowledge lies not merely in what we know, but in how much genuine benefit we can bring to others."
+          "about_p7": "I am continuously learning, experimenting, and refining my craft. For I believe the true worth of knowledge lies not merely in what we know, but in how much genuine benefit we can bring to others.",
+          "showcase_tab_4": "4. More Tools & Scripts",
+          "slide_badge_4": "Project 4 of 4",
+          "showcase_next_font_btn": "Next: Bornomala Trio Font",
+          "btf_badge_type": "Custom Multilingual Font",
+          "btf_badge_scripts": "Arabic • Bangla • English",
+          "btf_badge_weights": "Regular & Bold",
+          "btf_title": "Bornomala Trio — Multilingual Font (Arabic, Bangla, English)",
+          "btf_subtitle": "A unified tri-lingual typeface combining Arabic, Bengali, and English in a single synchronized baseline—available in both Regular and Bold weights for print, digital, and editorial publishing.",
+          "btf_specimen1_label": "Font Specimen: Regular & Bold Typography Display",
+          "btf_specimen2_label": "Font Specimen: Arabic, Bangla & English Composition",
+          "btf_credits_title": "Special Attribution & Gratitude",
+          "btf_credits_desc": "Heartfelt gratitude and credit to the creators of <strong>Bornomala</strong> and <strong>Traditional Arabic</strong> fonts. Bornomala Trio is crafted through the thoughtful fusion and metric alignment of these two timeless everyday typefaces with clean Latin typography, making multilingual publishing effortless.",
+          "btf_btn_zip": "Download Font Bundle (.zip)",
+          "btf_btn_regular": "Regular (.ttf)",
+          "btf_btn_bold": "Bold (.ttf)",
+          "btf_feat1_title": "3-in-1 Multilingual Harmony",
+          "btf_feat1_desc": "Seamlessly switch between Arabic, Bengali, and English inside the same sentence or paragraph without font replacement issues.",
+          "btf_feat2_title": "Synchronized Baseline & X-Height",
+          "btf_feat2_desc": "Carefully normalized vertical metrics ensure Arabic diacritics (harkat) and Bengali vowel marks (kar/fola) stay balanced without clipping.",
+          "btf_feat3_title": "Dual Weights: Regular & Bold",
+          "btf_feat3_desc": "Includes both 400 Regular for comfortable body reading and 700 Bold for strong, impactful headings and emphasis.",
+          "btf_feat4_title": "Ideal for Islamic & Academic Publishing",
+          "btf_feat4_desc": "Perfect for Quranic translations, Hadith collections, Madrasah textbooks, academic papers, and bilingual cultural publications.",
+          "btf_feat5_title": "Universal Software Support",
+          "btf_feat5_desc": "Fully compatible with Adobe InDesign, Illustrator, Photoshop, MS Word, mobile apps, and web @font-face CSS.",
+          "btf_feat6_title": "100% Free & Open Resource",
+          "btf_feat6_desc": "Available completely free for personal and commercial creative work. Download individual TTF files or the complete ZIP package.",
+          "btf_live_preview_label": "Live Multilingual Font Preview:"
      },
      "bn": {
           "header_sub": "গ্রাফিক ডিজাইনার &bull; অটোমেশনপ্রেমী &bull; টেক উৎসাহী &bull; প্রবলেম সলভার <br>উদ্দেশ্যপূর্ণ ভিজ্যুয়াল ডিজাইনের সাথে স্মার্ট অটোমেশন, ক্রিয়েটিভ থিংকিং ও কার্যকরী প্রযুক্তির মেলবন্ধন।",
@@ -1580,14 +1814,14 @@
           "showcase_intro": "আমার নিজের তৈরি সফটওয়্যার ইউটিলিটি, ক্রিয়েটিভ অটোমেশন স্ক্রিপ্ট এবং ডিজাইনার ওয়ার্কফ্লো টুলস। স্লাইড করে প্রজেক্টগুলো দেখুন।",
           "showcase_tab_1": "১. বাংলা প্রুফরিডার",
           "showcase_tab_2": "২. PDFCreator.jsx",
-          "showcase_tab_3": "৩. নতুন স্ক্রিপ্ট ও টুলস",
+          "showcase_tab_3": "৩. বর্ণমালা ট্রায়ো ফন্ট",
           "showcase_next_btn": "পরবর্তী প্রজেক্ট: PDFCreator.jsx",
           "showcase_prev_btn": "পূর্ববর্তী প্রজেক্ট",
           "showcase_next_tools_btn": "পরবর্তী: নতুন টুলস",
           "showcase_first_btn": "প্রথম প্রজেক্টে ফিরুন",
-          "slide_badge_1": "প্রজেক্ট ১ / ৩",
-          "slide_badge_2": "প্রজেক্ট ২ / ৩",
-          "slide_badge_3": "প্রজেক্ট ৩ / ৩",
+          "slide_badge_1": "প্রজেক্ট ১ / ৪",
+          "slide_badge_2": "প্রজেক্ট ২ / ৪",
+          "slide_badge_3": "প্রজেক্ট ৩ / ৪",
           "showcase_badge_pipeline": "ডেভেলপমেন্ট চলমান",
           "showcase_badge_more": "ওয়ার্কফ্লো টুলস",
           "teaser_script1_title": "ইনডিজাইন বুক ফরম্যাটার",
@@ -1660,7 +1894,35 @@
           "about_p4": "আমি বিশ্বাস করি, শেখার সবচেয়ে কার্যকর উপায় হলো বাস্তবে প্রয়োগ করা। তাই নতুন কিছু শেখার পাশাপাশি সেটিকে নিজের কাজে ব্যবহারযোগ্য করে তুলতে চেষ্টা করি। ডিজাইন আমাকে নান্দনিকভাবে চিন্তা করতে শেখায়, প্রোগ্রামিং শেখায় সমস্যাকে যৌক্তিকভাবে বিশ্লেষণ করতে, আর অটোমেশন শেখায় একই কাজ আরও বুদ্ধিমত্তার সঙ্গে সম্পন্ন করতে।",
           "about_p5": "আমার কাছে প্রযুক্তি শুধু আধুনিকতার প্রতীক নয়; এটি মানুষের কাজ সহজ করার একটি মাধ্যম। একটি সুন্দর ডিজাইন, কার্যকর স্ক্রিপ্ট কিংবা সময় বাঁচানো ছোট্ট কোনো টুল—প্রতিটি সৃষ্টির মধ্যেই আমি ব্যবহারিক উপযোগিতা ও সৃজনশীলতার সমন্বয় খুঁজি।",
           "about_p6": "আমার লক্ষ্য শুধু কিছু তৈরি করা নয়; বরং এমন কিছু তৈরি করা, যা সত্যিকার অর্থে কাজে আসে। এমন সমাধান, যা জটিলতাকে সরল করে, পুনরাবৃত্তিমূলক কাজকে স্বয়ংক্রিয় করে এবং মানুষকে তার প্রকৃত সৃজনশীলতায় মনোযোগ দেওয়ার সুযোগ করে দেয়।",
-          "about_p7": "আমি এখনও শিখছি, পরীক্ষা করছি এবং প্রতিনিয়ত নিজেকে উন্নত করার চেষ্টা করছি। কারণ আমার বিশ্বাস, দক্ষতার প্রকৃত মূল্য শুধু আমরা কী জানি, তার মধ্যে নয়—আমাদের জ্ঞান দিয়ে কতটা উপকার করা সম্ভব, তার মধ্যেই নিহিত।"
+          "about_p7": "আমি এখনও শিখছি, পরীক্ষা করছি এবং প্রতিনিয়ত নিজেকে উন্নত করার চেষ্টা করছি। কারণ আমার বিশ্বাস, দক্ষতার প্রকৃত মূল্য শুধু আমরা কী জানি, তার মধ্যে নয়—আমাদের জ্ঞান দিয়ে কতটা উপকার করা সম্ভব, তার মধ্যেই নিহিত।",
+          "showcase_tab_4": "৪. নতুন স্ক্রিপ্ট ও টুলস",
+          "slide_badge_4": "প্রজেক্ট ৪ / ৪",
+          "showcase_next_font_btn": "পরবর্তী: বর্ণমালা ট্রায়ো ফন্ট",
+          "btf_badge_type": "কাস্টম মাল্টিলিঙ্গুয়াল ফন্ট",
+          "btf_badge_scripts": "আরবি • বাংলা • ইংরেজি",
+          "btf_badge_weights": "রেগুলার ও বোল্ড",
+          "btf_title": "বর্ণমালা ট্রায়ো (Bornomala Trio) — ত্রিভাষিক কাস্টম ফন্ট",
+          "btf_subtitle": "আরবি, বাংলা ও ইংরেজি—এই তিনটি ভাষার নিখুঁত সমন্বয়ে তৈরি বিশেষ টাইপফেস, যেখানে একই বেসলাইনে তিনটি স্ক্রিপ্ট সাবলীলভাবে কাজ করে। রেগুলার ও বোল্ড উভয় ওজনে সম্পূর্ণ ফ্রিতে উপলব্ধ।",
+          "btf_specimen1_label": "ফন্ট নমুনা ১: রেগুলার ও বোল্ড টাইপোগ্রাফি প্রিভিউ",
+          "btf_specimen2_label": "ফন্ট নমুনা ২: আরবি, বাংলা ও ইংরেজি সমন্বিত টেক্সট",
+          "btf_credits_title": "বিশেষ কৃতজ্ঞতা ও স্বীকৃতি",
+          "btf_credits_desc": "বিশেষ কৃতজ্ঞতা <strong>'বর্নমালা' (Bornomala)</strong> এবং <strong>'ট্রেডিশনাল অ্যারাবিক' (Traditional Arabic)</strong> ফন্টের সম্মানিত নির্মাতাদের প্রতি। দৈনন্দিন জীবনে সর্বাধিক ব্যবহৃত এই দুটি ক্লাসিক ফন্টের চমৎকার কম্বিনেশনে এবং একই সাথে ইংরেজিকে নিখুঁত বেসলাইনে মিলিয়ে 'বর্ণমালা ট্রায়ো' তৈরি করা হয়েছে, যাতে একই ডকুমেন্টে তিনটি ভাষা স্বাচ্ছন্দ্যে ব্যবহার করা যায়।",
+          "btf_btn_zip": "ফন্ট বান্ডল ডাউনলোড (.zip)",
+          "btf_btn_regular": "রেগুলার (.ttf)",
+          "btf_btn_bold": "বোল্ড (.ttf)",
+          "btf_feat1_title": "৩টি ভাষার সহজ মেলবন্ধন",
+          "btf_feat1_desc": "একই অনুচ্ছেদ বা বাক্যের ভেতর আরবি, বাংলা ও ইংরেজি কোনো ফন্ট পরিবর্তন বা সাইজের অমিল ছাড়াই একসাথে অনায়াসে লেখা যায়।",
+          "btf_feat2_title": "সুষম বেসলাইন ও নিখুঁত অনুপাত",
+          "btf_feat2_desc": "আরবি হরকত এবং বাংলার কার ও যুক্তবর্ণের উচ্চতা এমনভাবে পরিমাপ করা হয়েছে যেন কোনো লেখা কেটে না যায় বা অসমান না দেখায়।",
+          "btf_feat3_title": "রেগুলার ও বোল্ড দুই ভার্সন",
+          "btf_feat3_desc": "স্বাচ্ছন্দ্যে দীর্ঘ পড়ার জন্য রেগুলার (৪০০) এবং স্পষ্ট ও আকর্ষণীয় শিরোনাম তৈরির জন্য বোল্ড (৭০০) উভয় ওজন রয়েছে।",
+          "btf_feat4_title": "বই ও প্রকাশনায় সর্বোত্তম ব্যবহার",
+          "btf_feat4_desc": "কুরআনের অনুবাদ, হাদিস সংকলন, ইসলামি কিতাব, মাদ্রাসা ও স্কুল টেক্সটবুক এবং প্রকাশনার কাজে ব্যবহারের জন্য আদর্শ।",
+          "btf_feat5_title": "সকল সফটওয়্যারে কাজ করে",
+          "btf_feat5_desc": "এডোবি ইনডিজাইন, ইলাস্ট্রেটর, ফটোশপ, মাইক্রোসফট ওয়ার্ড এবং ওয়েব ও মোবাইল সিস্টেমে নির্বিঘ্নে সাপোর্ট করে।",
+          "btf_feat6_title": "সম্পূর্ণ বিনামূল্যে উন্মুক্ত",
+          "btf_feat6_desc": "ব্যক্তিগত ও বাণিজ্যিক সব ধরনের কাজের জন্য সম্পূর্ণ বিনামূল্যে ডাউনলোড করে ব্যবহার করার উন্মুক্ত সুযোগ।",
+          "btf_live_preview_label": "লাইভ ফন্ট প্রিভিউ (বাংলা • আরবি • ইংরেজি):"
      },
      "ar": {
           "header_sub": "مصمم جرافيك &bull; شغوف بالأتمتة &bull; مهتم بالتقنية &bull; حلّال للمشكلات <br>دمج التصميم البصري الهادف مع أتمتة الأعمال، والتفكير الإبداعي والحلول التقنية المبتكرة.",
@@ -1695,14 +1957,14 @@
           "showcase_intro": "استكشف برمجياتي المخصصة وأدوات الأتمتة الإبداعية وحلول تحسين سير العمل. تصفح المشاريع جنباً إلى جنب أدناه.",
           "showcase_tab_1": "١. مدقق البنغالية",
           "showcase_tab_2": "٢. PDFCreator.jsx",
-          "showcase_tab_3": "٣. أدوات قادمة",
+          "showcase_tab_3": "٣. خط بورنومالا تريو",
           "showcase_next_btn": "المشروع التالي: PDFCreator.jsx",
           "showcase_prev_btn": "المشروع السابق",
           "showcase_next_tools_btn": "التالي: أدوات قادمة",
           "showcase_first_btn": "العودة للمشروع الأول",
-          "slide_badge_1": "المشروع ١ من ٣",
-          "slide_badge_2": "المشروع ٢ من ٣",
-          "slide_badge_3": "المشروع ٣ من ٣",
+          "slide_badge_1": "المشروع ١ من ٤",
+          "slide_badge_2": "المشروع ٢ من ٤",
+          "slide_badge_3": "المشروع ٣ من ٤",
           "showcase_badge_pipeline": "قيد التطوير",
           "showcase_badge_more": "أدوات مسار العمل",
           "teaser_script1_title": "منسق كتب إن ديزاين",
@@ -1775,7 +2037,35 @@
           "about_p4": "أؤمن بأن أكثر طرق التعلم فاعلية هي الممارسة والتطبيق المباشر. وحينما أتعلم شيئاً جديداً، أسعى فوراً لتوظيفه عملياً. يعلمني التصميم التفكير الجمالي، وتعلمني البرمجة التحليل المنطقي للمشكلات، وتعلمني الأتمتة إنجاز الأعمال بذكاء ومرونة أكبر.",
           "about_p5": "بالنسبة لي، التقنية ليست مجرد رمز للحداثة؛ بل هي وسيلة لتيسير حياة الناس وعملهم. وسواء كان عملاً بصرياً متقناً، أو برمجية فعالة، أو أداة صغيرة توفر دقائق ثمينة — أبحث دوماً عن التناغم بين الفائدة العملية واللمسة الإبداعية.",
           "about_p6": "غايتي ليست مجرد صناعة الأشياء، بل ابتكار ما ينفع الناس حقاً. حلول تبسط التعقيد، وتؤتمت الأعمال الروتينية، وتمنح الإنسان فرصة للتركيز على إبداعه الحقيقي.",
-          "about_p7": "ما زلت أتعلم، وأجرب، وأسعى دوماً لتطوير نفسي. لأنني أؤمن بأن القيمة الحقيقية للمهارة لا تكمن فيما نعرفه فقط — بل في مقدار النفع والخير الذي يمكن أن نقدمه بعلمنا."
+          "about_p7": "ما زلت أتعلم، وأجرب، وأسعى دوماً لتطوير نفسي. لأنني أؤمن بأن القيمة الحقيقية للمهارة لا تكمن فيما نعرفه فقط — بل في مقدار النفع والخير الذي يمكن أن نقدمه بعلمنا.",
+          "showcase_tab_4": "٤. أدوات قادمة",
+          "slide_badge_4": "المشروع ٤ من ٤",
+          "showcase_next_font_btn": "التالي: خط بورنومالا تريو",
+          "btf_badge_type": "خط مخصص متعدد اللغات",
+          "btf_badge_scripts": "عربي • بنغالي • إنجليزي",
+          "btf_badge_weights": "عادي وعريض",
+          "btf_title": "Bornomala Trio — خط موحد متعدد اللغات (عربي، بنغالي، إنجليزي)",
+          "btf_subtitle": "خط طباعي ثلاثي اللغات يدمج العربية والبنغالية والإنجليزية في خط أساس رأسي موحد وموزون — متوفر بوزنين: عادي (Regular) وعريض (Bold) للطباعة والنشر المكتبي والتصميم الرقمي.",
+          "btf_specimen1_label": "عينة الخط ١: استعراض تيبوغرافي للأوزان العادية والعريضة",
+          "btf_specimen2_label": "عينة الخط ٢: تكوين متكامل للنصوص العربية والبنغالية والإنجليزية",
+          "btf_credits_title": "امتنان وتقدير خاص",
+          "btf_credits_desc": "خالص التقدير والامتنان لمصممي خط <strong>بورنومالا (Bornomala)</strong> وخط <strong>تراديشونال أرابيك (Traditional Arabic)</strong>. تم ابتكار Bornomala Trio عبر دمج وموازنة هذين الخطين اليوميين الأساسيين مع الحروف اللاتينية بدقة، لتسهيل الطباعة والنشر متعدد اللغات دون أي تعارض في القياسات.",
+          "btf_btn_zip": "تحميل حزمة الخط كاملة (.zip)",
+          "btf_btn_regular": "الوزن العادي (.ttf)",
+          "btf_btn_bold": "الوزن العريض (.ttf)",
+          "btf_feat1_title": "تناغم ثلاث لغات في ملف واحد",
+          "btf_feat1_desc": "كتابة النصوص العربية والبنغالية والإنجليزية داخل نفس الفقرة بسلاسة دون الحاجة لتبديل الخط ودون أي تشوه بصري.",
+          "btf_feat2_title": "خط أساس وارتفاع متناسق تماماً",
+          "btf_feat2_desc": "ضبط دقيق للقياسات الرأسية يضمن عدم تداخل الحركات التشكيلية العربية مع علامات التشكيل البنغالية ودون أي قص للحروف.",
+          "btf_feat3_title": "وزنان متكاملان: عادي وعريض",
+          "btf_feat3_desc": "يتضمن الوزن العادي (400) لقراءة النصوص الممتدة، والوزن العريض (700) للعناوين والتركيز البصري القوي.",
+          "btf_feat4_title": "مثالي للنشر الإسلامي والأكاديمي",
+          "btf_feat4_desc": "مثالي لكتب ترجمات القرآن الكريم، ومجموعات الحديث النبوي، والمناهج التعليمية، والمنشورات ثنائية وثلاثية اللغة.",
+          "btf_feat5_title": "دعم كامل لكافة برامج التصميم",
+          "btf_feat5_desc": "توافق تام مع حزمة أدوبي (إليستريتور، إن ديزاين، فوتوشوب)، ووورد، وتطبيقات الهاتف وتنسيقات الويب الحديثة.",
+          "btf_feat6_title": "مجاني ومتاح للجميع",
+          "btf_feat6_desc": "متاح مجاناً لكافة الاستخدامات الشخصية والتجارية. متاح للتنزيل كملفات منفصلة أو كحزمة مضغوطة واحدة.",
+          "btf_live_preview_label": "معاينة حية للخط الموحد:"
      }
 };
 
@@ -1839,7 +2129,7 @@
 						<!-- Showcase Horizontal Slider Navigation Logic -->
 			<script>
 				let currentShowcaseSlide = 0;
-				const totalShowcaseSlides = 3;
+				const totalShowcaseSlides = 4;
 
 				function updateShowcaseSlider(index) {
 					if (index < 0) index = 0;
