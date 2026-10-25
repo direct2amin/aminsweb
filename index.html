@@ -151,6 +151,318 @@
 				display: none !important;
 			}
 
+			/* Showcase Styles */
+			.showcase-header {
+				margin-bottom: 2rem;
+			}
+			.showcase-card {
+				background: rgba(255, 255, 255, 0.05);
+				border: 1px solid rgba(255, 255, 255, 0.22);
+				border-radius: 8px;
+				padding: 2rem;
+				margin-bottom: 2rem;
+				box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+			}
+			@media screen and (max-width: 736px) {
+				.showcase-card {
+					padding: 1.25rem;
+				}
+			}
+			.showcase-badges {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 0.4rem;
+				margin-bottom: 1rem;
+			}
+			.badge-pill {
+				display: inline-block;
+				padding: 0.2rem 0.7rem;
+				border-radius: 50px;
+				font-size: 0.72rem;
+				font-weight: 600;
+				letter-spacing: 0.05rem;
+				background: rgba(142, 190, 63, 0.2);
+				color: #d6f59c !important;
+				border: 1px solid rgba(142, 190, 63, 0.45);
+			}
+			.badge-pill.version {
+				background: rgba(255, 255, 255, 0.12);
+				color: #ffffff !important;
+				border-color: rgba(255, 255, 255, 0.3);
+			}
+			.badge-pill.script {
+				background: rgba(255, 170, 0, 0.18);
+				color: #ffd166 !important;
+				border-color: rgba(255, 170, 0, 0.45);
+			}
+
+			/* Typography fix: Prevent letter-spacing and uppercase from breaking Bengali conjuncts */
+			.project-title,
+			.project-subtitle,
+			.showcase-card h3,
+			.showcase-card h4,
+			.showcase-badges,
+			.feature-item h4,
+			.feature-item p,
+			.showcase-actions .button {
+				text-transform: none !important;
+				letter-spacing: 0 !important;
+				font-family: 'Hind Siliguri', 'Noto Sans Bengali', "Source Sans Pro", sans-serif !important;
+			}
+			.showcase-card h3.project-title {
+				font-size: 1.6rem !important;
+				line-height: 1.4 !important;
+				margin-bottom: 0.5rem !important;
+				color: #ffffff !important;
+			}
+			.showcase-card p.project-subtitle {
+				font-size: 0.95rem !important;
+				line-height: 1.7 !important;
+				color: rgba(255, 255, 255, 0.9) !important;
+				margin-bottom: 1.5rem !important;
+			}
+			.showcase-actions {
+				display: flex;
+				flex-direction: row;
+				flex-wrap: wrap;
+				align-items: center;
+				gap: 0.8rem;
+				margin: 1.5rem 0 2rem 0;
+			}
+			.showcase-actions .button {
+				margin: 0 !important;
+				display: inline-flex !important;
+				align-items: center;
+				justify-content: center;
+				gap: 0.5rem;
+				border-radius: 4px;
+				font-size: 0.85rem;
+				height: 2.85rem;
+				line-height: 2.85rem;
+				padding: 0 1.35rem;
+				white-space: nowrap;
+				width: auto !important;
+			}
+			@media screen and (max-width: 540px) {
+				.showcase-actions {
+					flex-direction: column;
+					align-items: stretch;
+				}
+				.showcase-actions .button {
+					width: 100% !important;
+					white-space: normal;
+					height: auto;
+					min-height: 2.85rem;
+					padding: 0.6rem 1rem;
+				}
+			}
+			.showcase-actions .button.primary {
+				background-color: #8ebe3f !important;
+				color: #0e3019 !important;
+				border: 1px solid #8ebe3f !important;
+				font-weight: 700;
+				box-shadow: 0 4px 15px rgba(142, 190, 63, 0.3);
+			}
+			.showcase-actions .button.primary:hover {
+				background-color: #ffffff !important;
+				color: #0e3019 !important;
+				border-color: #ffffff !important;
+				box-shadow: 0 4px 20px rgba(255, 255, 255, 0.4);
+			}
+			.showcase-actions .button.secondary {
+				border: 1px solid rgba(255, 255, 255, 0.5) !important;
+				color: #ffffff !important;
+			}
+			.showcase-actions .button.secondary:hover {
+				border-color: #ffffff !important;
+				background-color: rgba(255, 255, 255, 0.15) !important;
+			}
+
+			/* Quick Usage Box */
+			.script-usage-box {
+				background: rgba(0, 0, 0, 0.4);
+				border: 1px solid rgba(255, 255, 255, 0.2);
+				border-radius: 6px;
+				padding: 0.85rem 1.15rem;
+				margin: 1.25rem 0;
+				font-size: 0.85rem;
+				color: #d6f59c;
+				display: flex;
+				align-items: center;
+				gap: 0.6rem;
+			}
+			.script-usage-box i {
+				color: #8ebe3f;
+				font-size: 1rem;
+			}
+
+			/* Screenshot Gallery */
+			.gallery-container {
+				margin: 1.75rem 0;
+			}
+			.gallery-main-view {
+				width: 100%;
+				border-radius: 6px;
+				border: 1px solid rgba(255, 255, 255, 0.3);
+				overflow: hidden;
+				background: #0d2314;
+				box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
+			}
+			.gallery-main-view img {
+				width: 100%;
+				height: auto;
+				display: block;
+				transition: opacity 0.2s ease-in-out;
+			}
+			.gallery-caption-bar {
+				padding: 0.65rem 1rem;
+				background: rgba(10, 35, 18, 0.9);
+				border-top: 1px solid rgba(255, 255, 255, 0.15);
+				font-size: 0.82rem;
+				color: #d6f59c;
+				display: flex;
+				align-items: center;
+				gap: 0.5rem;
+			}
+			.gallery-thumbs {
+				display: grid;
+				grid-template-columns: repeat(6, 1fr);
+				gap: 0.5rem;
+				margin-top: 0.75rem;
+			}
+			@media screen and (max-width: 840px) {
+				.gallery-thumbs {
+					grid-template-columns: repeat(3, 1fr);
+				}
+			}
+			@media screen and (max-width: 480px) {
+				.gallery-thumbs {
+					grid-template-columns: repeat(2, 1fr);
+				}
+			}
+			.thumb-item {
+				cursor: pointer;
+				border: 2px solid rgba(255, 255, 255, 0.2);
+				border-radius: 4px;
+				overflow: hidden;
+				background: rgba(0, 0, 0, 0.4);
+				padding: 2px;
+				transition: all 0.2s ease;
+			}
+			.thumb-item:hover {
+				border-color: rgba(142, 190, 63, 0.8);
+				transform: translateY(-2px);
+			}
+			.thumb-item.active {
+				border-color: #8ebe3f !important;
+				box-shadow: 0 0 10px rgba(142, 190, 63, 0.6);
+			}
+			.thumb-item img {
+				width: 100%;
+				height: 52px;
+				object-fit: cover;
+				display: block;
+				border-radius: 2px;
+			}
+			.thumb-item span.thumb-title {
+				display: block;
+				font-size: 0.65rem;
+				padding: 3px 2px;
+				text-align: center;
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				color: rgba(255, 255, 255, 0.9);
+			}
+
+			/* Features Grid */
+			.feature-grid {
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+				gap: 1rem;
+				margin: 1.5rem 0;
+			}
+			@media screen and (max-width: 736px) {
+				.feature-grid {
+					grid-template-columns: 1fr;
+				}
+			}
+			.feature-item {
+				background: rgba(255, 255, 255, 0.05);
+				border-left: 3px solid #8ebe3f;
+				border-radius: 0 6px 6px 0;
+				padding: 0.85rem 1rem;
+				transition: background-color 0.2s ease;
+			}
+			.feature-item:hover {
+				background: rgba(255, 255, 255, 0.08);
+			}
+			body.lang-ar .feature-item {
+				border-left: none;
+				border-right: 3px solid #8ebe3f;
+				border-radius: 6px 0 0 6px;
+			}
+			.feature-item h4 {
+				margin: 0 0 0.35rem 0 !important;
+				color: #d6f59c !important;
+				font-size: 0.95rem !important;
+				display: flex;
+				align-items: center;
+				gap: 0.4rem;
+			}
+			.feature-item p {
+				margin: 0 !important;
+				font-size: 0.85rem !important;
+				line-height: 1.55 !important;
+				color: rgba(255, 255, 255, 0.88) !important;
+			}
+
+			/* Tech tags */
+			.tech-stack-row {
+				display: flex;
+				flex-wrap: wrap;
+				align-items: center;
+				gap: 0.5rem;
+				margin-top: 1.25rem;
+				padding-top: 1rem;
+				border-top: 1px solid rgba(255, 255, 255, 0.15);
+			}
+			.tech-stack-title {
+				font-size: 0.75rem;
+				text-transform: uppercase;
+				letter-spacing: 0.05rem;
+				color: rgba(255, 255, 255, 0.6);
+				margin-right: 0.25rem;
+			}
+			.tech-tag {
+				background: rgba(255, 255, 255, 0.1);
+				border: 1px solid rgba(255, 255, 255, 0.2);
+				padding: 0.2rem 0.6rem;
+				border-radius: 4px;
+				font-size: 0.75rem;
+				color: rgba(255, 255, 255, 0.95);
+			}
+
+			/* Coming Soon Card */
+			.coming-soon-card {
+				background: rgba(255, 255, 255, 0.03);
+				border: 1px dashed rgba(255, 255, 255, 0.25);
+				border-radius: 8px;
+				padding: 1.5rem;
+				text-align: center;
+				margin-top: 1.5rem;
+			}
+			.coming-soon-card h4 {
+				color: #d6f59c !important;
+				margin-bottom: 0.4rem;
+				font-size: 1.05rem;
+			}
+			.coming-soon-card p {
+				font-size: 0.88rem !important;
+				color: rgba(255, 255, 255, 0.75);
+				margin: 0;
+			}
+
 			/* Form Inputs & Buttons */
 			input[type="text"],
 			input[type="email"],
@@ -366,6 +678,255 @@
 			body.lang-ar #main article .actions {
 				text-align: center !important;
 			}
+		
+			/* ============================================================
+			   PERSONALITY PILLARS GRID (INTRO)
+			   ============================================================ */
+			.personality-section {
+				margin: 1.75rem 0 2rem 0;
+			}
+			.personality-section > h3 {
+				display: flex;
+				align-items: center;
+				gap: 0.6rem;
+				font-size: 1.25rem !important;
+				color: #ffffff !important;
+				margin-bottom: 1.25rem !important;
+				border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+				padding-bottom: 0.6rem;
+			}
+			.personality-section > h3 i {
+				color: #8ebe3f;
+			}
+			.personality-grid {
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+				gap: 1rem;
+			}
+			@media screen and (max-width: 736px) {
+				.personality-grid {
+					grid-template-columns: 1fr;
+				}
+			}
+			.pillar-card {
+				background: rgba(0, 0, 0, 0.35);
+				border: 1px solid rgba(255, 255, 255, 0.18);
+				border-radius: 8px;
+				padding: 1.15rem 1.15rem;
+				transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+				display: flex;
+				flex-direction: column;
+			}
+			.pillar-card:hover {
+				transform: translateY(-3px);
+				border-color: rgba(142, 190, 63, 0.85);
+				box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
+				background: rgba(0, 0, 0, 0.55);
+			}
+			.pillar-header {
+				display: flex;
+				align-items: center;
+				gap: 0.75rem;
+				margin-bottom: 0.65rem;
+			}
+			.pillar-icon-box {
+				width: 2.35rem;
+				height: 2.35rem;
+				border-radius: 6px;
+				background: rgba(142, 190, 63, 0.15);
+				border: 1px solid rgba(142, 190, 63, 0.4);
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				color: #8ebe3f;
+				font-size: 1.1rem;
+				flex-shrink: 0;
+				transition: background 0.2s ease, color 0.2s ease;
+			}
+			.pillar-card:hover .pillar-icon-box {
+				background: #8ebe3f;
+				color: #0d2813;
+			}
+			.pillar-title {
+				margin: 0 !important;
+				font-size: 1.05rem !important;
+				color: #ffffff !important;
+				font-weight: 600 !important;
+				line-height: 1.3 !important;
+				text-transform: none !important;
+				letter-spacing: 0 !important;
+			}
+			.pillar-desc {
+				margin: 0 !important;
+				font-size: 0.86rem !important;
+				line-height: 1.65 !important;
+				color: rgba(255, 255, 255, 0.85) !important;
+			}
+			body.lang-bn .pillar-desc {
+				font-size: 0.92rem !important;
+				line-height: 1.75 !important;
+			}
+			body.lang-ar .pillar-desc {
+				font-size: 0.95rem !important;
+				line-height: 1.8 !important;
+			}
+			body.lang-ar .personality-grid {
+				direction: rtl;
+			}
+			body.lang-ar .pillar-header {
+				direction: rtl;
+			}
+
+			/* ============================================================
+			   SHOWCASE HORIZONTAL SLIDER & NAVIGATION
+			   ============================================================ */
+			.showcase-nav-bar {
+				display: flex;
+				flex-wrap: wrap;
+				align-items: center;
+				justify-content: space-between;
+				gap: 0.75rem;
+				padding: 0.65rem 0.9rem;
+				background: rgba(0, 0, 0, 0.45);
+				border: 1px solid rgba(255, 255, 255, 0.2);
+				border-radius: 8px;
+				margin-bottom: 1.5rem;
+			}
+			.showcase-tabs {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 0.45rem;
+				align-items: center;
+			}
+			.showcase-tab {
+				display: inline-flex;
+				align-items: center;
+				gap: 0.45rem;
+				background: rgba(255, 255, 255, 0.08);
+				border: 1px solid rgba(255, 255, 255, 0.22) !important;
+				color: rgba(255, 255, 255, 0.85) !important;
+				padding: 0.4rem 0.95rem !important;
+				border-radius: 20px !important;
+				font-size: 0.8rem !important;
+				font-weight: 500 !important;
+				height: auto !important;
+				line-height: normal !important;
+				cursor: pointer;
+				transition: all 0.2s ease;
+				white-space: nowrap;
+				text-transform: none !important;
+				letter-spacing: 0 !important;
+			}
+			.showcase-tab:hover {
+				background: rgba(255, 255, 255, 0.18);
+				color: #ffffff !important;
+				border-color: rgba(255, 255, 255, 0.4) !important;
+			}
+			.showcase-tab.active {
+				background: #8ebe3f !important;
+				color: #0a2312 !important;
+				border-color: #8ebe3f !important;
+				font-weight: 700 !important;
+				box-shadow: 0 0 12px rgba(142, 190, 63, 0.45);
+			}
+			.showcase-tab.active i {
+				color: #0a2312 !important;
+			}
+			.showcase-controls {
+				display: inline-flex;
+				align-items: center;
+				gap: 0.45rem;
+				margin-left: auto;
+			}
+			.slider-arrow-btn {
+				width: 2.2rem !important;
+				height: 2.2rem !important;
+				padding: 0 !important;
+				line-height: 2.2rem !important;
+				display: inline-flex !important;
+				align-items: center;
+				justify-content: center;
+				border-radius: 50% !important;
+				background: rgba(255, 255, 255, 0.1) !important;
+				border: 1px solid rgba(255, 255, 255, 0.3) !important;
+				color: #ffffff !important;
+				cursor: pointer;
+				transition: all 0.2s ease;
+			}
+			.slider-arrow-btn:hover {
+				background: #8ebe3f !important;
+				color: #0a2312 !important;
+				border-color: #8ebe3f !important;
+			}
+			.slide-indicator {
+				font-size: 0.85rem;
+				font-weight: 600;
+				color: #d6f59c;
+				letter-spacing: 0.1rem;
+				font-family: monospace, sans-serif;
+				padding: 0 0.35rem;
+			}
+
+			/* Viewport & Slide Display (Instant, default-visible, zero height lag) */
+			.showcase-slider-viewport {
+				width: 100%;
+				position: relative;
+			}
+			.showcase-slide {
+				display: none;
+				width: 100%;
+			}
+			.showcase-slide.active {
+				display: block !important;
+				animation: fadeInSlide 0.28s cubic-bezier(0.2, 0.9, 0.3, 1) forwards;
+			}
+			@keyframes fadeInSlide {
+				from {
+					opacity: 0;
+					transform: translateY(8px);
+				}
+				to {
+					opacity: 1;
+					transform: translateY(0);
+				}
+			}
+			body.lang-ar .showcase-slide {
+				direction: rtl !important;
+				text-align: right !important;
+			}
+
+			/* Slide Footer Navigation */
+			.slide-footer-nav {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				flex-wrap: wrap;
+				gap: 0.8rem;
+				padding-top: 1.35rem;
+				margin-top: 1.5rem;
+				border-top: 1px solid rgba(255, 255, 255, 0.15);
+			}
+			.slide-counter-badge {
+				font-size: 0.82rem;
+				color: rgba(255, 255, 255, 0.65);
+				letter-spacing: 0.05rem;
+				font-weight: 500;
+			}
+			.slide-footer-nav .button {
+				height: 2.5rem !important;
+				line-height: 2.5rem !important;
+				font-size: 0.82rem !important;
+				padding: 0 1.15rem !important;
+				display: inline-flex !important;
+				align-items: center;
+				gap: 0.45rem;
+				border-radius: 4px;
+				margin: 0 !important;
+			}
+			body.lang-ar .slide-footer-nav {
+				direction: rtl;
+			}
+
 		</style>
 	</head>
 	<body class="is-preload">
@@ -381,13 +942,13 @@
 						<div class="content">
 							<div class="inner">
 								<h1>AMIN</h1>
-								<p data-i18n="header_sub">Bringing visual ideas to life is what I do. <br> I focus on striking a natural balance between clarity, minimalism,<br> and thoughtful aesthetics in every design.</p>
+								<p data-i18n="header_sub">Graphic Designer &bull; Automation Lover &bull; Tech Enthusiast &bull; Problem Solver<br>Blending purposeful visual design with smart workflow automation, creative thinking & practical technology.</p>
 							</div>
 						</div>
 						<nav>
 							<ul>
 								<li><a href="#intro" data-i18n="nav_intro">Intro</a></li>
-								<li><a href="#work" data-i18n="nav_work">Work</a></li>
+								<li><a href="#work" data-i18n="nav_work">Showcase</a></li>
 								<li><a href="#about" data-i18n="nav_about">About</a></li>
 								<li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
 							</ul>
@@ -397,17 +958,67 @@
 				<!-- Main -->
 					<div id="main">
 
-						<!-- Intro -->
+												<!-- Intro -->
 							<article id="intro">
 								<h2 class="major" data-i18n="intro_title">Intro</h2>
-								<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
-								<p data-i18n="intro_text">Assalamu Alaikum, I’m Amin—a graphic designer dedicated to turning visual ideas into purposeful realities. I believe design is best when it is thoughtful, modest, and meaningful. In every project, I focus on striking a natural balance between clarity, minimalism, and clean aesthetics—keeping elements intentional and beneficial. Welcome to my creative space, and feel free to explore my work.</p>
-							</article>
+								<span class="image main"><img src="images/pic02.jpg" alt="Simplicity Speaks Louder" /></span>
+								<p data-i18n="intro_text">Assalamu Alaikum, I’m Amin—a graphic designer with a curiosity for technology and a passion for practical problem-solving. I enjoy turning creative ideas into meaningful designs, exploring useful tools, and automating repetitive tasks to make work simpler and more efficient. Welcome to my creative and technical space.</p>
 
-						<!-- Work -->
-							<article id="work">
-								<h2 class="major" data-i18n="work_title">Work</h2>
-								<span class="image main"><img src="images/pic02.jpg" alt="" /></span>
+								<!-- 6-Pillar Personality Section -->
+								<div class="personality-section">
+									<h3 data-i18n="intro_pillars_heading"><i class="icon fa-user-circle-o"></i> My Dimensions & Core Focus</h3>
+									<div class="personality-grid">
+										<div class="pillar-card">
+											<div class="pillar-header">
+												<div class="pillar-icon-box"><i class="icon fa-paint-brush"></i></div>
+												<h4 class="pillar-title" data-i18n="pillar_gd_title">Graphic Designer</h4>
+											</div>
+											<p class="pillar-desc" data-i18n="pillar_gd_desc">Crafting purposeful visual identities, refined typography, and clean layouts built on balance, minimalism, and thoughtful aesthetics.</p>
+										</div>
+
+										<div class="pillar-card">
+											<div class="pillar-header">
+												<div class="pillar-icon-box"><i class="icon fa-bolt"></i></div>
+												<h4 class="pillar-title" data-i18n="pillar_auto_title">Automation Lover</h4>
+											</div>
+											<p class="pillar-desc" data-i18n="pillar_auto_desc">Passionate about automating repetitive tasks in any workflow. Building custom scripts and tools to eliminate mechanical grind and save valuable time.</p>
+										</div>
+
+										<div class="pillar-card">
+											<div class="pillar-header">
+												<div class="pillar-icon-box"><i class="icon fa-laptop"></i></div>
+												<h4 class="pillar-title" data-i18n="pillar_tech_title">Tech Enthusiast</h4>
+											</div>
+											<p class="pillar-desc" data-i18n="pillar_tech_desc">Passionate about exploring all facets of technology—computers, mobile ecosystems, hardware, software, modern tools, and system innovations.</p>
+										</div>
+
+										<div class="pillar-card">
+											<div class="pillar-header">
+												<div class="pillar-icon-box"><i class="icon fa-puzzle-piece"></i></div>
+												<h4 class="pillar-title" data-i18n="pillar_ps_title">Problem Solver</h4>
+											</div>
+											<p class="pillar-desc" data-i18n="pillar_ps_desc">Driven by a natural urge to dig deep into real-world problems and workflow bottlenecks in any domain, engineering clean and practical solutions.</p>
+										</div>
+
+										<div class="pillar-card">
+											<div class="pillar-header">
+												<div class="pillar-icon-box"><i class="icon fa-lightbulb-o"></i></div>
+												<h4 class="pillar-title" data-i18n="pillar_ct_title">Creative Thinker</h4>
+											</div>
+											<p class="pillar-desc" data-i18n="pillar_ct_desc">Merging aesthetic intuition with logical analysis. Looking beyond conventional methods to find smarter, more inventive ways to solve challenges.</p>
+										</div>
+
+										<div class="pillar-card">
+											<div class="pillar-header">
+												<div class="pillar-icon-box"><i class="icon fa-wrench"></i></div>
+												<h4 class="pillar-title" data-i18n="pillar_pl_title">Practical Learner</h4>
+											</div>
+											<p class="pillar-desc" data-i18n="pillar_pl_desc">A hands-on learner who believes the best way to master anything is through direct implementation, building functional tools, and continuous experimentation.</p>
+										</div>
+									</div>
+								</div>
+
+								<hr>
 								<div>
 									<div>
 										<h3 data-i18n="work_heading1">Design Approach & Philosophy</h3>
@@ -443,13 +1054,279 @@
 								</div>
 							</article>
 
-						<!-- About -->
+												<!-- Showcase (Formerly Work) -->
+							<article id="work">
+								<h2 class="major" data-i18n="work_title">Showcase</h2>
+								<p data-i18n="showcase_intro">Custom-built software utilities, workflow automation tools, and creative scripts. Browse projects side-by-side below.</p>
+
+								<!-- Showcase Top Navigation Bar (Tabs & Slide Controls) -->
+								<div class="showcase-nav-bar">
+									<div class="showcase-tabs">
+										<button type="button" class="showcase-tab active" onclick="goToShowcaseSlide(0)">
+											<i class="icon fa-desktop"></i>
+											<span data-i18n="showcase_tab_1">1. Bangla Proofreader</span>
+										</button>
+										<button type="button" class="showcase-tab" onclick="goToShowcaseSlide(1)">
+											<i class="icon fa-file-code-o"></i>
+											<span data-i18n="showcase_tab_2">2. PDFCreator.jsx</span>
+										</button>
+										<button type="button" class="showcase-tab" onclick="goToShowcaseSlide(2)">
+											<i class="icon fa-cubes"></i>
+											<span data-i18n="showcase_tab_3">3. More Tools & Scripts</span>
+										</button>
+									</div>
+
+									<div class="showcase-controls">
+										<button type="button" class="slider-arrow-btn" onclick="prevShowcaseSlide()" title="Previous Project" aria-label="Previous Project">
+											<i class="icon fa-chevron-left"></i>
+										</button>
+										<span class="slide-indicator" id="showcase-slide-indicator">01 / 03</span>
+										<button type="button" class="slider-arrow-btn" onclick="nextShowcaseSlide()" title="Next Project" aria-label="Next Project">
+											<i class="icon fa-chevron-right"></i>
+										</button>
+									</div>
+								</div>
+
+								<!-- Showcase Slider Viewport & Track -->
+								<div class="showcase-slider-viewport" id="showcaseSliderViewport">
+
+										<!-- Slide 1: Bangla Proofreader -->
+										<div class="showcase-slide active" data-slide-index="0">
+											<div class="showcase-card">
+												<div class="showcase-badges">
+													<span class="badge-pill" data-i18n="bp_badge_app">AI Desktop App</span>
+													<span class="badge-pill version" data-i18n="bp_badge_version">v1.4.0</span>
+													<span class="badge-pill">Windows 10 / 11</span>
+													<span class="badge-pill">Open Source</span>
+												</div>
+
+												<h3 class="project-title" data-i18n="bp_title">বাংলা প্রুফরিডার (Bangla Proofreader)</h3>
+												<p class="project-subtitle" data-i18n="bp_subtitle">AI Assisted Windows Desktop Utility for Bangla Proofreading, Bijoy-to-Unicode Conversion & Linguistic Correction</p>
+
+												<!-- Screenshot Interactive Gallery -->
+												<div class="gallery-container">
+													<div class="gallery-main-view">
+														<img id="bp-main-image" src="images/proofreader/bp_side_by_side.png" alt="Bangla Proofreader Screenshot" />
+														<div class="gallery-caption-bar">
+															<i class="icon fa-image"></i>
+															<span id="bp-image-caption" data-i18n="caption_side_by_side">Side-by-Side Review: Word-level difference comparison with synced scrolling</span>
+														</div>
+													</div>
+
+													<div class="gallery-thumbs">
+														<div class="thumb-item active" onclick="switchProofreaderImage('images/proofreader/bp_side_by_side.png', 'caption_side_by_side', this)">
+															<img src="images/proofreader/bp_side_by_side.png" alt="Side-by-Side" />
+															<span class="thumb-title" data-i18n="thumb_side_by_side">Side-by-Side</span>
+														</div>
+														<div class="thumb-item" onclick="switchProofreaderImage('images/proofreader/bp_inline_diff.png', 'caption_inline_diff', this)">
+															<img src="images/proofreader/bp_inline_diff.png" alt="Inline Diff" />
+															<span class="thumb-title" data-i18n="thumb_inline_diff">Inline Diff</span>
+														</div>
+														<div class="thumb-item" onclick="switchProofreaderImage('images/proofreader/bp_changes_list.png', 'caption_changes_list', this)">
+															<img src="images/proofreader/bp_changes_list.png" alt="Changes List" />
+															<span class="thumb-title" data-i18n="thumb_changes_list">Changes List</span>
+														</div>
+														<div class="thumb-item" onclick="switchProofreaderImage('images/proofreader/bp_dark_mode.png', 'caption_dark_mode', this)">
+															<img src="images/proofreader/bp_dark_mode.png" alt="Dark Mode" />
+															<span class="thumb-title" data-i18n="thumb_dark_mode">Dark Mode</span>
+														</div>
+														<div class="thumb-item" onclick="switchProofreaderImage('images/proofreader/bp_settings.png', 'caption_settings', this)">
+															<img src="images/proofreader/bp_settings.png" alt="Settings" />
+															<span class="thumb-title" data-i18n="thumb_settings">Settings & Hotkey</span>
+														</div>
+														<div class="thumb-item" onclick="switchProofreaderImage('images/proofreader/bp_api_guide.png', 'caption_api_guide', this)">
+															<img src="images/proofreader/bp_api_guide.png" alt="API Guide" />
+															<span class="thumb-title" data-i18n="thumb_api_guide">Free API Guide</span>
+														</div>
+													</div>
+												</div>
+
+												<!-- Action Buttons -->
+												<div class="showcase-actions">
+													<a href="https://github.com/direct2amin/Bangla-Proofreader/raw/main/releases/BanglaProofreader_Setup_v1.4.0.exe" class="button primary icon fa-download" target="_blank" rel="noopener noreferrer" data-i18n="bp_btn_download">Download Setup v1.4.0 (.exe)</a>
+													<a href="https://github.com/direct2amin/Bangla-Proofreader" class="button secondary icon fa-github" target="_blank" rel="noopener noreferrer" data-i18n="bp_btn_github">View on GitHub</a>
+												</div>
+
+												<!-- Key Features Grid -->
+												<div class="feature-grid">
+													<div class="feature-item">
+														<h4><i class="icon fa-bolt"></i> <span data-i18n="bp_feat1_title">Global Hotkey (Ctrl+Alt+B)</span></h4>
+														<p data-i18n="bp_feat1_desc">Select text in Word, Illustrator, browser, or any app and trigger instant proofreading with a shortcut.</p>
+													</div>
+													<div class="feature-item">
+														<h4><i class="icon fa-refresh"></i> <span data-i18n="bp_feat2_title">Auto Bijoy-to-Unicode</span></h4>
+														<p data-i18n="bp_feat2_desc">Seamlessly converts legacy Bijoy (ANSI) text to Unicode upon pasting, saving time and manual conversion.</p>
+													</div>
+													<div class="feature-item">
+														<h4><i class="icon fa-shield"></i> <span data-i18n="bp_feat3_title">Arabic Script & Harkat Protection</span></h4>
+														<p data-i18n="bp_feat3_desc">100% preserves Quranic verses, Hadith, and Islamic invocations with diacritics inside Bangla text.</p>
+													</div>
+													<div class="feature-item">
+														<h4><i class="icon fa-map-marker"></i> <span data-i18n="bp_feat4_title">BD Location Gazetteer</span></h4>
+														<p data-i18n="bp_feat4_desc">Built-in verified database of all Bangladesh districts, upazilas, thanas, and unions for accurate spelling.</p>
+													</div>
+													<div class="feature-item">
+														<h4><i class="icon fa-check-square-o"></i> <span data-i18n="bp_feat5_title">Selective Suggestions Control</span></h4>
+														<p data-i18n="bp_feat5_desc">Easily choose which spelling corrections to accept or reject with individual checkboxes before replacing.</p>
+													</div>
+													<div class="feature-item">
+														<h4><i class="icon fa-paint-brush"></i> <span data-i18n="bp_feat6_title">Direct Active App Replace</span></h4>
+														<p data-i18n="bp_feat6_desc">'Replace in Active App' injects corrected text directly into Illustrator, Word, or any text editor with 1 click.</p>
+													</div>
+												</div>
+
+												<!-- Tech Stack Tags -->
+												<div class="tech-stack-row">
+													<span class="tech-stack-title" data-i18n="tech_stack_label">Built With:</span>
+													<span class="tech-tag">Python</span>
+													<span class="tech-tag">Google Gemini AI</span>
+													<span class="tech-tag">PyQt / Win32 API</span>
+													<span class="tech-tag">PyInstaller</span>
+													<span class="tech-tag">Inno Setup</span>
+													<span class="tech-tag">MIT License</span>
+												</div>
+											</div>
+
+											<!-- Slide Footer Navigation -->
+											<div class="slide-footer-nav">
+												<span class="slide-counter-badge" data-i18n="slide_badge_1">Project 1 of 3</span>
+												<button type="button" class="button primary small icon fa-arrow-right" onclick="nextShowcaseSlide()">
+													<span data-i18n="showcase_next_btn">Next Project: PDFCreator.jsx</span>
+												</button>
+											</div>
+										</div>
+
+										<!-- Slide 2: PDFCreator.jsx -->
+										<div class="showcase-slide" data-slide-index="1">
+											<div class="showcase-card">
+												<div class="showcase-badges">
+													<span class="badge-pill script" data-i18n="pdfc_badge_type">Illustrator Script</span>
+													<span class="badge-pill version">ExtendScript (.jsx)</span>
+													<span class="badge-pill" data-i18n="pdfc_badge_protection">Vector to Raster PDF</span>
+													<span class="badge-pill" data-i18n="pdfc_badge_free">Free Download</span>
+												</div>
+
+												<h3 class="project-title" data-i18n="pdfc_title">PDFCreator.jsx — Client Proof PDF Generator</h3>
+												<p class="project-subtitle" data-i18n="pdfc_subtitle">Automated Illustrator script to generate crisp, multi-page client proof PDFs while protecting raw vector source assets by flattening into high-res raster pages.</p>
+
+												<!-- Quick Usage Snippet -->
+												<div class="script-usage-box">
+													<i class="icon fa-terminal"></i>
+													<span data-i18n="pdfc_usage_guide">Illustrator Menu: <strong>File &gt; Scripts &gt; Other Script... &gt; PDFCreator.jsx</strong></span>
+												</div>
+
+												<!-- Action Buttons -->
+												<div class="showcase-actions">
+													<a href="assets/scripts/PDFCreator.jsx" download class="button primary icon fa-download" data-i18n="pdfc_btn_download">Download PDFCreator.jsx</a>
+												</div>
+
+												<!-- Key Features Grid -->
+												<div class="feature-grid">
+													<div class="feature-item">
+														<h4><i class="icon fa-shield"></i> <span data-i18n="pdfc_feat1_title">Vector Source Protection</span></h4>
+														<p data-i18n="pdfc_feat1_desc">Flattens vector artwork into high-res raster pages so clients can clearly inspect proofs without ever extracting or stealing raw vector paths.</p>
+													</div>
+													<div class="feature-item">
+														<h4><i class="icon fa-book"></i> <span data-i18n="pdfc_feat2_title">Multi-page Book & Artboard Support</span></h4>
+														<p data-i18n="pdfc_feat2_desc">Seamlessly compiles single or multi-artboard books, brochures, and catalogs into a single, unified multi-page PDF in exact page order.</p>
+													</div>
+													<div class="feature-item">
+														<h4><i class="icon fa-magic"></i> <span data-i18n="pdfc_feat3_title">1-Click Full Automation</span></h4>
+														<p data-i18n="pdfc_feat3_desc">Zero tedious manual steps: run the script from Illustrator, and it automatically executes export, sizing, and PDF compilation.</p>
+													</div>
+													<div class="feature-item">
+														<h4><i class="icon fa-rocket"></i> <span data-i18n="pdfc_feat4_title">Silent Background Engine</span></h4>
+														<p data-i18n="pdfc_feat4_desc">Custom binary PDF generator writes directly to disk without launching new Illustrator windows or slowing down your workflow.</p>
+													</div>
+													<div class="feature-item">
+														<h4><i class="icon fa-folder-open-o"></i> <span data-i18n="pdfc_feat5_title">Smart Output Location</span></h4>
+														<p data-i18n="pdfc_feat5_desc">Automatically saves the generated PDF in the exact folder of your source .ai file using the document's original name.</p>
+													</div>
+													<div class="feature-item">
+														<h4><i class="icon fa-recycle"></i> <span data-i18n="pdfc_feat6_title">Auto Temp Cleanup</span></h4>
+														<p data-i18n="pdfc_feat6_desc">Instantly purges and deletes all intermediate raster cache files upon completion, leaving your computer clean and uncluttered.</p>
+													</div>
+												</div>
+
+												<!-- Tech Stack Tags -->
+												<div class="tech-stack-row">
+													<span class="tech-stack-title" data-i18n="tech_stack_label">Built With:</span>
+													<span class="tech-tag">Adobe Illustrator CC</span>
+													<span class="tech-tag">ExtendScript / JavaScript</span>
+													<span class="tech-tag">Cross-Platform (Win / Mac)</span>
+													<span class="tech-tag">Direct Binary PDF 1.4</span>
+													<span class="tech-tag">Free & Open Tool</span>
+												</div>
+											</div>
+
+											<!-- Slide Footer Navigation -->
+											<div class="slide-footer-nav">
+												<button type="button" class="button secondary small icon fa-arrow-left" onclick="prevShowcaseSlide()">
+													<span data-i18n="showcase_prev_btn">Previous Project</span>
+												</button>
+												<span class="slide-counter-badge" data-i18n="slide_badge_2">Project 2 of 3</span>
+												<button type="button" class="button primary small icon fa-arrow-right" onclick="nextShowcaseSlide()">
+													<span data-i18n="showcase_next_tools_btn">Next: Upcoming Tools</span>
+												</button>
+											</div>
+										</div>
+
+										<!-- Slide 3: Coming Soon & More Tools -->
+										<div class="showcase-slide" data-slide-index="2">
+											<div class="showcase-card">
+												<div class="showcase-badges">
+													<span class="badge-pill script" data-i18n="showcase_badge_pipeline">In Development</span>
+													<span class="badge-pill version">Adobe Ecosystem</span>
+													<span class="badge-pill" data-i18n="showcase_badge_more">Workflow Tools</span>
+												</div>
+
+												<h3 class="project-title" data-i18n="showcase_coming_soon_title"><i class="icon fa-code"></i> More Adobe Scripts & Automation Coming Soon</h3>
+												<p class="project-subtitle" data-i18n="showcase_coming_soon_desc">Custom productivity scripts for Adobe Photoshop, Illustrator & InDesign are currently being curated for this showcase.</p>
+
+												<!-- Teaser Feature Grid -->
+												<div class="feature-grid">
+													<div class="feature-item">
+														<h4><i class="icon fa-book"></i> <span data-i18n="teaser_script1_title">InDesign Book Formatter</span></h4>
+														<p data-i18n="teaser_script1_desc">Automated book interior layout styler, footnote aligner, and master spread generator for editorial publishing.</p>
+													</div>
+													<div class="feature-item">
+														<h4><i class="icon fa-picture-o"></i> <span data-i18n="teaser_script2_title">Photoshop Batch Art Exporter</span></h4>
+														<p data-i18n="teaser_script2_desc">Instant multi-format asset export with color profile conversion and smart tagging for social media & print.</p>
+													</div>
+												</div>
+
+												<div class="script-usage-box">
+													<i class="icon fa-info-circle"></i>
+													<span data-i18n="teaser_note">Have a custom repetitive design workflow you'd like automated? Feel free to reach out via Contact.</span>
+												</div>
+											</div>
+
+											<!-- Slide Footer Navigation -->
+											<div class="slide-footer-nav">
+												<button type="button" class="button secondary small icon fa-arrow-left" onclick="prevShowcaseSlide()">
+													<span data-i18n="showcase_prev_btn">Previous Project</span>
+												</button>
+												<span class="slide-counter-badge" data-i18n="slide_badge_3">Project 3 of 3</span>
+												<button type="button" class="button secondary small icon fa-refresh" onclick="goToShowcaseSlide(0)">
+													<span data-i18n="showcase_first_btn">First Project</span>
+												</button>
+											</div>
+										</div>
+
+								</div>
+							</article>
+
+																		<!-- About -->
 							<article id="about">
 								<h2 class="major" data-i18n="about_title">About</h2>
 								<span class="image main"><img src="images/pic03.jpg" alt="" /></span>
-								<p data-i18n="about_p1">Assalamu Alaikum. I am a passionate graphic designer who views creative work as both an art and a responsibility. My journey is shaped by a deep respect for ethical values, clarity, and intentional aesthetics. Rather than chasing fleeting design trends, I focus on creating timeless visuals that communicate with modesty, purpose, and impact.</p>
-								<p data-i18n="about_p2">My creative discipline is grounded in the principle of simplicity. I specialize in harmonizing clean layouts, refined typography, and thoughtful color schemes to bring meaningful ideas to life. Every project I undertake is treated as a trust (<em>Amanah</em>), ensuring honest collaboration, meticulous attention to detail, and a calm, uncluttered end result.</p>
-								<p data-i18n="about_p3">Whether shaping brand identities, designing print layouts, or crafting digital media, my goal remains consistent: to deliver work that serves a genuine benefit, elevates the message, and brings visual tranquility to the viewer.</p>
+								<p data-i18n="about_p1">Assalamu Alaikum. I am a graphic designer, tech-driven developer, and automation creator. I view creativity not merely as a skill, but as an <em>Amanah</em> (a sacred trust) bound to sincerity, integrity, and purposeful benefit.</p>
+								<p data-i18n="about_p2">My journey began in visual design—drawn to refined typography, balanced whitespace, and purposeful minimalism. Yet through hands-on experience, I learned that creating beautiful visuals is not enough; the workflow itself must be simple, organized, and truly efficient.</p>
+								<p data-i18n="about_p3">This insight sparked my deep passion for technology and programming. I love exploring new technologies, getting to the root of problems to engineer practical solutions, and finding smarter ways to streamline daily tasks. Whether crafting custom scripts, simplifying file conversions, or building standalone software and automation tools, my core motivation remains singular: eliminating unnecessary friction so people's time and creativity can flourish.</p>
+								<p data-i18n="about_p4">I believe the most effective way to learn is through hands-on application. Whenever I discover something new, I immediately put it to work in real-world scenarios. Design teaches me to think aesthetically, programming teaches me to analyze problems logically, and automation teaches me to accomplish tasks with greater intelligence.</p>
+								<p data-i18n="about_p5">To me, technology is not just a badge of modern life; it is an empowering medium to make human effort simpler. Be it an elegant design, an efficient script, or a tiny time-saving utility, I always seek the harmony between practical utility and creative craftsmanship.</p>
+								<p data-i18n="about_p6">My goal is never just to build things for the sake of building, but to create things that genuinely serve a purpose. Solutions that simplify complexity, automate repetitive grind, and allow people to focus on their authentic creative voice.</p>
+								<p data-i18n="about_p7">I am continuously learning, experimenting, and refining my craft. For I believe the true worth of knowledge lies not merely in what we know, but in how much genuine benefit we can bring to others.</p>
 							</article>
 
 						<!-- Contact -->
@@ -526,94 +1403,381 @@
 				}
 			</script>
 
+			<!-- Image Gallery Switcher Script -->
+			<script>
+				function switchProofreaderImage(src, captionKey, thumbElement) {
+					const mainImg = document.getElementById('bp-main-image');
+					const captionEl = document.getElementById('bp-image-caption');
+					if (!mainImg) return;
+
+					mainImg.style.opacity = '0.25';
+					setTimeout(() => {
+						mainImg.src = src;
+						mainImg.style.opacity = '1';
+					}, 150);
+
+					document.querySelectorAll('.gallery-thumbs .thumb-item').forEach(t => t.classList.remove('active'));
+					if (thumbElement) thumbElement.classList.add('active');
+
+					if (captionEl && captionKey) {
+						captionEl.setAttribute('data-i18n', captionKey);
+						const currentLang = localStorage.getItem('preferred_lang') || 'en';
+						if (translations[currentLang] && translations[currentLang][captionKey]) {
+							captionEl.innerHTML = translations[currentLang][captionKey];
+						}
+					}
+				}
+			</script>
+
 			<!-- Instant Multi-Language Translation & Home Navigation Script -->
 			<script>
 				const translations = {
-					en: {
-						header_sub: "Bringing visual ideas to life is what I do. <br> I focus on striking a natural balance between clarity, minimalism,<br> and thoughtful aesthetics in every design.",
-						nav_intro: "Intro",
-						nav_work: "Work",
-						nav_about: "About",
-						nav_contact: "Contact",
-						intro_title: "Intro",
-						intro_text: "Assalamu Alaikum, I’m Amin—a graphic designer dedicated to turning visual ideas into purposeful realities. I believe design is best when it is thoughtful, modest, and meaningful. In every project, I focus on striking a natural balance between clarity, minimalism, and clean aesthetics—keeping elements intentional and beneficial. Welcome to my creative space, and feel free to explore my work.",
-						work_title: "Work",
-						work_heading1: "Design Approach & Philosophy",
-						work_p1: "For me, design is not merely about decorating a canvas; it is an <em>Amanah</em> (a trust) that demands integrity, sincerity, and purpose. I approach every project with the belief that visual communication should be meaningful, modest, and genuinely beneficial.",
-						work_p2: "In a digital space often overwhelmed by excessive noise, I prioritize intentional simplicity. My creative process centers on thoughtful typography, balanced whitespace, and purposeful color harmony. Every line, curve, and layout choice is crafted to convey a clear message without compromising on ethical values or artistic elegance.",
-						work_heading2: "Core Services & Capabilities",
-						work_service1: "<strong>Brand Identity:</strong> Meaningful logos, cohesive color palettes, and visual systems built on balance and clarity.",
-						work_service2: "<strong>Typography & Layout Design:</strong> Clean editorial layouts, Arabic/Latin typography integration, and print-ready compositions.",
-						work_service3: "<strong>Digital & Social Media Creatives:</strong> Refined, eye-catching visual assets that maintain aesthetic poise and ethical standards.",
-						work_service4: "<strong>Visual Concept Development:</strong> Transforming abstract ideas into structured, functional, and timeless visual assets.",
-						about_title: "About",
-						about_p1: "Assalamu Alaikum. I am a passionate graphic designer who views creative work as both an art and a responsibility. My journey is shaped by a deep respect for ethical values, clarity, and intentional aesthetics. Rather than chasing fleeting design trends, I focus on creating timeless visuals that communicate with modesty, purpose, and impact.",
-						about_p2: "My creative discipline is grounded in the principle of simplicity. I specialize in harmonizing clean layouts, refined typography, and thoughtful color schemes to bring meaningful ideas to life. Every project I undertake is treated as a trust (<em>Amanah</em>), ensuring honest collaboration, meticulous attention to detail, and a calm, uncluttered end result.",
-						about_p3: "Whether shaping brand identities, designing print layouts, or crafting digital media, my goal remains consistent: to deliver work that serves a genuine benefit, elevates the message, and brings visual tranquility to the viewer.",
-						contact_title: "Contact",
-						label_name: "Name",
-						label_email: "Email (Optional)",
-						label_message: "Message",
-						btn_send: "Contact on WhatsApp",
-						btn_reset: "Reset"
-					},
-					bn: {
-						header_sub: "দৃশ্যমান ভাবনাগুলোকে জীবন্ত রূপ দেওয়াই আমার কাজ। <br> প্রতিটি ডিজাইনে স্পষ্টতা, মিনিমালিজম এবং নান্দনিকতার<br> নিখুঁত ভারসাম্য বজায় রাখাই আমার লক্ষ্য।",
-						nav_intro: "পরিচিতি",
-						nav_work: "কাজ",
-						nav_about: "সম্পর্কে",
-						nav_contact: "যোগাযোগ",
-						intro_title: "পরিচিতি",
-						intro_text: "আসসালামু আলাইকুম, আমি আমিন—একজন গ্রাফিক ডিজাইনার। আমি অর্থপূর্ণ, মার্জিত এবং পরিচ্ছন্ন ডিজাইনে বিশ্বাসী। প্রতিটি কাজেই মিনিমালিজম এবং সঠিক নান্দনিকতার সমন্বয় ঘটিয়ে উপকারী কিছু তৈরি করার চেষ্টা করি। আমার পোর্টফোলিওতে আপনাকে স্বাগতম।",
-						work_title: "কাজের ক্ষেত্র",
-						work_heading1: "ডিজাইন দর্শন ও দৃষ্টিভঙ্গি",
-						work_p1: "আমার কাছে ডিজাইন কেবল ক্যানভাস সাজানো নয়; এটি একটি <em>আমানত</em> যা সততা, আন্তরিকতা ও উদ্দেশ্যের দাবি রাখে। আমি বিশ্বাস করি ভিজ্যুয়াল যোগাযোগ হওয়া উচিত অর্থপূর্ণ ও উপকারী।",
-						work_p2: "ডিজিটাল দুনিয়ার কোলাহলে আমি সরলতাকে প্রাধান্য দিই। মার্জিত টাইপোগ্রাফি, ব্যালান্সড স্পেসিং এবং কালার হারমোনির মাধ্যমে নৈতিক মান ঠিক রেখে কাজ তৈরি করি।",
-						work_heading2: "প্রধান সেবাসমূহ",
-						work_service1: "<strong>ব্র্যান্ড আইডেন্টিটি:</strong> অর্থপূর্ণ লোগো এবং সুবিন্যস্ত কালার প্যালেট তৈরি।",
-						work_service2: "<strong>টাইপোগ্রাফি ও লেআউট:</strong> আরবি ও ইংরেজি টাইপোগ্রাফির সমন্বয়ে পরিচ্ছন্ন প্রিন্ট ডিজাইন।",
-						work_service3: "<strong>ডিজিটাল ও সোশ্যাল ক্রিয়েটিভস:</strong> মার্জিত এবং দৃষ্টিনন্দন সোশ্যাল মিডিয়া ভিজ্যুয়াল।",
-						work_service4: "<strong>কনসেপ্ট ডেভেলপমেন্ট:</strong> আইডিয়াকে সময়োপযোগী ও কার্যকরী ডিজাইনে রূপান্তর।",
-						about_title: "সম্পর্কে",
-						about_p1: "আসসালামু আলাইকুম। আমি ডিজাইনকে দায়িত্ব ও শিল্পের মেলবন্ধন হিসেবে দেখি। ট্রেন্ডের পেছনে না ছুটে মার্জিত ও অর্থপূর্ণ ভিজ্যুয়াল তৈরিতে আমি বিশ্বাসী।",
-						about_p2: "আমার কাজের মূল ভিত্তি হলো সরলতা। টাইপোগ্রাফি এবং রঙের সঠিক বিন্যাসের মাধ্যমে যেকোনো কাজকে আমানত হিসেবে গুরুত্ব সহকারে সম্পন্ন করি।",
-						about_p3: "ব্র্যান্ড ডিজাইন হোক কিংবা প্রিন্ট লেআউট—আমার লক্ষ্য দর্শকের কাছে একটি ইতিবাচক ও স্বস্তিদায়ক ভিজ্যুয়াল অভিজ্ঞতা পৌঁছে দেওয়া।",
-						contact_title: "যোগাযোগ",
-						label_name: "নাম",
-						label_email: "ইমেইল (ঐচ্ছিক)",
-						label_message: "বার্তা",
-						btn_send: "হোয়াটসঅ্যাপে মেসেজ পাঠান",
-						btn_reset: "রিসেট"
-					},
-					ar: {
-						header_sub: "إحياء الأفكار البصرية هو شغفي. <br> أركز على تحقيق توازن طبيعي بين الوضوح، البساطة،<br> والجماليات المدروسة في كل تصميم.",
-						nav_intro: "مقدمة",
-						nav_work: "أعمالي",
-						nav_about: "عنّي",
-						nav_contact: "تواصل",
-						intro_title: "مقدمة",
-						intro_text: "السلام عليكم، أنا أمين — مصمم جرافيك أكرس جهدي لتحويل الأفكار البصرية إلى واقع هادف. أؤمن بأن التصميم يكون في أبهى صوره عندما يكون متأملاً، متواضعاً وذا مغزى. مرحباً بكم في مساحتي الإبداعية.",
-						work_title: "الأعمال",
-						work_heading1: "نهج وفلسفة التصميم",
-						work_p1: "بالنسبة لي، التصميم ليس مجرد تزيين؛ بل هو <em>أمانة</em> تتطلب النزاهة والإخلاص والهدف. أسعى لتقديم رسائل بصرية هادفة ونافعة.",
-						work_p2: "في عالم رقمي مليء بالضوضاء، أعطي الأولوية للبساطة الهادفة مع التركيز على التيبوغرافيا المتناسقة والمساحات المتوازنة.",
-						work_heading2: "الخدمات والقدرات الأساسية",
-						work_service1: "<strong>الهوية البصرية:</strong> شعارات معبرة، ولوحات ألوان متناسقة مبنية على التوازن والوضوح.",
-						work_service2: "<strong>تصميم التيبوغرافيا والتخطيط:</strong> تصاميم تحريرية متقنة تدمج الخطوط العربية واللاتينية باحترافية.",
-						work_service3: "<strong>تصاميم وسائل التواصل:</strong> محتوى بصري راقٍ يحافظ على الهيبة والجمال.",
-						work_service4: "<strong>تطوير المفاهيم البصرية:</strong> تحويل الأفكار المجردة إلى أصول بصرية وظيفية وخالدة.",
-						about_title: "عنّي",
-						about_p1: "السلام عليكم. أنا مصمم جرافيك أرى العمل الإبداعي فناً ومسؤولية في آن واحد. أركز على إبداع تصاميم خالدة تنقل الرسائل بأناقة ووضوح.",
-						about_p2: "يعتمد أسلوبي على البساطة والتناغم، وأتعامل مع كل مشروع كأمانة تتطلب الدقة والاهتمام بأدق التفاصيل.",
-						about_p3: "هدفي هو تقديم أعمال نافعة ترفع من قيمة الرسالة وتمنح المشاهد شعوراً بالسكينة والارتياح.",
-						contact_title: "تواصل معي",
-						label_name: "الاسم",
-						label_email: "البريد الإلكتروني (اختياري)",
-						label_message: "الرسالة",
-						btn_send: "تواصل عبر واتساب",
-						btn_reset: "إعادة تعيين"
-					}
-				};
+     "en": {
+          "header_sub": "Graphic Designer &bull; Automation Lover &bull; Tech Enthusiast &bull; Problem Solver<br>Blending purposeful visual design with smart workflow automation, creative thinking & practical technology.",
+          "nav_intro": "Intro",
+          "nav_work": "Showcase",
+          "nav_about": "About",
+          "nav_contact": "Contact",
+          "intro_title": "Intro",
+          "intro_text": "Assalamu Alaikum, I’m Amin—a graphic designer with a curiosity for technology and a passion for practical problem-solving. I enjoy turning creative ideas into meaningful designs, exploring useful tools, and automating repetitive tasks to make work simpler and more efficient. Welcome to my creative and technical space.",
+          "intro_pillars_heading": "<i class=\"icon fa-user-circle-o\"></i> My Dimensions & Core Focus",
+          "pillar_gd_title": "Graphic Designer",
+          "pillar_gd_desc": "Crafting purposeful visual identities, refined typography, and clean layouts built on balance, minimalism, and thoughtful aesthetics.",
+          "pillar_auto_title": "Automation Lover",
+          "pillar_auto_desc": "Passionate about automating repetitive tasks in any workflow. Building custom scripts and tools to eliminate mechanical grind and save valuable time.",
+          "pillar_tech_title": "Tech Enthusiast",
+          "pillar_tech_desc": "Passionate about exploring all facets of technology—computers, mobile ecosystems, hardware, software, modern tools, and system innovations.",
+          "pillar_ps_title": "Problem Solver",
+          "pillar_ps_desc": "Driven by a natural urge to dig deep into real-world problems and workflow bottlenecks in any domain, engineering clean and practical solutions.",
+          "pillar_ct_title": "Creative Thinker",
+          "pillar_ct_desc": "Merging aesthetic intuition with logical analysis. Looking beyond conventional methods to find smarter, more inventive ways to solve challenges.",
+          "pillar_pl_title": "Practical Learner",
+          "pillar_pl_desc": "A hands-on learner who believes the best way to master anything is through direct implementation, building functional tools, and continuous experimentation.",
+          "work_heading1": "Design Approach & Philosophy",
+          "work_p1": "For me, design is not merely about decorating a canvas; it is an <em>Amanah</em> (a trust) that demands integrity, sincerity, and purpose. I approach every project with the belief that visual communication should be meaningful, modest, and genuinely beneficial.",
+          "work_p2": "In a digital space often overwhelmed by excessive noise, I prioritize intentional simplicity. My creative process centers on thoughtful typography, balanced whitespace, and purposeful color harmony. Every line, curve, and layout choice is crafted to convey a clear message without compromising on ethical values or artistic elegance.",
+          "work_heading2": "Core Services & Capabilities",
+          "work_service1": "<strong>Brand Identity:</strong> Meaningful logos, cohesive color palettes, and visual systems built on balance and clarity.",
+          "work_service2": "<strong>Typography & Layout Design:</strong> Clean editorial layouts, Arabic/Latin typography integration, and print-ready compositions.",
+          "work_service3": "<strong>Digital & Social Media Creatives:</strong> Refined, eye-catching visual assets that maintain aesthetic poise and ethical standards.",
+          "work_service4": "<strong>Visual Concept Development:</strong> Transforming abstract ideas into structured, functional, and timeless visual assets.",
+          "work_title": "Showcase",
+          "showcase_intro": "Custom-built software utilities, workflow automation tools, and creative scripts. Browse projects side-by-side below.",
+          "showcase_tab_1": "1. Bangla Proofreader",
+          "showcase_tab_2": "2. PDFCreator.jsx",
+          "showcase_tab_3": "3. More Tools & Scripts",
+          "showcase_next_btn": "Next Project: PDFCreator.jsx",
+          "showcase_prev_btn": "Previous Project",
+          "showcase_next_tools_btn": "Next: Upcoming Tools",
+          "showcase_first_btn": "Back to First Project",
+          "slide_badge_1": "Project 1 of 3",
+          "slide_badge_2": "Project 2 of 3",
+          "slide_badge_3": "Project 3 of 3",
+          "showcase_badge_pipeline": "In Development",
+          "showcase_badge_more": "Workflow Tools",
+          "teaser_script1_title": "InDesign Book Formatter",
+          "teaser_script1_desc": "Automated book interior layout styler, footnote aligner, and master spread generator for editorial publishing.",
+          "teaser_script2_title": "Photoshop Batch Art Exporter",
+          "teaser_script2_desc": "Instant multi-format asset export with color profile conversion and smart tagging for social media & print.",
+          "teaser_note": "Have a custom repetitive design workflow you'd like automated? Feel free to reach out via Contact.",
+          "bp_badge_app": "AI Desktop App",
+          "bp_badge_version": "v1.4.0",
+          "bp_title": "Bangla Proofreader (বাংলা প্রুফরিডার)",
+          "bp_subtitle": "AI-Assisted Windows Desktop Utility for Bangla Proofreading, Bijoy-to-Unicode Conversion & Linguistic Correction",
+          "bp_btn_download": "Download Setup v1.4.0 (.exe)",
+          "bp_btn_github": "View on GitHub",
+          "caption_side_by_side": "Side-by-Side Review: Word-level difference comparison with synced scrolling",
+          "caption_inline_diff": "Inline Diff View: Color-coded differences with deletions and corrections",
+          "caption_changes_list": "Changes List: Interactive table of accepted and rejected suggestions",
+          "caption_dark_mode": "Dark Theme: Sleek, high-contrast dark UI for comfortable night work",
+          "caption_settings": "Settings Dialog: Theme mode, Gemini API key, and custom global hotkeys",
+          "caption_api_guide": "Free API Guide: Step-by-step instructions to get a 100% free Gemini API key",
+          "thumb_side_by_side": "Side-by-Side",
+          "thumb_inline_diff": "Inline Diff",
+          "thumb_changes_list": "Changes List",
+          "thumb_dark_mode": "Dark Mode",
+          "thumb_settings": "Settings",
+          "thumb_api_guide": "Free API Guide",
+          "bp_feat1_title": "Global Hotkey (Ctrl+Alt+B)",
+          "bp_feat1_desc": "Select text in Word, Illustrator, browser, or any app and trigger instant proofreading with a shortcut.",
+          "bp_feat2_title": "Auto Bijoy-to-Unicode",
+          "bp_feat2_desc": "Seamlessly converts legacy Bijoy (ANSI) text to Unicode upon pasting, saving time and manual conversion.",
+          "bp_feat3_title": "Arabic Script & Harkat Protection",
+          "bp_feat3_desc": "100% preserves Quranic verses, Hadith, and Islamic invocations with diacritics inside Bangla text.",
+          "bp_feat4_title": "BD Location Gazetteer",
+          "bp_feat4_desc": "Built-in verified database of all Bangladesh districts, upazilas, thanas, and unions for accurate spelling.",
+          "bp_feat5_title": "Selective Suggestions Control",
+          "bp_feat5_desc": "Easily choose which spelling corrections to accept or reject with individual checkboxes before replacing.",
+          "bp_feat6_title": "Direct Active App Replace",
+          "bp_feat6_desc": "'Replace in Active App' injects corrected text directly into Illustrator, Word, or any text editor with 1 click.",
+          "tech_stack_label": "Built With:",
+          "pdfc_badge_type": "Illustrator Script",
+          "pdfc_badge_protection": "Vector to Raster PDF",
+          "pdfc_badge_free": "Free Download",
+          "pdfc_title": "PDFCreator.jsx — Client Proof PDF Generator",
+          "pdfc_subtitle": "Automated Illustrator script to generate crisp, multi-page client proof PDFs while protecting raw vector source assets by flattening into high-res raster pages.",
+          "pdfc_usage_guide": "Illustrator Menu: <strong>File &gt; Scripts &gt; Other Script... &gt; PDFCreator.jsx</strong>",
+          "pdfc_btn_download": "Download PDFCreator.jsx",
+          "pdfc_feat1_title": "Vector Source Protection",
+          "pdfc_feat1_desc": "Flattens vector artwork into high-res raster pages so clients can clearly inspect proofs without ever extracting or stealing raw vector paths.",
+          "pdfc_feat2_title": "Multi-page Book & Artboard Support",
+          "pdfc_feat2_desc": "Seamlessly compiles single or multi-artboard books, brochures, and catalogs into a single, unified multi-page PDF in exact page order.",
+          "pdfc_feat3_title": "1-Click Full Automation",
+          "pdfc_feat3_desc": "Zero tedious manual steps: run the script from Illustrator, and it automatically executes export, sizing, and PDF compilation.",
+          "pdfc_feat4_title": "Silent Background Engine",
+          "pdfc_feat4_desc": "Custom binary PDF generator writes directly to disk without launching new Illustrator windows or slowing down your workflow.",
+          "pdfc_feat5_title": "Smart Output Location",
+          "pdfc_feat5_desc": "Automatically saves the generated PDF in the exact folder of your source .ai file using the document's original name.",
+          "pdfc_feat6_title": "Auto Temp Cleanup",
+          "pdfc_feat6_desc": "Instantly purges and deletes all intermediate raster cache files upon completion, leaving your computer clean and uncluttered.",
+          "showcase_coming_soon_title": "More Adobe Scripts & Automation Coming Soon",
+          "showcase_coming_soon_desc": "Custom productivity scripts for Adobe Photoshop, Illustrator & InDesign are currently being curated for this showcase.",
+          "about_title": "About",
+          "about_p1": "Assalamu Alaikum. I am a graphic designer, tech-driven developer, and automation creator. I view creativity not merely as a skill, but as an <em>Amanah</em> (a sacred trust) bound to sincerity, integrity, and purposeful benefit.",
+          "about_p2": "My journey began in visual design—drawn to refined typography, balanced whitespace, and purposeful minimalism. Yet through hands-on experience, I learned that creating beautiful visuals is not enough; the workflow itself must be simple, organized, and truly efficient.",
+          "about_p3": "This insight sparked my deep passion for technology and programming. I love exploring new technologies, getting to the root of problems to engineer practical solutions, and finding smarter ways to streamline daily tasks. Whether crafting custom scripts, simplifying file conversions, or building standalone software and automation tools, my core motivation remains singular: eliminating unnecessary friction so people's time and creativity can flourish.",
+          "contact_title": "Contact",
+          "label_name": "Name",
+          "label_email": "Email (Optional)",
+          "label_message": "Message",
+          "btn_send": "Contact on WhatsApp",
+          "btn_reset": "Reset",
+          "about_p4": "I believe the most effective way to learn is through hands-on application. Whenever I discover something new, I immediately put it to work in real-world scenarios. Design teaches me to think aesthetically, programming teaches me to analyze problems logically, and automation teaches me to accomplish tasks with greater intelligence.",
+          "about_p5": "To me, technology is not just a badge of modern life; it is an empowering medium to make human effort simpler. Be it an elegant design, an efficient script, or a tiny time-saving utility, I always seek the harmony between practical utility and creative craftsmanship.",
+          "about_p6": "My goal is never just to build things for the sake of building, but to create things that genuinely serve a purpose. Solutions that simplify complexity, automate repetitive grind, and allow people to focus on their authentic creative voice.",
+          "about_p7": "I am continuously learning, experimenting, and refining my craft. For I believe the true worth of knowledge lies not merely in what we know, but in how much genuine benefit we can bring to others."
+     },
+     "bn": {
+          "header_sub": "গ্রাফিক ডিজাইনার &bull; অটোমেশনপ্রেমী &bull; টেক উৎসাহী &bull; প্রবলেম সলভার<br>উদ্দেশ্যপূর্ণ ভিজ্যুয়াল ডিজাইনের সাথে স্মার্ট অটোমেশন, ক্রিয়েটিভ থিংকিং ও কার্যকরী প্রযুক্তির মেলবন্ধন।",
+          "nav_intro": "পরিচিতি",
+          "nav_work": "শোকেস",
+          "nav_about": "সম্পর্কে",
+          "nav_contact": "যোগাযোগ",
+          "intro_title": "পরিচিতি",
+          "intro_text": "আসসালামু আলাইকুম, আমি আমিন—একজন গ্রাফিক ডিজাইনার, প্রযুক্তিপ্রেমী ও বাস্তব সমস্যার কার্যকর সমাধান খুঁজতে আগ্রহী একজন মানুষ। সৃজনশীল ভাবনাকে ডিজাইনে রূপ দেওয়ার পাশাপাশি নতুন প্রযুক্তি ঘাঁটাঘাঁটি, প্রয়োজনীয় টুলস তৈরি এবং পুনরাবৃত্তিমূলক কাজ অটোমেট করতে ভালোবাসি। আমার সৃজনশীলতা ও প্রযুক্তির জগতে আপনাকে স্বাগতম।",
+          "intro_pillars_heading": "<i class=\"icon fa-user-circle-o\"></i> আমার পরিচয় ও দক্ষতার পরিধি",
+          "pillar_gd_title": "গ্রাফিক ডিজাইনার",
+          "pillar_gd_desc": "মার্জিত টাইপোগ্রাফি, নিখুঁত স্পেসিং এবং পরিচ্ছন্ন নান্দনিকতার সমন্বয়ে অর্থপূর্ণ ভিজ্যুয়াল ব্র্যান্ডিং ও এডিটোরিয়াল ডিজাইন তৈরি করি।",
+          "pillar_auto_title": "অটোমেশনপ্রেমী",
+          "pillar_auto_desc": "যেকোনো ধরনের একঘেয়ে ও পুনরাবৃত্তিমূলক কাজ অটোমেট করতে ভালোবাসি। স্ক্রিপ্ট ও নিজস্ব টুলস তৈরির মাধ্যমে কাজের জটিলতা দূর করে সময় ও শ্রম বাঁচাই।",
+          "pillar_tech_title": "প্রযুক্তিপ্রেমী",
+          "pillar_tech_desc": "কম্পিউটার, মোবাইল, হার্ডওয়্যার ও সফটওয়্যার—প্রযুক্তির যেকোনো নতুন উদ্ভাবন ও টুলস নিয়ে ঘাঁটাঘাঁটি ও গবেষণা করতে আমি দারুণ উৎসাহী।",
+          "pillar_ps_title": "প্রবলেম সলভার",
+          "pillar_ps_desc": "যেকোনো কাজের বাস্তব সমস্যা ও চ্যালেঞ্জের গভীরে গিয়ে কার্যকর ও বাস্তবসম্মত সমাধান খুঁজে বের করা আমার স্বভাবজাত আনন্দ।",
+          "pillar_ct_title": "ক্রিয়েটিভ থিংকার",
+          "pillar_ct_desc": "সমস্যাকে শুধু গতানুগতিকভাবে না দেখে নান্দনিক অনুভূতি ও যৌক্তিক বিশ্লেষণের সমন্বয়ে নতুন উপায়ে কার্যকরী সমাধানের পথ খুঁজি।",
+          "pillar_pl_title": "প্র্যাক্টিক্যাল লার্নার",
+          "pillar_pl_desc": "নতুন যা-ই শিখি, তা সরাসরি নিজের বাস্তব কাজে প্রয়োগে বিশ্বাসী। হাতে-কলমে কাজ করা ও পরীক্ষা-নিরীক্ষার মাধ্যমেই আমার দক্ষতার বিকাশ ঘটে।",
+          "work_heading1": "ডিজাইন দর্শন ও দৃষ্টিভঙ্গি",
+          "work_p1": "আমার কাছে ডিজাইন কেবল ক্যানভাস সাজানো নয়; এটি একটি <em>আমানত</em> যা সততা, আন্তরিকতা ও উদ্দেশ্যের দাবি রাখে। আমি বিশ্বাস করি ভিজ্যুয়াল যোগাযোগ হওয়া উচিত অর্থপূর্ণ ও উপকারী।",
+          "work_p2": "ডিজিটাল দুনিয়ার কোলাহলে আমি সরলতাকে প্রাধান্য দিই। মার্জিত টাইপোগ্রাফি, ব্যালান্সড স্পেসিং এবং কালার হারমোনির মাধ্যমে নৈতিক মান ঠিক রেখে কাজ তৈরি করি।",
+          "work_heading2": "প্রধান সেবাসমূহ",
+          "work_service1": "<strong>ব্র্যান্ড আইডেন্টিটি:</strong> অর্থপূর্ণ লোগো এবং সুবিন্যস্ত কালার প্যালেট তৈরি।",
+          "work_service2": "<strong>টাইপোগ্রাফি ও লেআউট:</strong> আরবি ও ইংরেজি টাইপোগ্রাফির সমন্বয়ে পরিচ্ছন্ন প্রিন্ট ডিজাইন।",
+          "work_service3": "<strong>ডিজিটাল ও সোশ্যাল ক্রিয়েটিভস:</strong> মার্জিত এবং দৃষ্টিনন্দন সোশ্যাল মিডিয়া ভিজ্যুয়াল।",
+          "work_service4": "<strong>কনসেপ্ট ডেভেলপমেন্ট:</strong> আইডিয়াকে সময়োপযোগী ও কার্যকরী ডিজাইনে রূপান্তর।",
+          "work_title": "শোকেস",
+          "showcase_intro": "আমার নিজের তৈরি সফটওয়্যার ইউটিলিটি, ক্রিয়েটিভ অটোমেশন স্ক্রিপ্ট এবং ডিজাইনার ওয়ার্কফ্লো টুলস। স্লাইড করে প্রজেক্টগুলো দেখুন।",
+          "showcase_tab_1": "১. বাংলা প্রুফরিডার",
+          "showcase_tab_2": "২. PDFCreator.jsx",
+          "showcase_tab_3": "৩. নতুন স্ক্রিপ্ট ও টুলস",
+          "showcase_next_btn": "পরবর্তী প্রজেক্ট: PDFCreator.jsx",
+          "showcase_prev_btn": "পূর্ববর্তী প্রজেক্ট",
+          "showcase_next_tools_btn": "পরবর্তী: নতুন টুলস",
+          "showcase_first_btn": "প্রথম প্রজেক্টে ফিরুন",
+          "slide_badge_1": "প্রজেক্ট ১ / ৩",
+          "slide_badge_2": "প্রজেক্ট ২ / ৩",
+          "slide_badge_3": "প্রজেক্ট ৩ / ৩",
+          "showcase_badge_pipeline": "ডেভেলপমেন্ট চলমান",
+          "showcase_badge_more": "ওয়ার্কফ্লো টুলস",
+          "teaser_script1_title": "ইনডিজাইন বুক ফরম্যাটার",
+          "teaser_script1_desc": "বই বা প্রকাশনার অভ্যন্তরীণ লেআউট, পাদটীকা (ফুটনোট) অ্যালাইনমেন্ট ও মাস্টার স্প্রেড স্বয়ংক্রিয়ভাবে সাজানোর স্ক্রিপ্ট।",
+          "teaser_script2_title": "ফটোশপ ব্যাচ আর্ট এক্সপোর্টার",
+          "teaser_script2_desc": "সোশ্যাল মিডিয়া ও প্রিন্টের জন্য এক ক্লিকে বিভিন্ন ফরম্যাটে ছবি এক্সপোর্ট ও কালার প্রোফাইল রূপান্তর টুল।",
+          "teaser_note": "আপনার কাজের কোনো একঘেয়ে বা দীর্ঘ ধাপ স্বয়ংক্রিয় করতে চাইলে সরাসরি যোগাযোগের মাধ্যমে জানাতে পারেন।",
+          "bp_badge_app": "এআই ডেস্কটপ অ্যাপ্লিকেশন",
+          "bp_badge_version": "ভার্সন ১.৪.০",
+          "bp_title": "বাংলা প্রুফরিডার (Bangla Proofreader)",
+          "bp_subtitle": "সিস্টেম-ওয়াইড গ্লোবাল শর্টকাট, স্বয়ংক্রিয় বিজয়-ইউনিকোড কনভার্টার, আরবি হরকত সুরক্ষা ও এআই-সহায়ক আধুনিক বাংলা প্রুফরিডার",
+          "bp_btn_download": "ইনস্টলার ডাউনলোড v1.4.0 (.exe)",
+          "bp_btn_github": "গিটহাবে সোর্স কোড দেখুন",
+          "caption_side_by_side": "পাশাপাশি তুলনা: ভুল ও শুদ্ধ শব্দের কালার-কোডেড ভিজ্যুয়াল পার্থক্য এবং সিঙ্ক্রোনাইজড স্ক্রলিং",
+          "caption_inline_diff": "ইনলাইন পার্থক্য: কাটা দাগ ও সবুজ রঙে টেক্সটের অভ্যন্তরীণ পরিবর্তনের ভিউ",
+          "caption_changes_list": "পরিবর্তন তালিকা: প্রতিটি সংশোধনের বিস্তারিত টেবিল এবং চেকমার্ক অপশন",
+          "caption_dark_mode": "ডার্ক মোড: রাতে বা দীর্ঘ সময় কাজের সুবিধার্থে আকর্ষণীয় ডার্ক ইন্টারফেস",
+          "caption_settings": "সেটিংস ডায়ালগ: থিম পরিবর্তন, জেমিনি এপিআই কি ও কাস্টম গ্লোবাল শর্টকাট কনফিগারেশন",
+          "caption_api_guide": "ফ্রি এপিআই গাইড: সম্পূর্ণ বিনামূল্যে ব্যক্তিগত Gemini API Key নেওয়ার সহজ ৫ ধাপ",
+          "thumb_side_by_side": "পাশাপাশি তুলনা",
+          "thumb_inline_diff": "ইনলাইন ভিউ",
+          "thumb_changes_list": "পরিবর্তন তালিকা",
+          "thumb_dark_mode": "ডার্ক মোড",
+          "thumb_settings": "সেটিংস",
+          "thumb_api_guide": "এপিআই গাইড",
+          "bp_feat1_title": "সিস্টেম-ওয়াইড গ্লোবাল শর্টকাট",
+          "bp_feat1_desc": "যেকোনো সফটওয়্যার (Word, Illustrator, ব্রাউজার) থেকে লেখা সিলেক্ট করে শর্টকাট চাপলেই নিমেষেই প্রুফরিডার চালু হয়।",
+          "bp_feat2_title": "অটো বিজয়-টু-ইউনিকোড কনভার্সন",
+          "bp_feat2_desc": "বিজয় (SutonnyMJ/ANSI) টেক্সট পেস্ট করার সাথে সাথে স্বয়ংক্রিয়ভাবে নির্ভুল ইউনিকোডে রূপান্তর সম্পন্ন হয়।",
+          "bp_feat3_title": "আরবি টেক্সট ও হরকত সুরক্ষা",
+          "bp_feat3_desc": "বাংলা লেখার ভেতরে থাকা কুরআনের আয়াত, হাদিস বা আরবি দোয়া ও হরকত শতভাগ অবিকৃত ও সুরক্ষিত রাখে।",
+          "bp_feat4_title": "বাংলাদেশের স্থাননাম অভিধান",
+          "bp_feat4_desc": "বাংলাদেশের জেলা, উপজেলা, থানা ও ইউনিয়নের সঠিক বানানের সমন্বিত ডেটাবেস ভ্যালিডেশন।",
+          "bp_feat5_title": "পছন্দমাফিক চেকমার্ক দিয়ে নির্বাচন",
+          "bp_feat5_desc": "প্রস্তাবিত সংশোধনীগুলোর মধ্য থেকে কোনটি গ্রহণ করবেন আর কোনটি বর্জন করবেন, তা চেকমার্ক দিয়ে সহজে বেছে নেওয়ার পূর্ণ স্বাধীনতা।",
+          "bp_feat6_title": "Active App এ সরাসরি ১-ক্লিকে প্রতিস্থাপন",
+          "bp_feat6_desc": "'Replace in Active App' বাটনে ক্লিক করলেই সরাসরি এডোবি ইলাস্ট্রেটর, ওয়ার্ড বা যেকোনো চলমান অ্যাপে শুদ্ধ লেখা পেস্ট হয়ে যায়।",
+          "tech_stack_label": "ব্যবহৃত প্রযুক্তি:",
+          "pdfc_badge_type": "ইলাস্ট্রেটর স্ক্রিপ্ট",
+          "pdfc_badge_protection": "ভেক্টর টু রাস্টার পিডিএফ",
+          "pdfc_badge_free": "ফ্রি ডাউনলোড",
+          "pdfc_title": "PDFCreator.jsx — ক্লায়েন্ট প্রুফ ও সোর্স প্রোটেকশন পিডিএফ স্ক্রিপ্ট",
+          "pdfc_subtitle": "ভেক্টর সোর্স ফাইল অক্ষুণ্ণ রেখে বই বা যে কোনো মাল্টি-পেজ .ai ফাইল থেকে ক্লায়েন্ট প্রুফের জন্য এক ক্লিকে হাই-রেজোলিউশন রাস্টার পিডিএফ তৈরির অটোমেশন স্ক্রিপ্ট।",
+          "pdfc_usage_guide": "ইলাস্ট্রেটর মেনু: <strong>File &gt; Scripts &gt; Other Script... &gt; PDFCreator.jsx</strong>",
+          "pdfc_btn_download": "PDFCreator.jsx ডাউনলোড",
+          "pdfc_feat1_title": "ভেক্টর সোর্স ফাইল সুরক্ষা",
+          "pdfc_feat1_desc": "ডিজাইনকে হাই-রেজোলিউশন রাস্টার পেজে রূপান্তর করে পিডিএফ তৈরি করে, ফলে ক্লায়েন্ট নিখুঁত প্রুফ দেখতে পেলেও মূল ভেক্টর উপাদান আলাদা করতে পারে না।",
+          "pdfc_feat2_title": "মাল্টি-পেজ বই ও আর্টবোর্ড সাপোর্ট",
+          "pdfc_feat2_desc": "বই, ব্রোশিউর বা ক্যাটালগের সবকয়টি আর্টবোর্ডকে পৃষ্ঠাক্রম অনুসারে স্বয়ংক্রিয়ভাবে একটি সুবিন্যস্ত মাল্টি-পেজ পিডিএফে সাজিয়ে তোলে।",
+          "pdfc_feat3_title": "১-ক্লিকে সম্পূর্ণ অটোমেশন",
+          "pdfc_feat3_desc": "কোনো জটিল বা দীর্ঘ ধাপ নেই—শুধু স্ক্রিপ্টটি রান করলেই স্বয়ংক্রিয়ভাবে এক্সপোর্ট, পেজ সাইজিং ও পিডিএফ কম্পাইলেশন সম্পন্ন হয়।",
+          "pdfc_feat4_title": "সাইলেন্ট ব্যাকগ্রাউন্ড ইঞ্জিন",
+          "pdfc_feat4_desc": "কাস্টম বাইনারি ইঞ্জিন দিয়ে সরাসরি ডিস্কে পিডিএফ রাইট করে; কোনো বাড়তি উইন্ডো খোলে না এবং কাজের গতিশীলতা বজায় রাখে।",
+          "pdfc_feat5_title": "স্মার্ট লোকেশনে সেভ",
+          "pdfc_feat5_desc": "মূল .ai ফাইলের নামানুসারে একই ফোল্ডারে স্বয়ংক্রিয়ভাবে পিডিএফটি সেভ হয়, ফলে ফাইল খুঁজতে ঝামেলা পোহাতে হয় না।",
+          "pdfc_feat6_title": "অটো টেম্প ফাইল ক্লিনআপ",
+          "pdfc_feat6_desc": "পিডিএফ প্রস্তুত হওয়ার সাথে সাথে সকল মধ্যবর্তী ক্যাশ ও টেম্পোরারি ছবি নিজে থেকেই ডিলিট করে ড্রাইভ পরিচ্ছন্ন রাখে।",
+          "showcase_coming_soon_title": "খুব শীঘ্রই আরও নতুন এডোবি স্ক্রিপ্ট যুক্ত হচ্ছে",
+          "showcase_coming_soon_desc": "আমার তৈরি অন্যান্য এডোবি ফটোশপ, ইলাস্ট্রেটর ও ইনডিজাইন অটোমেশন স্ক্রিপ্টগুলো খুব শীঘ্রই এই শোকেসে সাজানো হবে।",
+          "about_title": "সম্পর্কে",
+          "about_p1": "আসসালামু আলাইকুম। আমি একজন গ্রাফিক ডিজাইনার, প্রযুক্তিপ্রেমী ডেভেলপার এবং অটোমেশন নির্মাতা। সৃজনশীলতাকে আমি শুধু একটি দক্ষতা হিসেবে দেখি না; বরং সততা, আন্তরিকতা ও কল্যাণকর উদ্দেশ্যের সঙ্গে যুক্ত একটি আমানত হিসেবে বিবেচনা করি।",
+          "about_p2": "আমার আগ্রহের শুরু ভিজ্যুয়াল ডিজাইন থেকে—মার্জিত টাইপোগ্রাফি, নিখুঁত স্পেসিং এবং পরিচ্ছন্ন নান্দনিকতার প্রতি ভালো লাগা থেকেই। তবে কাজ করতে গিয়ে বুঝেছি, শুধু সুন্দর কিছু তৈরি করাই যথেষ্ট নয়; কাজের প্রক্রিয়াটিও হওয়া উচিত সহজ, সুশৃঙ্খল ও কার্যকর।",
+          "about_p3": "এই ভাবনা থেকেই প্রযুক্তি ও প্রোগ্রামিংয়ের প্রতি আমার আগ্রহ তৈরি হয়েছে। আমি নতুন প্রযুক্তি জানতে ভালোবাসি, সমস্যার গভীরে গিয়ে তার বাস্তবসম্মত সমাধান খুঁজতে পছন্দ করি এবং প্রতিদিনের কাজকে আরও সহজ করার উপায় খুঁজি। স্ক্রিপ্ট তৈরি, ফাইল কনভার্সন প্রক্রিয়া সহজ করা কিংবা নিজস্ব সফটওয়্যার ও অটোমেশন টুল তৈরির প্রচেষ্টা—সবকিছুর পেছনে আমার মূল প্রেরণা একটাই: অপ্রয়োজনীয় পরিশ্রম কমিয়ে মানুষের সময় ও সৃজনশীলতাকে আরও মূল্যবান করে তোলা।",
+          "contact_title": "যোগাযোগ",
+          "label_name": "নাম",
+          "label_email": "ইমেইল (ঐচ্ছিক)",
+          "label_message": "বার্তা",
+          "btn_send": "হোয়াটসঅ্যাপে মেসেজ পাঠান",
+          "btn_reset": "রিসেট",
+          "about_p4": "আমি বিশ্বাস করি, শেখার সবচেয়ে কার্যকর উপায় হলো বাস্তবে প্রয়োগ করা। তাই নতুন কিছু শেখার পাশাপাশি সেটিকে নিজের কাজে ব্যবহারযোগ্য করে তুলতে চেষ্টা করি। ডিজাইন আমাকে নান্দনিকভাবে চিন্তা করতে শেখায়, প্রোগ্রামিং শেখায় সমস্যাকে যৌক্তিকভাবে বিশ্লেষণ করতে, আর অটোমেশন শেখায় একই কাজ আরও বুদ্ধিমত্তার সঙ্গে সম্পন্ন করতে।",
+          "about_p5": "আমার কাছে প্রযুক্তি শুধু আধুনিকতার প্রতীক নয়; এটি মানুষের কাজ সহজ করার একটি মাধ্যম। একটি সুন্দর ডিজাইন, কার্যকর স্ক্রিপ্ট কিংবা সময় বাঁচানো ছোট্ট কোনো টুল—প্রতিটি সৃষ্টির মধ্যেই আমি ব্যবহারিক উপযোগিতা ও সৃজনশীলতার সমন্বয় খুঁজি।",
+          "about_p6": "আমার লক্ষ্য শুধু কিছু তৈরি করা নয়; বরং এমন কিছু তৈরি করা, যা সত্যিকার অর্থে কাজে আসে। এমন সমাধান, যা জটিলতাকে সরল করে, পুনরাবৃত্তিমূলক কাজকে স্বয়ংক্রিয় করে এবং মানুষকে তার প্রকৃত সৃজনশীলতায় মনোযোগ দেওয়ার সুযোগ করে দেয়।",
+          "about_p7": "আমি এখনও শিখছি, পরীক্ষা করছি এবং প্রতিনিয়ত নিজেকে উন্নত করার চেষ্টা করছি। কারণ আমার বিশ্বাস, দক্ষতার প্রকৃত মূল্য শুধু আমরা কী জানি, তার মধ্যে নয়—আমাদের জ্ঞান দিয়ে কতটা উপকার করা সম্ভব, তার মধ্যেই নিহিত।"
+     },
+     "ar": {
+          "header_sub": "مصمم جرافيك &bull; شغوف بالأتمتة &bull; مهتم بالتقنية &bull; حلّال للمشكلات<br>دمج التصميم البصري الهادف مع أتمتة الأعمال، والتفكير الإبداعي والحلول التقنية المبتكرة.",
+          "nav_intro": "مقدمة",
+          "nav_work": "معرض الأعمال",
+          "nav_about": "عنّي",
+          "nav_contact": "تواصل",
+          "intro_title": "مقدمة",
+          "intro_text": "السلام عليكم، أنا أمين، مصمم جرافيك شغوف بالتقنية وإيجاد الحلول العملية. أستمتع بتحويل الأفكار الإبداعية إلى تصاميم هادفة، واستكشاف الأدوات المفيدة، وأتمتة المهام المتكررة لجعل العمل أبسط وأكثر كفاءة. أهلاً بكم في مساحتي الإبداعية والتقنية.",
+          "intro_pillars_heading": "<i class=\"icon fa-user-circle-o\"></i> مجالات تركيزي وخبراتي المتكاملة",
+          "pillar_gd_title": "مصمم جرافيك",
+          "pillar_gd_desc": "صناعة هويات بصرية هادفة وتيبوغرافيا متوازنة وتخطيطات نقية قائمة على البساطة والجماليات المدروسة.",
+          "pillar_auto_title": "شغوف بالأتمتة",
+          "pillar_auto_desc": "شغوف بأتمتة المهام الروتينية المتكررة في أي مسار عمل. بناء برمجيات وأدوات مخصصة لتوفير الوقت والجهد وتسهيل الإنجاز.",
+          "pillar_tech_title": "مهتم بالتقنية",
+          "pillar_tech_desc": "شغوف باستكشاف كافة أبعاد التقنية — من أجهزة الكمبيوتر والهواتف الذكية، إلى العتاد والبرمجيات وأحدث الأدوات الرقمية.",
+          "pillar_ps_title": "حلّال للمشكلات",
+          "pillar_ps_desc": "مدفوع بشغف فطري للتعمق في المشكلات العملية وعقبات العمل في أي مجال، وابتكار حلول واقعية وذكية لمعالجتها.",
+          "pillar_ct_title": "مفكر إبداعي",
+          "pillar_ct_desc": "الجمع بين الحدس الفني والتحليل المنطقي. التفكير خارج الأطر التقليدية لابتكار طرق أكثر ذكاءً وفاعلية لمواجهة التحديات.",
+          "pillar_pl_title": "متعلّم تطبيقي",
+          "pillar_pl_desc": "متعلم عملي يؤمن بأن أفضل طريقة لاكتساب المعرفة هي التطبيق المباشر، وبناء أدوات وظيفية، والتجربة والتحسين المستمر.",
+          "work_heading1": "نهج وفلسفة التصميم",
+          "work_p1": "بالنسبة لي، التصميم ليس مجرد تزيين؛ بل هو <em>أمانة</em> تتطلب النزاهة والإخلاص والهدف. أسعى لتقديم رسائل بصرية هادفة ونافعة.",
+          "work_p2": "في عالم رقمي مليء بالضوضاء، أعطي الأولوية للبساطة الهادفة مع التركيز على التيبوغرافيا المتناسقة والمساحات المتوازنة.",
+          "work_heading2": "الخدمات والقدرات الأساسية",
+          "work_service1": "<strong>الهوية البصرية:</strong> شعارات معبرة، ولوحات ألوان متناسقة مبنية على التوازن والوضوح.",
+          "work_service2": "<strong>تصميم التيبوغرافيا والتخطيط:</strong> تصاميم تحريرية متقنة تدمج الخطوط العربية واللاتينية باحترافية.",
+          "work_service3": "<strong>تصاميم وسائل التواصل:</strong> محتوى بصري راقٍ يحافظ على الهيبة والجمال.",
+          "work_service4": "<strong>تطوير المفاهيم البصرية:</strong> تحويل الأفكار المجردة إلى أصول بصرية وظيفية وخالدة.",
+          "work_title": "معرض المشاريع",
+          "showcase_intro": "استكشف برمجياتي المخصصة وأدوات الأتمتة الإبداعية وحلول تحسين سير العمل. تصفح المشاريع جنباً إلى جنب أدناه.",
+          "showcase_tab_1": "١. مدقق البنغالية",
+          "showcase_tab_2": "٢. PDFCreator.jsx",
+          "showcase_tab_3": "٣. أدوات قادمة",
+          "showcase_next_btn": "المشروع التالي: PDFCreator.jsx",
+          "showcase_prev_btn": "المشروع السابق",
+          "showcase_next_tools_btn": "التالي: أدوات قادمة",
+          "showcase_first_btn": "العودة للمشروع الأول",
+          "slide_badge_1": "المشروع ١ من ٣",
+          "slide_badge_2": "المشروع ٢ من ٣",
+          "slide_badge_3": "المشروع ٣ من ٣",
+          "showcase_badge_pipeline": "قيد التطوير",
+          "showcase_badge_more": "أدوات مسار العمل",
+          "teaser_script1_title": "منسق كتب إن ديزاين",
+          "teaser_script1_desc": "أداة أتمتة لتنسيق الصفحات الداخلية للكتب، ومحاذاة الحواشي السفلية، وبناء القوالب الرئيسية للنشر المكتبي.",
+          "teaser_script2_title": "مصدّر الدفعات لفوتوشوب",
+          "teaser_script2_desc": "تصدير فوري متعدد الصيغ للأصول واللوحات الفنية مع تحويل ملفات الألوان وإضافة العلامات الذكية للنشر والطباعة.",
+          "teaser_note": "هل لديك مسار عمل تصميمي متكرر ترغب في أتمتته؟ لا تتردد في مراسلتي عبر صفحة التواصل.",
+          "bp_badge_app": "تطبيق سطح مكتب بالذكاء الاصطناعي",
+          "bp_badge_version": "الإصدار 1.4.0",
+          "bp_title": "مدقق اللغة البنغالية (Bangla Proofreader)",
+          "bp_subtitle": "أداة سطح مكتب بنظام ويندوز مدعومة بالذكاء الاصطناعي للتدقيق اللغوي البنغالي والتحويل التلقائي وحماية النصوص العربية",
+          "bp_btn_download": "تحميل البرنامج v1.4.0 (.exe)",
+          "bp_btn_github": "عرض الكود على GitHub",
+          "caption_side_by_side": "مقارنة جنباً إلى جنب: تظليل الفروق النصية بدقة مع تمرير متزامن",
+          "caption_inline_diff": "المقارنة المدمجة: إبراز الحذف والتصحيح بترميز لوني واضح",
+          "caption_changes_list": "قائمة التعديلات: جدول تفاعلي للتصحيحات المقترحة وإمكانية قبولها",
+          "caption_dark_mode": "الوضع الداكن: واجهة أنيقة ومريحة للعين أثناء العمل ليلاً",
+          "caption_settings": "نافذة الإعدادات: اختيار السمة ومفتاح Gemini واختصارات النظام",
+          "caption_api_guide": "دليل API المجاني: خطوات بسيطة للحصول على مفتاح Gemini مجاني تماماً",
+          "thumb_side_by_side": "جنباً إلى جنب",
+          "thumb_inline_diff": "مقارنة مدمجة",
+          "thumb_changes_list": "قائمة التعديلات",
+          "thumb_dark_mode": "الوضع الداكن",
+          "thumb_settings": "الإعدادات",
+          "thumb_api_guide": "دليل API",
+          "bp_feat1_title": "اختصار عام للنظام (Ctrl+Alt+B)",
+          "bp_feat1_desc": "حدد أي نص في Word أو Illustrator أو المتصفح وابدأ التدقيق فورياً عبر الاختصار.",
+          "bp_feat2_title": "تحويل تلقائي من بيجوي إلى يونيكود",
+          "bp_feat2_desc": "يحول نصوص خط بيجوي القديمة تلقائياً إلى يونيكود بمجرد اللصق مما يوفر الوقت.",
+          "bp_feat3_title": "حماية النصوص العربية والحركات",
+          "bp_feat3_desc": "يحافظ بدقة 100% على الآيات القرآنية والأحاديث والتشكيل داخل النصوص البنغالية.",
+          "bp_feat4_title": "معجم المواقع الجغرافية لبنغلاديش",
+          "bp_feat4_desc": "قاعدة بيانات معتمدة لأسماء المناطق والمحافظات لضمان صحة الإملاء الجغرافي.",
+          "bp_feat5_title": "تحديد وقبول الاقتراحات بحرية",
+          "bp_feat5_desc": "حرية كاملة لاختيار التصحيحات المرغوبة وقبولها أو تجاهلها عبر مربعات الاختيار بكل سهولة قبل التطبيق.",
+          "bp_feat6_title": "استبدال فوري في التطبيق النشط",
+          "bp_feat6_desc": "بنقرة واحدة يتم استبدال ولصق النص المصحح مباشرة داخل إليستريتور أو وورد أو أي محرر نصوص نشط.",
+          "tech_stack_label": "التقنيات المستخدمة:",
+          "pdfc_badge_type": "برمجية إليستريتور",
+          "pdfc_badge_protection": "بي دي إف محمي نقطياً",
+          "pdfc_badge_free": "تحميل مجاني",
+          "pdfc_title": "PDFCreator.jsx — أداة تصدير ملفات PDF الآمنة لبرنامج إليستريتور",
+          "pdfc_subtitle": "برمجية نصية لأدوبي إليستريتور لتصدير كتب وملفات .ai متعددة الصفحات كملف PDF عالي الدقة دون كشف أو فقدان ملفات الفيكتور الأصلية.",
+          "pdfc_usage_guide": "قائمة إليستريتور: <strong>File &gt; Scripts &gt; Other Script... &gt; PDFCreator.jsx</strong>",
+          "pdfc_btn_download": "تحميل PDFCreator.jsx",
+          "pdfc_feat1_title": "حماية ملفات الفيكتور الأصلية",
+          "pdfc_feat1_desc": "يحول التصاميم المتجهية إلى صفحات نقطية عالية الدقة، مما يتيح للعميل مراجعة العمل بدقة فائقة دون إمكانية سحب أو سرقة خطوط الفيكتور الأصلية.",
+          "pdfc_feat2_title": "دعم الكتب وتعدد ألواح الرسم (Artboards)",
+          "pdfc_feat2_desc": "يجمع كافة صفحات الكتب والكتالوجات المتعددة في ملف PDF موحد متعدد الصفحات بدقة وبنفس ترتيب الصفحات الأصلي.",
+          "pdfc_feat3_title": "أتمتة كاملة بنقرة واحدة",
+          "pdfc_feat3_desc": "بدون خطوات يدوية معقدة: بمجرد تشغيل البرمجية النصية من إليستريتور، تقوم تلقائياً بالتصدير، ضبط الأبعاد، وبناء ملف الـ PDF كاملاً.",
+          "pdfc_feat4_title": "محرك صامت في الخلفية",
+          "pdfc_feat4_desc": "محرك إنشاء ملفات PDF ثنائي يكتب الملف مباشرة على القرص دون فتح نوافذ جديدة في البرنامج ودون إبطاء سير العمل.",
+          "pdfc_feat5_title": "حفظ ذكي في نفس المسار",
+          "pdfc_feat5_desc": "يحفظ ملف الـ PDF الناتج تلقائياً في نفس مجلد ملف .ai الأصلي وبالاسم المطابق للوثيقة لتسهيل الوصول إليه فوراً.",
+          "pdfc_feat6_title": "تنظيف تلقائي للملفات المؤقتة",
+          "pdfc_feat6_desc": "يحذف فوراً كافة الملفات المؤقتة وذاكرة التخزين الوسيطة بعد الانتهاء، محافظاً على نظافة مساحة القرص لديك.",
+          "showcase_coming_soon_title": "المزيد من برمجيات أدوبي والأتمتة قريباً",
+          "showcase_coming_soon_desc": "يتم حالياً إعداد باقة مخصصة من برمجيات الأتمتة لبرامج فوتوشوب وإليستريتور وإن ديزاين لهذا المعرض.",
+          "about_title": "عنّي",
+          "about_p1": "السلام عليكم. أنا مصمم جرافيك، مطور شغوف بالتقنية وصانع لأدوات الأتمتة. لا أنظر إلى الإبداع كمجرد مهارة؛ بل أعتبره <em>أمانة</em> ترتبط بالإخلاص والنزاهة والغاية النافعة.",
+          "about_p2": "بدأت رحلتي من التصميم البصري — شغوفاً بالتيبوغرافيا الراقية، والمساحات المتوازنة، والجماليات النقية. لكن من خلال الممارسة العملية، أدركت أن مجرد صنع تصاميم جميلة لا يكفي؛ بل يجب أن يكون مسار العمل ذاته بسيطاً، منظماً وفعالاً.",
+          "about_p3": "ومن هذا المنطلق نما شغفي بالتقنية والبرمجة. أحب استكشاف التقنيات الجديدة، والتعمق في جوهر المشكلات لإيجاد حلول واقعية، والبحث المستمر عن طرق لتسهيل العمل اليومي. سواء كان ذلك عبر كتابة البرمجيات النصية، أو تبسيط تحويل الملفات، أو بناء برامج وأدوات أتمتة مخصصة — يبقى دافعي الأساسي واحداً: القضاء على الجهد غير المجدي لرفع قيمة وقت المبدعين وطاقتهم.",
+          "contact_title": "تواصل معي",
+          "label_name": "الاسم",
+          "label_email": "البريد الإلكتروني (اختياري)",
+          "label_message": "الرسالة",
+          "btn_send": "تواصل عبر واتساب",
+          "btn_reset": "إعادة تعيين",
+          "about_p4": "أؤمن بأن أكثر طرق التعلم فاعلية هي الممارسة والتطبيق المباشر. وحينما أتعلم شيئاً جديداً، أسعى فوراً لتوظيفه عملياً. يعلمني التصميم التفكير الجمالي، وتعلمني البرمجة التحليل المنطقي للمشكلات، وتعلمني الأتمتة إنجاز الأعمال بذكاء ومرونة أكبر.",
+          "about_p5": "بالنسبة لي، التقنية ليست مجرد رمز للحداثة؛ بل هي وسيلة لتيسير حياة الناس وعملهم. وسواء كان عملاً بصرياً متقناً، أو برمجية فعالة، أو أداة صغيرة توفر دقائق ثمينة — أبحث دوماً عن التناغم بين الفائدة العملية واللمسة الإبداعية.",
+          "about_p6": "غايتي ليست مجرد صناعة الأشياء، بل ابتكار ما ينفع الناس حقاً. حلول تبسط التعقيد، وتؤتمت الأعمال الروتينية، وتمنح الإنسان فرصة للتركيز على إبداعه الحقيقي.",
+          "about_p7": "ما زلت أتعلم، وأجرب، وأسعى دوماً لتطوير نفسي. لأنني أؤمن بأن القيمة الحقيقية للمهارة لا تكمن فيما نعرفه فقط — بل في مقدار النفع والخير الذي يمكن أن نقدمه بعلمنا."
+     }
+};
 
 				function switchLanguage(lang) {
 					// Update Active Button
@@ -645,6 +1809,13 @@
 
 					// Save Preference
 					localStorage.setItem('preferred_lang', lang);
+
+					// Refresh slider layout if viewing showcase
+					if (typeof updateShowcaseSlider === 'function' && window.location.hash === '#work') {
+						setTimeout(() => {
+							updateShowcaseSlider(currentShowcaseSlide);
+						}, 100);
+					}
 				}
 
 				// Reset to Home (English & Main Screen)
@@ -660,6 +1831,93 @@
 					const savedLang = localStorage.getItem('preferred_lang') || 'en';
 					if (savedLang !== 'en') {
 						switchLanguage(savedLang);
+					}
+				});
+			</script>
+
+	
+						<!-- Showcase Horizontal Slider Navigation Logic -->
+			<script>
+				let currentShowcaseSlide = 0;
+				const totalShowcaseSlides = 3;
+
+				function updateShowcaseSlider(index) {
+					if (index < 0) index = 0;
+					if (index >= totalShowcaseSlides) index = totalShowcaseSlides - 1;
+					currentShowcaseSlide = index;
+
+					const slides = document.querySelectorAll('.showcase-slide');
+					const tabs = document.querySelectorAll('.showcase-tab');
+					const indicator = document.getElementById('showcase-slide-indicator');
+
+					slides.forEach((s, idx) => {
+						if (idx === index) {
+							s.classList.add('active');
+						} else {
+							s.classList.remove('active');
+						}
+					});
+
+					tabs.forEach((t, idx) => {
+						if (idx === index) {
+							t.classList.add('active');
+						} else {
+							t.classList.remove('active');
+						}
+					});
+
+					if (indicator) {
+						indicator.textContent = `0${index + 1} / 0${totalShowcaseSlides}`;
+					}
+				}
+
+				function goToShowcaseSlide(index) {
+					updateShowcaseSlider(index);
+				}
+
+				function nextShowcaseSlide() {
+					if (currentShowcaseSlide < totalShowcaseSlides - 1) {
+						updateShowcaseSlider(currentShowcaseSlide + 1);
+					} else {
+						updateShowcaseSlider(0);
+					}
+				}
+
+				function prevShowcaseSlide() {
+					if (currentShowcaseSlide > 0) {
+						updateShowcaseSlider(currentShowcaseSlide - 1);
+					} else {
+						updateShowcaseSlider(totalShowcaseSlides - 1);
+					}
+				}
+
+				// Keyboard and Swipe Controls
+				document.addEventListener('DOMContentLoaded', () => {
+					// Keyboard arrows
+					document.addEventListener('keydown', (e) => {
+						if (window.location.hash === '#work') {
+							if (e.key === 'ArrowRight') nextShowcaseSlide();
+							else if (e.key === 'ArrowLeft') prevShowcaseSlide();
+						}
+					});
+
+					// Touch swipe on mobile
+					const viewportEl = document.getElementById('showcaseSliderViewport');
+					if (viewportEl) {
+						let touchStartX = 0;
+						let touchStartY = 0;
+						viewportEl.addEventListener('touchstart', (e) => {
+							touchStartX = e.changedTouches[0].screenX;
+							touchStartY = e.changedTouches[0].screenY;
+						}, {passive: true});
+						viewportEl.addEventListener('touchend', (e) => {
+							const diffX = e.changedTouches[0].screenX - touchStartX;
+							const diffY = e.changedTouches[0].screenY - touchStartY;
+							if (Math.abs(diffX) > 45 && Math.abs(diffX) > Math.abs(diffY)) {
+								if (diffX > 0) prevShowcaseSlide();
+								else nextShowcaseSlide();
+							}
+						}, {passive: true});
 					}
 				});
 			</script>
